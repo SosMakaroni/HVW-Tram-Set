@@ -1,0 +1,158 @@
+// --------------------------------------------------------------------------------UV12_02
+
+spriteset(ss_UV12_purchase, "src/UV/UV12_BUY_8bpp.png")		{tmpl_purchase()}
+spriteset(ss_UV12_PDO_purchase, "src/UV/UV12_BUY_P_8bpp.png")		{tmpl_purchase()}
+spriteset(ss_UV12_01, "src/UV/UV1_01_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_UV12_01, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/UV/UV1_01_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_UV12_01, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/UV/UV1_01_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_UV12_01_PUP, "src/UV/UV1_01_PUP_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_UV12_01_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/UV/UV1_01_PUP_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_UV12_01_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/UV/UV1_01_PUP_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_UV12_02, "src/UV/UV1_02_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_UV12_02, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/UV/UV1_02_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_UV12_02, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/UV/UV1_02_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_UV12_02_PDO, "src/UV/UV1_02_PDO_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_UV12_02_PDO, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/UV/UV1_02_PDO_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_UV12_02_PDO, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/UV/UV1_02_PDO_4x_8bpp.png") {tmpl_1(4)}
+
+spritegroup sg_UV12_01 {	loaded:  [ss_UV12_01];	loading: [ss_UV12_01];}
+spritegroup sg_UV12_02 {	loaded:  [ss_UV12_02];	loading: [ss_UV12_02];}
+
+switch (FEAT_ROADVEHS, SELF, swg_UV12_purchase, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_UV12_purchase;    // Alap modell
+    1: return ss_UV12_PDO_purchase;    // Pantonograf (le)
+}
+switch (FEAT_ROADVEHS, SELF, swg_UV12_01, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_UV12_01;    // Alap modell
+    1: return ss_UV12_01_PUP;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, swg_UV12_02, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_UV12_02;    // Alap modell
+    1: return ss_UV12_02_PDO;    // Pantonograf (le)
+}
+
+switch (FEAT_ROADVEHS, SELF, sw_UV12_02, position_in_consist ) {
+    1: ss_toldat;
+	2: swg_UV12_02;
+	3: ss_toldat;
+    swg_UV12_01;
+}
+switch (FEAT_ROADVEHS, SELF, sw1_UV12_02_ss, cargo_subtype) {
+	0: sw_UV12_02;
+	CB_RESULT_NO_TEXT;
+}
+switch (FEAT_ROADVEHS, SELF, sw_UV12_02_articulated, extra_callback_info1) {
+    0: item_UV12_02;
+    1: item_UV12_02_T;
+    2: item_UV12_02_2;
+    3: item_UV12_02_T;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_UV12_02_length, position_in_consist) {
+	1: return 4;
+	2: return 5;
+	3: return 8;
+    return 8;
+}
+switch (FEAT_ROADVEHS, SELF, sw_UV12_02_livery_text, cargo_subtype) {
+	0: return string(STR_COLOUR_SCHEME_BUDAPEST);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_UV12_02) {
+	property {
+        name:								string(STR_UV12_02_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1956,04,03);
+        model_life:						20;
+        vehicle_life:						50;
+        reliability_decay:				10;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					30;
+        cost_factor:						60;
+        running_cost_factor:				55;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								60 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								296 kW;
+        weight:							40 ton;
+        cargo_capacity:					94;
+		cargo_age_period:					30;
+        sound_effect:						SOUND_POWER_STATION;
+		variant_group:					item_UV11_01;
+    }
+    graphics {
+		default:                 		sw1_UV12_02_ss;
+		purchase:						swg_UV12_purchase;
+		articulated_part:        		sw_UV12_02_articulated;
+		length:                  		sw_UV12_02_length;
+		cargo_subtype_text: 			sw_UV12_02_livery_text;
+		cost_factor:					60 * parapuco;
+		running_cost_factor:			55 * pararuco;
+		additional_text: 				string(STR_UV12_02_ADAT);
+    }
+}
+item(FEAT_ROADVEHS, item_UV12_02_2) {
+	property {
+        name:								string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					30;
+        cost_factor:						0;
+        running_cost_factor:				0;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:								0 kW;
+        weight:							0 ton;
+        cargo_capacity:					94;
+		cargo_age_period:					0;
+        sound_effect:						SOUND_POWER_STATION;
+    }
+    graphics {
+		default:                 		sw1_UV12_02_ss;
+		length:                  		sw_UV12_02_length;
+    }
+}
+item(FEAT_ROADVEHS, item_UV12_02_T) {
+	property {
+        name:								string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        refittable_cargo_classes:		bitmask(NO_CARGO_CLASS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					0;
+        cost_factor:						0;
+        running_cost_factor:				0;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:								0 kW;
+        weight:							0 ton;
+        cargo_capacity:					0;
+		cargo_age_period:					0;
+    }
+    graphics {
+		default:                 		ss_toldat;
+		length:                  		sw_UV12_02_length;
+    }
+}
+
+// --------------------------------------------------------------------------------UV12_02 End
+// --
+// --

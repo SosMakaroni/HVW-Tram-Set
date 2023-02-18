@@ -1,0 +1,7 @@
+
+
+Wood	:ł
+Trailer	:Ł
+Double	:đ
+Triple	:Đ
+Twin	:Ń

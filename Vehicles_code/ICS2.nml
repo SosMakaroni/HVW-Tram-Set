@@ -1,0 +1,236 @@
+// --------------------------------------------------------------------------------ICS2
+
+spriteset(ss_ICS2_purchase, "src/CSM/ICS_8bpp.png")		{tmpl_purchase()}  //Motorkocsi
+spriteset(ss_ICS2_PDO_purchase, "src/CSM/ICS_PDO_8bpp.png")		{tmpl_purchase()} //Áramszedő
+spriteset(ss_ICS2_1, "src/CSM/ICS_1_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_ICS2_1, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CSM/ICS_1_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_ICS2_1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CSM/ICS_1_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_ICS2_1PUP, "src/CSM/ICS_PUP_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_ICS2_1PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CSM/ICS_PUP_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_ICS2_1PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CSM/ICS_PUP_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_ICS2_2, "src/CSM/ICS_2_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_ICS2_2, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CSM/ICS_2_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_ICS2_2, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CSM/ICS_2_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_ICS2_2R1, "src/CSM/ICS_R1_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_ICS2_2R1, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CSM/ICS_R1_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_ICS2_2R1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CSM/ICS_R1_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_ICS2_2R2, "src/CSM/ICS_R2_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_ICS2_2R2, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CSM/ICS_R2_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_ICS2_2R2, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CSM/ICS_R2_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_ICS2_3, "src/CSM/ICS_3_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_ICS2_3, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CSM/ICS_3_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_ICS2_3, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CSM/ICS_3_4x_8bpp.png") {tmpl_1(4)}
+
+spritegroup sg_ICS2_1 {	loaded:  [ss_ICS2_1];	loading: [ss_ICS2_1];}
+spritegroup sg_ICS2_2 {	loaded:  [ss_ICS2_2];	loading: [ss_ICS2_2];}
+spritegroup sg_ICS2_3 {	loaded:  [ss_ICS2_3];	loading: [ss_ICS2_3];}
+
+random_switch(FEAT_ROADVEHS, SELF, ss_ICS2_2R) {
+	1: ss_ICS2_2R1;
+	1: ss_ICS2_2R2;
+}
+
+switch (FEAT_ROADVEHS, SELF, swg_ICS2_purchase, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_ICS2_purchase;    // Alap modell
+    1: return ss_ICS2_PDO_purchase;    // Pantonograf (le)
+}
+switch (FEAT_ROADVEHS, SELF, sgw_ICS2_1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_ICS2_1;    // Alap modell
+    1: return ss_ICS2_1PUP;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sgw_ICS2_2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_ICS2_2;    // Alap modell
+    1: return ss_ICS2_2R;    // Reklámtábla
+}
+
+
+switch (FEAT_ROADVEHS, SELF, sw_ICS2_ss, position_in_consist ) {
+    1: ss_toldat;
+	2: sgw_ICS2_2;
+	3: sg_ICS2_3;
+	4: ss_toldat;
+    5: sgw_ICS2_1;
+    6: ss_toldat;
+	7: sgw_ICS2_2;
+	8: sg_ICS2_3;
+	9: ss_toldat;
+    sgw_ICS2_1;
+}
+
+switch (FEAT_ROADVEHS, SELF, sw1_ICS2_ss, cargo_subtype) {
+	0: sw_ICS2_ss;
+	CB_RESULT_NO_TEXT;
+}
+switch (FEAT_ROADVEHS, SELF, sw_ICS2_articulated, extra_callback_info1) {
+    0: item_ICS2;
+    1: item_ICS2_T;
+    2: item_ICS2_2;
+    3: item_ICS2_3;
+    4: item_ICS2_T;
+    5: item_ICS2_1;
+    6: item_ICS2_T;
+    7: item_ICS2_2;
+    8: item_ICS2_3;
+    9: item_ICS2_T;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_ICS2_length, position_in_consist) {
+	1: return 1;
+	2: return 6;
+	3: return 2;
+	4: return 8;
+	5: return 8;
+	6: return 1;
+	7: return 6;
+	8: return 3;
+	9: return 8;
+    return 8;
+}
+switch (FEAT_ROADVEHS, SELF, sw_ICS2_livery_text, cargo_subtype) {
+	0: return string(STR_COLOUR_SCHEME_BUDAPEST);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_ICS2) {
+	property {
+        name:								string(STR_ICS2_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1977,09,1);
+        model_life:						20;
+        vehicle_life:						50;
+        reliability_decay:				10;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					26;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								55 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								528 kW;
+        weight:							63 ton;
+        cargo_capacity:					76;
+		cargo_age_period:					30;
+        sound_effect:						SOUND_POWER_STATION;
+		variant_group:					item_ICS1;
+    }
+    graphics {
+		default:                 		sw1_ICS2_ss;
+		purchase:						swg_ICS2_purchase;
+		articulated_part:        		sw_ICS2_articulated;
+		length:                  		sw_ICS2_length;
+		cargo_subtype_text: 			sw_ICS2_livery_text;
+		cost_factor:					140 * parapuco;
+		running_cost_factor:			140 * pararuco;
+		additional_text: 				string(STR_ICS2_ADAT);
+    }
+}
+item(FEAT_ROADVEHS, item_ICS2_1) {
+	property {
+        name:								string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					26;
+        cost_factor:						0;
+        running_cost_factor:				0;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:								0 kW;
+        weight:							0 ton;
+        cargo_capacity:					76;
+		cargo_age_period:					0;
+        sound_effect:						SOUND_POWER_STATION;
+    }
+    graphics {
+		default:                 		sw1_ICS2_ss;
+		length:                  		sw_ICS2_length;
+    }
+}
+item(FEAT_ROADVEHS, item_ICS2_2) {
+	property {
+        name:								string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					13;
+        cost_factor:						0;
+        running_cost_factor:				0;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:								0 kW;
+        weight:							0 ton;
+        cargo_capacity:					46;
+		cargo_age_period:					0;
+        sound_effect:						SOUND_POWER_STATION;
+    }
+    graphics {
+		default:                 		sw1_ICS2_ss;
+		length:                  		sw_ICS2_length;
+    }
+}
+item(FEAT_ROADVEHS, item_ICS2_3) {
+	property {
+        name:								string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					26;
+        cost_factor:						0;
+        running_cost_factor:				0;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:								0 kW;
+        weight:							0 ton;
+        cargo_capacity:					76;
+		cargo_age_period:					0;
+        sound_effect:						SOUND_POWER_STATION;
+    }
+    graphics {
+		default:                 		sw1_ICS2_ss;
+		length:                  		sw_ICS2_length;
+    }
+}
+item(FEAT_ROADVEHS, item_ICS2_T) {
+	property {
+        name:								string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        refittable_cargo_classes:		bitmask(NO_CARGO_CLASS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					0;
+        cost_factor:						0;
+        running_cost_factor:				0;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:								0 kW;
+        weight:							0 ton;
+        cargo_capacity:					0;
+		cargo_age_period:					0;
+    }
+    graphics {
+		default:                 		ss_toldat;
+		length:                  		sw_ICS2_length;
+    }
+}
+
+// --------------------------------------------------------------------------------ICS2 End
+// --
+// --

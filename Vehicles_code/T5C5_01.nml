@@ -1,0 +1,126 @@
+// --------------------------------------------------------------------------------T5C5_01
+
+spriteset(ss_T5C5_01_purchase, "src/T5C5/T5C5a_01_BUY_8bpp.png")		{tmpl_purchase()}
+spriteset(ss_T5C5_01_P_purchase, "src/T5C5/T5C5a_01_BUY_P_8bpp.png")		{tmpl_purchase()}
+spriteset(ss_T5C51a_01, "src/T5C5/T5C5a_01_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_T5C51a_01, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/T5C5/T5C5a_01_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_T5C51a_01, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/T5C5/T5C5a_01_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_T5C51a_01_PUP, "src/T5C5/T5C5a_01_PUP_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_T5C51a_01_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/T5C5/T5C5a_01_PUP_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_T5C51a_01_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/T5C5/T5C5a_01_PUP_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_T5C51proto_01, "src/T5C5/T5C5proto_01_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_T5C51proto_01, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/T5C5/T5C5proto_01_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_T5C51proto_01, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/T5C5/T5C5proto_01_4x_8bpp.png") {tmpl_1(4)}
+
+spritegroup sg_T5C51a_01 {	loaded:  [ss_T5C51a_01];	loading: [ss_T5C51a_01];}
+spritegroup sg_T5C51proto_01 {	loaded:  [ss_T5C51proto_01];	loading: [ss_T5C51proto_01];}
+
+switch (FEAT_ROADVEHS, SELF, swg_T5C5_01_purchase, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_T5C5_01_purchase;    // Alap modell
+    1: return ss_T5C5_01_P_purchase;    // Pantonograf (le)
+}
+switch (FEAT_ROADVEHS, SELF, sgw_T5C51a_01, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_T5C51a_01;    // Alap modell
+    1: return ss_T5C51a_01_PUP;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sgw_T5C51proto_01, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_T5C51proto_01;    // Alap modell
+    1: return ss_T5C51a_01_PUP;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw_T5C5a_01, position_in_consist ) {
+    1: ss_toldat;
+    sgw_T5C51a_01;
+}
+switch (FEAT_ROADVEHS, SELF, sw_T5C5proto_01, position_in_consist ) {
+    1: ss_toldat;
+    sgw_T5C51proto_01;
+}
+switch (FEAT_ROADVEHS, SELF, sw_T5C5_01_ss, cargo_subtype) {
+	0: sw_T5C5a_01;
+	1: sw_T5C5proto_01;
+	CB_RESULT_NO_TEXT;
+}
+switch (FEAT_ROADVEHS, SELF, sw_T5C5_01_articulated, extra_callback_info1) {
+    0: item_T5C5_01;
+    1: item_T5C5_01_T;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_T5C5_01_length, position_in_consist) {
+	1: return 8;
+    return 7;
+}
+switch (FEAT_ROADVEHS, SELF, sw_T5C5_01_livery_text, cargo_subtype) {
+	0: return string(STR_COLOUR_SCHEME_BUDAPEST);
+	1: return string(STR_COLOUR_SCHEME_PROTO);
+	CB_RESULT_NO_TEXT;
+}
+
+item(FEAT_ROADVEHS, item_T5C5_01) {
+	property {
+        name:								string(STR_T5C5_01_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1980,02,01);
+        model_life:						20;
+        vehicle_life:						50;
+        reliability_decay:				10;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					39; //3*13
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								65 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								180 kW;
+        weight:							19 ton;
+        cargo_capacity:					100;
+		cargo_age_period:					30;
+        sound_effect:						SOUND_POWER_STATION;
+    }
+    graphics {
+		default:                 		sw_T5C5_01_ss;
+		purchase:						swg_T5C5_01_purchase;
+		articulated_part:        		sw_T5C5_01_articulated;
+		length:                  		sw_T5C5_01_length;
+		cargo_subtype_text: 			sw_T5C5_01_livery_text;
+		cost_factor:					35 * parapuco;
+		running_cost_factor:			40 * pararuco;
+		additional_text: 				string(STR_T5C5_01_ADAT);
+    }
+}
+item(FEAT_ROADVEHS, item_T5C5_01_T) {
+	property {
+        name:								string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        refittable_cargo_classes:		bitmask(NO_CARGO_CLASS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					0;
+        cost_factor:						0;
+        running_cost_factor:				0;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:								0 kW;
+        weight:							0 ton;
+        cargo_capacity:					0;
+		cargo_age_period:					0;
+    }
+    graphics {
+		default:                 		ss_toldat;
+		length:                  		sw_T5C5_01_length;
+    }
+}
+
+// --------------------------------------------------------------------------------T5C5_01 End
+// --
+// --

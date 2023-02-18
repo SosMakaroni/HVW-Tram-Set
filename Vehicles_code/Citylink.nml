@@ -1,0 +1,233 @@
+// --------------------------------------------------------------------------------Citylink
+
+spriteset(ss_Citylink_purchase, "src/CityLink/CityLinka1_BUY_8bpp.png")		{tmpl_purchase()}
+spriteset(ss_Citylink_purchase_PDO, "src/CityLink/CityLinka1_BUY_P_8bpp.png")		{tmpl_purchase()}
+//--------------A
+spriteset(ss_Citylink_1_a, "src/CityLink/CityLinka1_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_Citylink_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CityLink/CityLinka1_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_Citylink_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CityLink/CityLinka1_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_Citylink_2_a, "src/CityLink/CityLinka2_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_Citylink_2_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CityLink/CityLinka2_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_Citylink_2_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CityLink/CityLinka2_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_Citylink_2_a_PUP, "src/CityLink/CityLinka2_PUP_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_Citylink_2_a_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CityLink/CityLinka2_PUP_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_Citylink_2_a_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CityLink/CityLinka2_PUP_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_Citylink_3_a, "src/CityLink/CityLinka3_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_Citylink_3_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CityLink/CityLinka3_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_Citylink_3_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CityLink/CityLinka3_4x_8bpp.png") {tmpl_1(4)}
+
+spritegroup sg_Citylink_1_a {	loaded:  [ss_Citylink_1_a];	loading: [ss_Citylink_1_a];}
+spritegroup sg_Citylink_2_a {	loaded:  [ss_Citylink_2_a];	loading: [ss_Citylink_2_a];}
+spritegroup sg_Citylink_3_a {	loaded:  [ss_Citylink_3_a];	loading: [ss_Citylink_3_a];}
+//--------------A end
+//--------------B
+spriteset(ss_Citylink_1_b, "src/CityLink/CityLinkb1_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_Citylink_1_b, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CityLink/CityLinkb1_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_Citylink_1_b, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CityLink/CityLinkb1_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_Citylink_2_b, "src/CityLink/CityLinkb2_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_Citylink_2_b, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CityLink/CityLinkb2_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_Citylink_2_b, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CityLink/CityLinkb2_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_Citylink_2_b_PUP, "src/CityLink/CityLinkb2_PUP_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_Citylink_2_b_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CityLink/CityLinkb2_PUP_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_Citylink_2_b_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CityLink/CityLinkb2_PUP_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_Citylink_3_b, "src/CityLink/CityLinkb3_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_Citylink_3_b, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CityLink/CityLinkb3_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_Citylink_3_b, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CityLink/CityLinkb3_4x_8bpp.png") {tmpl_1(4)}
+
+spritegroup sg_Citylink_1_b {	loaded:  [ss_Citylink_1_b];	loading: [ss_Citylink_1_b];}
+spritegroup sg_Citylink_2_b {	loaded:  [ss_Citylink_2_b];	loading: [ss_Citylink_2_b];}
+spritegroup sg_Citylink_3_b {	loaded:  [ss_Citylink_3_b];	loading: [ss_Citylink_3_b];}
+//--------------B end
+//--------------C
+spriteset(ss_Citylink_1_c, "src/CityLink/CityLinkc1_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_Citylink_1_c, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CityLink/CityLinkc1_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_Citylink_1_c, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CityLink/CityLinkc1_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_Citylink_2_c, "src/CityLink/CityLinkc2_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_Citylink_2_c, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CityLink/CityLinkc2_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_Citylink_2_c, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CityLink/CityLinkc2_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_Citylink_2_c_PUP, "src/CityLink/CityLinkc2_PUP_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_Citylink_2_c_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CityLink/CityLinkc2_PUP_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_Citylink_2_c_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CityLink/CityLinkc2_PUP_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_Citylink_3_c, "src/CityLink/CityLinkc3_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_Citylink_3_c, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CityLink/CityLinkc3_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_Citylink_3_c, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CityLink/CityLinkc3_4x_8bpp.png") {tmpl_1(4)}
+
+spritegroup sg_Citylink_1_c {	loaded:  [ss_Citylink_1_c];	loading: [ss_Citylink_1_c];}
+spritegroup sg_Citylink_2_c {	loaded:  [ss_Citylink_2_c];	loading: [ss_Citylink_2_c];}
+spritegroup sg_Citylink_3_c {	loaded:  [ss_Citylink_3_c];	loading: [ss_Citylink_3_c];}
+//--------------C end
+switch (FEAT_ROADVEHS, SELF, swg_Citylink_purchase, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_Citylink_purchase;    // Alap modell
+    1: return ss_Citylink_purchase_PDO;    // Pantonograf (le)
+}
+//--------------A
+switch (FEAT_ROADVEHS, SELF, sgw_Citylink_2_a, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_Citylink_2_a;    // Alap modell
+    1: return ss_Citylink_2_a_PUP;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw_Citylink_a, position_in_consist ) {
+    1: ss_toldat;
+	2: sgw_Citylink_2_a;
+	3: ss_toldat;
+	4: sg_Citylink_3_a;
+	5: ss_toldat;
+    sg_Citylink_1_a;
+}
+//--------------A end
+//--------------B
+switch (FEAT_ROADVEHS, SELF, sgw_Citylink_2_b, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_Citylink_2_b;    // Alap modell
+    1: return ss_Citylink_2_b_PUP;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw_Citylink_b, position_in_consist ) {
+    1: ss_toldat;
+	2: sgw_Citylink_2_b;
+	3: ss_toldat;
+	4: sg_Citylink_3_b;
+	5: ss_toldat;
+    sg_Citylink_1_b;
+}
+//--------------B end
+//--------------C
+switch (FEAT_ROADVEHS, SELF, sgw_Citylink_2_c, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_Citylink_2_c;    // Alap modell
+    1: return ss_Citylink_2_c_PUP;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw_Citylink_c, position_in_consist ) {
+    1: ss_toldat;
+	2: sgw_Citylink_2_c;
+	3: ss_toldat;
+	4: sg_Citylink_3_c;
+	5: ss_toldat;
+    sg_Citylink_1_c;
+}
+//--------------C end
+switch (FEAT_ROADVEHS, SELF, sw_Citylink_ss, cargo_subtype) {
+	0: sw_Citylink_a;
+	1: sw_Citylink_b;	
+	2: sw_Citylink_c;	
+	CB_RESULT_NO_TEXT;
+}
+switch (FEAT_ROADVEHS, SELF, sw_Citylink_articulated, extra_callback_info1) {
+    0: item_Citylink;
+    1: item_Citylink_T;
+    2: item_Citylink_2;
+    3: item_Citylink_T;
+    4: item_Citylink_2;
+    5: item_Citylink_T;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_Citylink_length, position_in_consist) {
+	1: return 4;
+	2: return 8;
+	3: return 2;
+	4: return 5;
+	5: return 8;
+    return 8;
+}
+switch (FEAT_ROADVEHS, SELF, sw_Citylink_livery_text, cargo_subtype) {
+	0: return string(STR_COLOUR_SCHEME_SZEGED);
+	1: return string(STR_COLOUR_SCHEME_CHEMNITZ);	
+	2: return string(STR_COLOUR_SCHEME_KARLSRUHE);	
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_Citylink) {
+	property {
+        name:								string(STR_Citylink_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(2021,01,01);
+        model_life:						25;
+        vehicle_life:						40;
+        reliability_decay:				10;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					20;
+        cost_factor:						100;
+        running_cost_factor:				100;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								100 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								580 kW;
+        weight:							58 ton;
+        cargo_capacity:					72;
+		cargo_age_period:					20;
+        sound_effect:						SOUND_POWER_STATION;
+    }
+    graphics {
+		default:                 		sw_Citylink_ss;
+		purchase:						swg_Citylink_purchase;
+		articulated_part:        		sw_Citylink_articulated;
+		length:                  		sw_Citylink_length;
+		cargo_subtype_text: 			sw_Citylink_livery_text;
+		cost_factor:					100 * parapuco;
+		running_cost_factor:			100 * pararuco;
+		additional_text: 				string(STR_Citylink_ADAT);
+    }
+}
+item(FEAT_ROADVEHS, item_Citylink_2) {
+	property {
+        name:								string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					20;
+        cost_factor:						0;
+        running_cost_factor:				0;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:								0 kW;
+        weight:							0 ton;
+        cargo_capacity:					72;
+		cargo_age_period:					0;
+        sound_effect:						SOUND_POWER_STATION;
+    }
+    graphics {
+		default:                 		sw_Citylink_ss;
+		length:                  		sw_Citylink_length;
+    }
+}
+item(FEAT_ROADVEHS, item_Citylink_T) {
+	property {
+        name:								string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        refittable_cargo_classes:		bitmask(NO_CARGO_CLASS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					0;
+        cost_factor:						0;
+        running_cost_factor:				0;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:								0 kW;
+        weight:							0 ton;
+        cargo_capacity:					0;
+		cargo_age_period:					0;
+    }
+    graphics {
+		default:                 		ss_toldat;
+		length:                  		sw_Citylink_length;
+    }
+}
+
+// --------------------------------------------------------------------------------Citylink End
+// --
+// --

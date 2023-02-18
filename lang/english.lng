@@ -1,0 +1,102 @@
+﻿##grflangid 0x01
+# This is the English language file
+
+# GRF name and description definitions	
+STR_GRF_NAME	:HVW Tram Set
+STR_GRF_DESC	:{}{LTBLUE}Tram Set{}{BLACK}Last update:{WHITE} 2023.02.08 {}{BLACK}Code and model:{GREEN}SosMakaroni{} {COPYRIGHT}2022 SosMakaroni{}{GRAY}License: GPLv2{}{BLACK}Tram Set.
+
+STR_BUG	:HVW Toyland bug, sorry :(
+
+STR_PARAM_BUY_NAME	:Purchase cost
+STR_PARAM_BUY_DESC	:For players who want to choose the purchase cost.
+STR_PARAM_MAINTENANCE_NAME	:Maintenance costs
+STR_PARAM_MAINTENANCE_DESC	:For players who want to choose the cost of maintenance.
+STR_PARAM_GAME_VERY_EASY	:/4
+STR_PARAM_GAME_EASY	:/2
+STR_PARAM_GAME_NORMAL	:1 {SILVER} By default{BLACK}
+STR_PARAM_GAME_HARD	:x2
+STR_PARAM_GAME_VERY_HARD	:x4
+
+STR_T5C5_01_NAME	:Tatra T5C5
+STR_T5C5_01_ADAT	:{GOLD}----------{}The{BLACK} Tatra T5C5 {GOLD}is a single-car tram built by ČKD Tatra in Prague, between 1978 and 1984, 322 vehicles were supplied to Budapest.{}{BLACK}T5C5{GOLD} differed in many ways to earlier Tatra products, most notably that the vehicle was controlled by a hand lever rather than a foot pedal.{BLACK}{}
+STR_T5C5_02_NAME	:Tatra T5C5 {Double}
+STR_T5C5_02_ADAT	:{GOLD}----------{}The{BLACK} Tatra T5C5 {GOLD}is a single-car tram built by ČKD Tatra in Prague, between 1978 and 1984, 322 vehicles were supplied to Budapest.{}{BLACK}T5C5{GOLD} differed in many ways to earlier Tatra products, most notably that the vehicle was controlled by a hand lever rather than a foot pedal.{BLACK}{}
+STR_T5C5_03_NAME	:Tatra T5C5 {Triple}
+STR_T5C5_03_ADAT	:{GOLD}----------{}The{BLACK} Tatra T5C5 {GOLD}is a single-car tram built by ČKD Tatra in Prague, between 1978 and 1984, 322 vehicles were supplied to Budapest.{}{BLACK}T5C5{GOLD} differed in many ways to earlier Tatra products, most notably that the vehicle was controlled by a hand lever rather than a foot pedal.{BLACK}{}
+
+STR_Citylink_NAME	:Stadler Citylink
+STR_Citylink_ADAT	:{GOLD}----------{BLACK}{}CITYLINK {GOLD}is a clever design of tram which can be configured as an urban tram or as an inter-city train.{}The barrier-free {BLACK}CITYLINK{GOLD} type tram has a low-floor design throughout.{BLACK}{}
+
+STR_FA_NAME	:Schlick F {BROWN}{Wood}{BLACK}
+STR_FA_ADAT	:{GOLD}----------{}The{BLACK} Schlick {GOLD}factory built 50 {BLACK}F-type{GOLD} motor cars during 1904-1905,{} which were given track number 196-245 at the Budapest City Electric Railway (BVVV).{BLACK}{}
+STR_FAP_NAME	:Schlick F + M{Trailer} {BROWN}{Wood}{BLACK}
+STR_FAP_ADAT	:{GOLD}----------{}The{BLACK} Schlick {GOLD}factory built 50 {BLACK}F-type{GOLD} motor cars during 1904-1905,{} which were given track number 196-245 at the Budapest City Electric Railway (BVVV).{BLACK}{}
+STR_FB_NAME	:Schlick F
+STR_FB_ADAT	:{GOLD}----------{}In 1956, the steel frame conversions of the{BLACK} Schlick F-type {GOLD}motor cars began.{} During the conversion, several developments were launched at later times, so the trams came out of the main workshop in several versions.{BLACK}{}
+STR_FBP_NAME	:Schlick F + N{Trailer}
+STR_FBP_ADAT	:{GOLD}----------{}In 1956, the steel frame conversions of the{BLACK} Schlick F-type {GOLD}motor cars began.{} During the conversion, several developments were launched at later times, so the trams came out of the main workshop in several versions.{BLACK}{}
+STR_FBPP_NAME	:Schlick F + 2 N{Trailer}
+STR_FBPP_ADAT	:{GOLD}----------{}In 1956, the steel frame conversions of the{BLACK} Schlick F-type {GOLD}motor cars began.{} During the conversion, several developments were launched at later times, so the trams came out of the main workshop in several versions.{BLACK}{}
+STR_FT_NAME	:Schlick F {Twin}
+STR_FT_ADAT	:{GOLD}----------{}In 1956, the steel frame conversions of the{BLACK} Schlick F-type {GOLD}motor cars began.{} During the conversion, several developments were launched at later times, so the trams came out of the main workshop in several versions.{BLACK}{}
+
+STR_BE3_NAME	:FVV CSM (3 doors)
+STR_BE3_ADAT	:{GOLD}----------{}The {BLACK}FVV CSM{GOLD} is a four-axis articulated tram manufactured by FVV, between 1961 and 1963.{}{BLACK}Nickname:{GOLD} "Bengáli" unwieldy{BLACK}{}{BLACK}Version: {GOLD}3 doors, 1 driving positions{BLACK}{}
+STR_BE4_NAME	:FVV CSM (3 doors)
+STR_BE4_ADAT	:{GOLD}----------{}The {BLACK}FVV CSM{GOLD} is a four-axis articulated tram manufactured by FVV, between 1963 and 1965.{}{BLACK}Nickname:{GOLD} "Bengáli" unwieldy{BLACK}{}{BLACK}Version: {GOLD}3 doors, 2 driving positions{BLACK}{}
+STR_BE5_NAME	:FVV CSM (5 doors)
+STR_BE5_ADAT	:{GOLD}----------{}The {BLACK}FVV CSM{GOLD} is a four-axis articulated tram manufactured by FVV, between 1967 and 1973.{}{BLACK}Nickname:{GOLD} "Bengáli" unwieldy{BLACK}{}{BLACK}Version: {GOLD}5 doors, 2 driving positions{BLACK}{}
+STR_BE6_NAME	:FVV CSM (6 doors)
+STR_BE6_ADAT	:{GOLD}----------{}The {BLACK}FVV CSM{GOLD} is a four-axis articulated tram manufactured by FVV, between 1969 and 1970.{}{BLACK}Nickname:{GOLD} "Bengáli" unwieldy{BLACK}{}{BLACK}Version: {GOLD}6 doors, 2 driving positions{BLACK}{}
+STR_BE1_NAME	:FVV CSM (8/10 doors)
+STR_BE1_ADAT	:{GOLD}----------{}The {BLACK}FVV CSM{GOLD} is a four-axis articulated tram manufactured by FVV, between 1963 and 1978.{}{BLACK}Nickname:{GOLD} "Bengáli" unwieldy{BLACK}{}{BLACK}Version: {GOLD}10 doors, 2 driving positions{BLACK}{}
+
+STR_ICS1_NAME	:Ganz ICS
+STR_ICS1_ADAT	:{GOLD}----------{}The {BLACK}Ganz ICS{GOLD} is a eight-axis tram manufactured by Ganz between 1967 and 1978.{}{BLACK}Nickname:{GOLD} Industrial articulation{BLACK}{}
+STR_ICS2_NAME	:Ganz ICS {Double}
+STR_ICS2_ADAT	:{GOLD}----------{}The {BLACK}Ganz ICS{GOLD} is a eight-axis tram manufactured by Ganz between 1967 and 1978.{}{BLACK}Nickname:{GOLD} Industrial articulation{BLACK}{}
+STR_KCSV7_NAME	:Ganz KCSV7
+STR_KCSV7_ADAT	:{GOLD}----------{}The {BLACK}Ganz KCSV7{GOLD} type name covers the 30 vehicles rebuilt between 1996 and 1999 by the Ganz ICS articulated vehicles.{}{BLACK}Nickname:{GOLD} Industrial articulation{BLACK}{}
+
+STR_TM_01_NAME	:Ganz TM
+STR_TM_01_ADAT	:{GOLD}----------{}The {BLACK}GanzTM{GOLD} is a four-axis, two-way, solo tram manufactured by Ganz between 1940 and 1943.{}The type was built based on the American PCC design that became famous in the 1930s.{}{BLACK}Nickname:{GOLD} Stuka (Ju 87){BLACK}{}
+STR_TMP_01_NAME	:Ganz TM + 5800{Trailer}
+STR_TMP_01_ADAT	:{GOLD}----------{}The {BLACK}GanzTM{GOLD} is a four-axis, two-way, solo tram manufactured by Ganz between 1940 and 1943.{}The type was built based on the American PCC design that became famous in the 1930s.{}{BLACK}Nickname:{GOLD} Stuka (Ju 87){BLACK}{}
+STR_TV_03_NAME	:Ganz TV {Triple}
+STR_TV_03_ADAT	:{GOLD}----------{}The {BLACK}Ganz TV{GOLD} was made from three TM cars damaged in World War II.{}The remote control of the electric braking of the cars was also solved, their middle door became double-leaf.{}{BLACK}Nickname:{GOLD} Szellem (Ghost){BLACK}{}
+STR_UV11_01_NAME	:Ganz UV1
+STR_UV11_01_ADAT	:{GOLD}----------{}The {BLACK}Ganz UV{GOLD} type was developed from TM cars.{}{BLACK}Version: {GOLD}2 driving positions{BLACK}{}
+STR_UV12_02_NAME	:Ganz UV1 {Double}
+STR_UV12_02_ADAT	:{GOLD}----------{}The {BLACK}Ganz UV{GOLD} type was developed from TM cars.{}{BLACK}Version: {GOLD}2 driving positions{BLACK}{}
+STR_UV32_02_NAME	:Ganz UV3 {Double}
+STR_UV32_02_ADAT	:{GOLD}----------{}The {BLACK}Ganz UV{GOLD} type was developed from TM cars.{}{BLACK}Version: {GOLD}1 driving positions{BLACK}{}
+STR_UV3P_02_NAME	:Ganz UV3 {Double} + 5900{Trailer}
+STR_UV3P_02_ADAT	:{GOLD}----------{}The {BLACK}Ganz UV{GOLD} type was developed from TM cars.{}{BLACK}Version: {GOLD}1 driving positions{BLACK}{}
+STR_UV52_02_NAME	:Ganz UV5 {Double}
+STR_UV52_02_ADAT	:{GOLD}----------{}The {BLACK}Ganz UV{GOLD} type was developed from TM cars.{}{BLACK}Version: {GOLD}Wide middle door{BLACK}{}
+STR_UV5P_02_NAME	:Ganz UV5 {Double} + 6000{Trailer}
+STR_UV5P_02_ADAT	:{GOLD}----------{}The {BLACK}Ganz UV{GOLD} type was developed from TM cars.{}{BLACK}Version: {GOLD}Wide middle door{BLACK}{}
+
+STR_CAFBPH_NAME	:CAF Urbos 3
+STR_CAFBPH_ADAT	:{GOLD}----------{BLACK}{}Urbos 3 {GOLD}(9 modules) is a most longer tram with 100% low floor design.{BLACK}{}
+STR_CAFBPR_NAME	:CAF Urbos 3
+STR_CAFBPR_ADAT	:{GOLD}----------{BLACK}{}Urbos 3 {GOLD}(5 modules) is a 100% low floor design.{BLACK}{}
+
+STR_COLOUR_SCHEME_BUDAPEST	: - Budapest Scheme
+STR_COLOUR_SCHEME_BUDAPEST2	: - Budapest Newer Scheme
+STR_COLOUR_SCHEME_SZEGED	: - Szeged Scheme
+STR_COLOUR_SCHEME_DEBRECEN	: - Debrecen Scheme
+STR_COLOUR_SCHEME_CHEMNITZ	: - Chemnitz Scheme
+STR_COLOUR_SCHEME_KARLSRUHE	: - Karlsruhe Scheme
+STR_COLOUR_SCHEME_PROTO	: - Prototype Scheme
+STR_COLOUR_SCHEME_PEPSI	: - Pepsi advertising Scheme
+STR_COLOUR_SCHEME_COCA	: - CocaCola advertising Scheme
+
+STR_CargoProba1__type_name	: Próba1
+STR_CargoProba1__unit_name	: Próba2
+STR_CargoProba1__units_of_cargo	:{COMMA} egység
+STR_CargoProba1__items_of_cargo	:{COMMA} egység Próba
+STR_CargoProba1__abbreviation	:{TINYFONT} P5
+
+STR_TESZT1_NAME	:Teszt gépezet
+STR_TESZT1_ADAT	:{GOLD}-Randomshit-{}
