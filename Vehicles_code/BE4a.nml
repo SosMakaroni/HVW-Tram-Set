@@ -1,0 +1,217 @@
+// --------------------------------------------------------------------------------BE4a
+
+spriteset(ss_BE4a_purchase, "src/BENG/BE4a_BUY_8bpp.png")		{tmpl_purchase()}  // Vásárlási jármű
+spriteset(ss_BE4a_PDO_purchase, "src/BENG/BE1_PDO_8bpp.png")		{tmpl_purchase()} // Vásárlási áramszedő
+
+spriteset(ss_BE4a_1PUP, "src/BENG/BE1_PUP_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_BE4a_1PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/BENG/BE1_PUP_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_BE4a_1PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/BENG/BE1_PUP_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_BE4a_1PUPi, "src/BENG/BE1_PUP_8bpp.png")		{tmpl_depo()}
+spriteset(ss_BE4a_1, "src/BENG/BE4a_1_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_BE4a_1, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/BENG/BE4a_1_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_BE4a_1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/BENG/BE4a_1_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_BE4a_1i, "src/BENG/BE4a_1_8bpp.png")		{tmpl_depo()}
+spriteset(ss_BE4a_2, "src/BENG/BE4a_2_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_BE4a_2, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/BENG/BE4a_2_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_BE4a_2, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/BENG/BE4a_2_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_BE4a_2i, "src/BENG/BE4a_2_8bpp.png")		{tmpl_depo()}
+spriteset(ss_BE4a_3, "src/BENG/BE4a_3_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_BE4a_3, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/BENG/BE4a_3_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_BE4a_3, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/BENG/BE4a_3_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_BE4a_3i, "src/BENG/BE4a_3_8bpp.png")		{tmpl_depo()}
+
+// Rakodási grafika
+spritegroup sg_BE4a_1 {	loaded:  [ss_BE4a_1];	loading: [ss_BE4a_1];}
+spritegroup sg_BE4a_2 {	loaded:  [ss_BE4a_2];	loading: [ss_BE4a_2];}
+spritegroup sg_BE4a_3 {	loaded:  [ss_BE4a_3];	loading: [ss_BE4a_3];}
+
+// Vásárlási grafika
+switch (FEAT_ROADVEHS, SELF, swg_BE4a_purchase, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_BE4a_purchase;    // Alap modell
+    1: return ss_BE4a_PDO_purchase;    // Pantonograf (le)
+}
+
+// Lista grafika
+switch (FEAT_ROADVEHS, SELF, sgw_BE4a_1i, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_BE4a_1i;    // Alap modell
+    1: return ss_BE4a_1PUPi;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw1_BE4ai, position_in_consist ) {
+	1: ss_BE4a_2i;
+	2: ss_BE4a_3i;
+	3: ss_toldat;
+    sgw_BE4a_1i;
+}
+
+// Játék grafika
+switch (FEAT_ROADVEHS, SELF, sgw_BE4a_1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_BE4a_1;    // Alap modell
+    1: return ss_BE4a_1PUP;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw1_BE4a, position_in_consist ) {
+	1: sg_BE4a_2;
+	2: sg_BE4a_3;
+	3: ss_toldat;
+    sgw_BE4a_1;
+}
+
+// Rajz
+switch(FEAT_ROADVEHS, SELF, sw_BE4a, (extra_callback_info1 & 0x12)) {
+   0x10: sw1_BE4ai; // Depó nézet
+   0x11: sw1_BE4ai; // Jármű infó/Refit nézet
+   0x12: sw1_BE4ai; // Jármű lista nézet
+   0x00: sw1_BE4a; // Játék nézet
+}
+
+// Csuklosítás
+switch (FEAT_ROADVEHS, SELF, sw_BE4a_articulated, extra_callback_info1) {
+    0: item_BE4a;
+    1: item_BE4a_2;
+    2: item_BE4a_3;
+    3: item_BE4a_T;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+// Modelhossz
+switch (FEAT_ROADVEHS, SELF, sw_BE4a_length, position_in_consist) {
+	1: return 4;
+	2: return 3;
+	3: return 8;
+    return 8;
+}
+
+// Szövegek
+switch(FEAT_ROADVEHS, SELF, sw_BE4a_namep, (extra_callback_info1 >> 8) & 0xFFFF) {
+    1: return string(STR_BE3_BUY);
+    2: return string(STR_BE4a_BUY);
+	return CB_RESULT_NO_TEXT;
+}
+switch(FEAT_ROADVEHS, SELF, sw_BE4a_name, extra_callback_info1 & 0xFF) {
+    0x11: return string(STR_BE4a_INFO); // Jármű infóban név
+    0x20: sw_BE4a_namep; // Vásárlási lista név
+	0x21: return string(STR_BE4a_NAME); // Elővásárlási név
+	return CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_BE4a) {
+	property {
+        name:								string(STR_BE_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1963,01,01);
+        model_life:						17;
+        vehicle_life:						18;
+        reliability_decay:				20;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					11;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								40 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								117 kW;
+        weight:							24 ton;
+        cargo_capacity:					50;
+		cargo_age_period:					185;
+        sound_effect:						SOUND_POWER_STATION;
+		variant_group:					item_BE3proto;
+    }
+    graphics {
+		default:                 		sw_BE4a;
+		purchase:						swg_BE4a_purchase;
+		articulated_part:        		sw_BE4a_articulated;
+		length:                  		sw_BE4a_length;
+		cost_factor:					20 * parapuco;
+		running_cost_factor:			19 * pararuco;
+		additional_text: 				string(STR_BE4a_ADAT);
+		name:							sw_BE4a_name;
+    }
+}
+item(FEAT_ROADVEHS, item_BE4a_2) {
+	property {
+        name:								string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					8;
+        cost_factor:						0;
+        running_cost_factor:				0;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:								0 kW;
+        weight:							0 ton;
+        cargo_capacity:					35;
+		cargo_age_period:					0;
+        sound_effect:						SOUND_POWER_STATION;
+    }
+    graphics {
+		default:                 		sw_BE4a;
+		length:                  		sw_BE4a_length;
+    }
+}
+item(FEAT_ROADVEHS, item_BE4a_3) {
+	property {
+        name:								string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					11;
+        cost_factor:						0;
+        running_cost_factor:				0;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:								0 kW;
+        weight:							0 ton;
+        cargo_capacity:					50;
+		cargo_age_period:					0;
+        sound_effect:						SOUND_POWER_STATION;
+    }
+    graphics {
+		default:                 		sw_BE4a;
+		length:                  		sw_BE4a_length;
+    }
+}
+item(FEAT_ROADVEHS, item_BE4a_T) {
+	property {
+        name:								string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
+        refittable_cargo_classes:		bitmask(NO_CARGO_CLASS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					0;
+        cost_factor:						0;
+        running_cost_factor:				0;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:								0 kW;
+        weight:							0 ton;
+        cargo_capacity:					0;
+		cargo_age_period:					0;
+    }
+    graphics {
+		default:                 		ss_toldat;
+		length:                  		sw_BE4a_length;
+    }
+}
+
+// --------------------------------------------------------------------------------BE4a End
+// --
+// --

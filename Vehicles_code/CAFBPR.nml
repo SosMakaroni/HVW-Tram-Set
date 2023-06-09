@@ -1,32 +1,41 @@
 // --------------------------------------------------------------------------------CAFBPR
 
-spriteset(ss_CAFBPR_purchase, "src/CAF/CAFBPR_BUY_8bpp.png")		{tmpl_purchase()}
-spriteset(ss_CAFBPR_P_purchase, "src/CAF/CAFBPR_BUY_P_8bpp.png")		{tmpl_purchase()}
-spriteset(ss_CAFBPR_01, "src/CAF/CAFBPR_01_1x_8bpp.png")		{tmpl_1(1)}
-alternative_sprites(ss_CAFBPR_01, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CAF/CAFBPR_01_2x_8bpp.png") {tmpl_1(2)}
-alternative_sprites(ss_CAFBPR_01, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CAF/CAFBPR_01_4x_8bpp.png") {tmpl_1(4)}
-spriteset(ss_CAFBPR_02, "src/CAF/CAFBPR_02_1x_8bpp.png")		{tmpl_1(1)}
-alternative_sprites(ss_CAFBPR_02, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CAF/CAFBPR_02_2x_8bpp.png") {tmpl_1(2)}
-alternative_sprites(ss_CAFBPR_02, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CAF/CAFBPR_02_4x_8bpp.png") {tmpl_1(4)}
-spriteset(ss_CAFBPR_03, "src/CAF/CAFBPR_03_1x_8bpp.png")		{tmpl_1(1)}
-alternative_sprites(ss_CAFBPR_03, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CAF/CAFBPR_03_2x_8bpp.png") {tmpl_1(2)}
-alternative_sprites(ss_CAFBPR_03, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CAF/CAFBPR_03_4x_8bpp.png") {tmpl_1(4)}
-spriteset(ss_CAFBPR_03_PUP, "src/CAF/CAFBPR_03_PUP_1x_8bpp.png")		{tmpl_1(1)}
-alternative_sprites(ss_CAFBPR_03_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CAF/CAFBPR_03_PUP_2x_8bpp.png") {tmpl_1(2)}
-alternative_sprites(ss_CAFBPR_03_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CAF/CAFBPR_03_PUP_4x_8bpp.png") {tmpl_1(4)}
-spriteset(ss_CAFBPR_04, "src/CAF/CAFBPR_04_1x_8bpp.png")		{tmpl_1(1)}
-alternative_sprites(ss_CAFBPR_04, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CAF/CAFBPR_04_2x_8bpp.png") {tmpl_1(2)}
-alternative_sprites(ss_CAFBPR_04, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CAF/CAFBPR_04_4x_8bpp.png") {tmpl_1(4)}
-spriteset(ss_CAFBPR_05, "src/CAF/CAFBPR_05_1x_8bpp.png")		{tmpl_1(1)}
-alternative_sprites(ss_CAFBPR_05, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CAF/CAFBPR_05_2x_8bpp.png") {tmpl_1(2)}
-alternative_sprites(ss_CAFBPR_05, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CAF/CAFBPR_05_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_CAFBPR_purchase, "src/CAF/CAFBPR_BUY_8bpp.png")		{tmpl_purchase()} // Vásárlási jármű
+spriteset(ss_CAFBPR_P_purchase, "src/CAF/CAFBPR_BUY_P_8bpp.png")		{tmpl_purchase()} // Vásárlási áramszedő
 
-spritegroup sg_CAFBPR_01 {	loaded:  [ss_CAFBPR_01];	loading: [ss_CAFBPR_01];}
-spritegroup sg_CAFBPR_02 {	loaded:  [ss_CAFBPR_02];	loading: [ss_CAFBPR_02];}
-spritegroup sg_CAFBPR_03 {	loaded:  [ss_CAFBPR_03];	loading: [ss_CAFBPR_03];}
-spritegroup sg_CAFBPR_04 {	loaded:  [ss_CAFBPR_04];	loading: [ss_CAFBPR_04];}
-spritegroup sg_CAFBPR_05 {	loaded:  [ss_CAFBPR_05];	loading: [ss_CAFBPR_05];}
+spriteset(ss_CAFBPR_1, "src/CAF/CAFBPR_01_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_CAFBPR_1, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CAF/CAFBPR_01_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_CAFBPR_1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CAF/CAFBPR_01_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_CAFBPR_1i, "src/CAF/CAFBPR_01_8bpp.png")		{tmpl_depo()}
+spriteset(ss_CAFBPR_2, "src/CAF/CAFBPR_02_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_CAFBPR_2, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CAF/CAFBPR_02_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_CAFBPR_2, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CAF/CAFBPR_02_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_CAFBPR_2i, "src/CAF/CAFBPR_02_8bpp.png")		{tmpl_depo()}
+spriteset(ss_CAFBPR_3, "src/CAF/CAFBPR_03_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_CAFBPR_3, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CAF/CAFBPR_03_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_CAFBPR_3, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CAF/CAFBPR_03_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_CAFBPR_3i, "src/CAF/CAFBPR_03_8bpp.png")		{tmpl_depo()}
+spriteset(ss_CAFBPR_3_PUP, "src/CAF/CAFBPR_03_PUP_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_CAFBPR_3_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CAF/CAFBPR_03_PUP_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_CAFBPR_3_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CAF/CAFBPR_03_PUP_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_CAFBPR_3_PUPi, "src/CAF/CAFBPR_03_PUP_8bpp.png")		{tmpl_depo()}
+spriteset(ss_CAFBPR_4, "src/CAF/CAFBPR_04_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_CAFBPR_4, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CAF/CAFBPR_04_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_CAFBPR_4, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CAF/CAFBPR_04_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_CAFBPR_4i, "src/CAF/CAFBPR_04_8bpp.png")		{tmpl_depo()}
+spriteset(ss_CAFBPR_5, "src/CAF/CAFBPR_05_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_CAFBPR_5, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CAF/CAFBPR_05_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_CAFBPR_5, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CAF/CAFBPR_05_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_CAFBPR_5i, "src/CAF/CAFBPR_05_8bpp.png")		{tmpl_depo()}
 
+// Rakodási grafika
+spritegroup sg_CAFBPR_1 {	loaded:  [ss_CAFBPR_1];	loading: [ss_CAFBPR_1];}
+spritegroup sg_CAFBPR_2 {	loaded:  [ss_CAFBPR_2];	loading: [ss_CAFBPR_2];}
+spritegroup sg_CAFBPR_3 {	loaded:  [ss_CAFBPR_3];	loading: [ss_CAFBPR_3];}
+spritegroup sg_CAFBPR_4 {	loaded:  [ss_CAFBPR_4];	loading: [ss_CAFBPR_4];}
+spritegroup sg_CAFBPR_5 {	loaded:  [ss_CAFBPR_5];	loading: [ss_CAFBPR_5];}
+
+// Vásárlási grafika
 switch (FEAT_ROADVEHS, SELF, swg_CAFBPR_purchase, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
@@ -34,35 +43,62 @@ switch (FEAT_ROADVEHS, SELF, swg_CAFBPR_purchase, [
     0: return ss_CAFBPR_purchase;    // Alap modell
     1: return ss_CAFBPR_P_purchase;    // Pantonograf (le)
 }
-switch (FEAT_ROADVEHS, SELF, sgw_CAFBPR_03, [
+
+// Lista grafika
+switch (FEAT_ROADVEHS, SELF, sgw_CAFBPR_3i, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: return sg_CAFBPR_03;    // Alap modell
-    1: return ss_CAFBPR_03_PUP;    // Pantonograf (fel)
+    0: return ss_CAFBPR_3i;    // Alap modell
+    1: return ss_CAFBPR_3_PUPi;    // Pantonograf (fel)
 }
 
-switch (FEAT_ROADVEHS, SELF, sw_CAFBPR, position_in_consist ) {
-    1: sg_CAFBPR_02;
-	2: sgw_CAFBPR_03;
-	3: sg_CAFBPR_04;
-	4: sg_CAFBPR_05;
+switch (FEAT_ROADVEHS, SELF, sw1_CAFBPRi, position_in_consist ) {
+    1: ss_CAFBPR_2i;
+	2: sgw_CAFBPR_3i;
+	3: ss_CAFBPR_4i;
+	4: ss_CAFBPR_5i;
 	5: ss_toldat;
-    sg_CAFBPR_01;
+    ss_CAFBPR_1i;
 }
-switch (FEAT_ROADVEHS, SELF, sw_CAFBPR_ss, cargo_subtype) {
-	0: sw_CAFBPR;
-	CB_RESULT_NO_TEXT;
+
+// Játék grafika
+switch (FEAT_ROADVEHS, SELF, sgw_CAFBPR_3, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_CAFBPR_3;    // Alap modell
+    1: return ss_CAFBPR_3_PUP;    // Pantonograf (fel)
 }
+
+switch (FEAT_ROADVEHS, SELF, sw1_CAFBPR, position_in_consist ) {
+    1: sg_CAFBPR_2;
+	2: sgw_CAFBPR_3;
+	3: sg_CAFBPR_4;
+	4: sg_CAFBPR_5;
+	5: ss_toldat;
+    sg_CAFBPR_1;
+}
+
+// Rajz
+switch(FEAT_ROADVEHS, SELF, sw_CAFBPR, (extra_callback_info1 & 0x12)) {
+   0x10: sw1_CAFBPRi; // Depó nézet
+   0x11: sw1_CAFBPRi; // Jármű infó/Refit nézet
+   0x12: sw1_CAFBPRi; // Jármű lista nézet
+   0x00: sw1_CAFBPR; // Játék nézet
+}
+
+// Csuklosítás
 switch (FEAT_ROADVEHS, SELF, sw_CAFBPR_articulated, extra_callback_info1) {
     0: item_CAFBPR;
-    1: item_CAFBPR_02;
-    2: item_CAFBPR_03;
-    3: item_CAFBPR_04;
-    4: item_CAFBPR_05;
+    1: item_CAFBPR_2;
+    2: item_CAFBPR_3;
+    3: item_CAFBPR_4;
+    4: item_CAFBPR_5;
     5: item_CAFBPR_T;
     CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
+// Modelhossz
 switch (FEAT_ROADVEHS, SELF, sw_CAFBPR_length, position_in_consist) {
 	1: return 6;
 	2: return 4;
@@ -71,52 +107,62 @@ switch (FEAT_ROADVEHS, SELF, sw_CAFBPR_length, position_in_consist) {
 	5: return 8;
     return 7;
 }
-switch (FEAT_ROADVEHS, SELF, sw_CAFBPR_livery_text, cargo_subtype) {
-	0: return string(STR_COLOUR_SCHEME_BUDAPEST);
-	CB_RESULT_NO_TEXT;
+
+// Szövegek
+switch(FEAT_ROADVEHS, SELF, sw_CAFBPR_namep, (extra_callback_info1 >> 8) & 0xFFFF) {
+    1: return string(STR_CAFBPR_BUY);
+	return CB_RESULT_NO_TEXT;
+}
+switch(FEAT_ROADVEHS, SELF, sw_CAFBPR_name, extra_callback_info1 & 0xFF) {
+    0x11: return string(STR_CAFBPR_INFO); // Jármű infóban név
+    0x20: sw_CAFBPR_namep; // Vásárlási lista név
+	0x21: return string(STR_CAFBPR_NAME); // Elővásárlási név
+	return CB_RESULT_NO_TEXT;
 }
 
 
 item(FEAT_ROADVEHS, item_CAFBPR) {
 	property {
-        name:								string(STR_CAFBPR_NAME);
+        name:								string(STR_CAF_NAME);
         climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
-        introduction_date:				date(1984,09,01);
+        introduction_date:				date(2015,08,27);
         model_life:						20;
-        vehicle_life:						50;
-        reliability_decay:				10;
+        vehicle_life:						40;
+        reliability_decay:				20;
         refittable_cargo_classes:		bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
-        loading_speed:					39;
+        loading_speed:					12;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
-        speed:								65 km/h;
+        speed:								50 km/h;
         misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
         refit_cost:						0;
         running_cost_base:				RUNNING_COST_ROADVEH;
-        power:								540 kW;
-        weight:							57 ton;
-        cargo_capacity:					100;
-		cargo_age_period:					30;
+        power:								560 kW;
+        weight:							41 ton;
+        cargo_capacity:					39;
+		cargo_age_period:					185;
         sound_effect:						SOUND_POWER_STATION;
+		variant_group:					item_CAFD;
     }
     graphics {
-		default:                 		sw_CAFBPR_ss;
+		default:                 		sw_CAFBPR;
 		purchase:						swg_CAFBPR_purchase;
 		articulated_part:        		sw_CAFBPR_articulated;
 		length:                  		sw_CAFBPR_length;
-		cargo_subtype_text: 			sw_CAFBPR_livery_text;
-		cost_factor:					105 * parapuco;
-		running_cost_factor:			126 * pararuco;
+		cost_factor:					58 * parapuco;
+		running_cost_factor:			81 * pararuco;
 		additional_text: 				string(STR_CAFBPR_ADAT);
+		name:							sw_CAFBPR_name;
     }
 }
-item(FEAT_ROADVEHS, item_CAFBPR_02) {
+item(FEAT_ROADVEHS, item_CAFBPR_2) {
 	property {
         name:								string(STR_BUG);
         climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
         refittable_cargo_classes:		bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
-        loading_speed:					39;
+        loading_speed:					13;
         cost_factor:						0;
         running_cost_factor:				0;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
@@ -125,22 +171,23 @@ item(FEAT_ROADVEHS, item_CAFBPR_02) {
         running_cost_base:				RUNNING_COST_NONE;
         power:								0 kW;
         weight:							0 ton;
-        cargo_capacity:					100;
+        cargo_capacity:					51;
 		cargo_age_period:					0;
         sound_effect:						SOUND_POWER_STATION;
     }
     graphics {
-		default:                 		sw_CAFBPR_ss;
+		default:                 		sw_CAFBPR;
 		length:                  		sw_CAFBPR_length;
     }
 }
-item(FEAT_ROADVEHS, item_CAFBPR_03) {
+item(FEAT_ROADVEHS, item_CAFBPR_3) {
 	property {
         name:								string(STR_BUG);
         climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
         refittable_cargo_classes:		bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
-        loading_speed:					39;
+        loading_speed:					6;
         cost_factor:						0;
         running_cost_factor:				0;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
@@ -149,22 +196,23 @@ item(FEAT_ROADVEHS, item_CAFBPR_03) {
         running_cost_base:				RUNNING_COST_NONE;
         power:								0 kW;
         weight:							0 ton;
-        cargo_capacity:					100;
+        cargo_capacity:					20;
 		cargo_age_period:					0;
         sound_effect:						SOUND_POWER_STATION;
     }
     graphics {
-		default:                 		sw_CAFBPR_ss;
+		default:                 		sw_CAFBPR;
 		length:                  		sw_CAFBPR_length;
     }
 }
-item(FEAT_ROADVEHS, item_CAFBPR_04) {
+item(FEAT_ROADVEHS, item_CAFBPR_4) {
 	property {
         name:								string(STR_BUG);
         climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
         refittable_cargo_classes:		bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
-        loading_speed:					39;
+        loading_speed:					13;
         cost_factor:						0;
         running_cost_factor:				0;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
@@ -173,22 +221,23 @@ item(FEAT_ROADVEHS, item_CAFBPR_04) {
         running_cost_base:				RUNNING_COST_NONE;
         power:								0 kW;
         weight:							0 ton;
-        cargo_capacity:					100;
+        cargo_capacity:					51;
 		cargo_age_period:					0;
         sound_effect:						SOUND_POWER_STATION;
     }
     graphics {
-		default:                 		sw_CAFBPR_ss;
+		default:                 		sw_CAFBPR;
 		length:                  		sw_CAFBPR_length;
     }
 }
-item(FEAT_ROADVEHS, item_CAFBPR_05) {
+item(FEAT_ROADVEHS, item_CAFBPR_5) {
 	property {
         name:								string(STR_BUG);
         climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
         refittable_cargo_classes:		bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
-        loading_speed:					39;
+        loading_speed:					12;
         cost_factor:						0;
         running_cost_factor:				0;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
@@ -197,12 +246,12 @@ item(FEAT_ROADVEHS, item_CAFBPR_05) {
         running_cost_base:				RUNNING_COST_NONE;
         power:								0 kW;
         weight:							0 ton;
-        cargo_capacity:					100;
+        cargo_capacity:					39;
 		cargo_age_period:					0;
         sound_effect:						SOUND_POWER_STATION;
     }
     graphics {
-		default:                 		sw_CAFBPR_ss;
+		default:                 		sw_CAFBPR;
 		length:                  		sw_CAFBPR_length;
     }
 }
@@ -211,6 +260,7 @@ item(FEAT_ROADVEHS, item_CAFBPR_T) {
 	property {
         name:								string(STR_BUG);
         climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
         refittable_cargo_classes:		bitmask(NO_CARGO_CLASS);
         non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
         loading_speed:					0;

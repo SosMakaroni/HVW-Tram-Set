@@ -1,16 +1,21 @@
 // --------------------------------------------------------------------------------FB
 
-spriteset(ss_FB_purchase, "src/BVV/FB_BUY_8bpp.png")		{tmpl_purchase()}
-spriteset(ss_FB_P_purchase, "src/BVV/FB_BUY_P_8bpp.png")		{tmpl_purchase()}
+spriteset(ss_FB_purchase, "src/BVV/FB_BUY_8bpp.png")		{tmpl_purchase()} // Vásárlási jármű
+spriteset(ss_FB_P_purchase, "src/BVV/FB_BUY_P_8bpp.png")		{tmpl_purchase()} // Vásárlási áramszedő
+
 spriteset(ss_FB, "src/BVV/FB_1x_8bpp.png")		{tmpl_1(1)}
 alternative_sprites(ss_FB, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/BVV/FB_2x_8bpp.png") {tmpl_1(2)}
 alternative_sprites(ss_FB, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/BVV/FB_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_FBi, "src/BVV/FB_8bpp.png")		{tmpl_depo()}
 spriteset(ss_FB_PUP, "src/BVV/FB_PUP_1x_8bpp.png")		{tmpl_1(1)}
 alternative_sprites(ss_FB_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/BVV/FB_PUP_2x_8bpp.png") {tmpl_1(2)}
 alternative_sprites(ss_FB_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/BVV/FB_PUP_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_FB_PUPi, "src/BVV/FB_PUP_8bpp.png")		{tmpl_depo()}
 
+// Rakodási grafika
 spritegroup sg_FB {	loaded:  [ss_FB];	loading: [ss_FB];}
 
+// Vásárlási grafika
 switch (FEAT_ROADVEHS, SELF, swg_FB_purchase, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
@@ -18,6 +23,22 @@ switch (FEAT_ROADVEHS, SELF, swg_FB_purchase, [
     0: return ss_FB_purchase;    // Alap modell
     1: return ss_FB_P_purchase;    // Pantonograf (le)
 }
+
+// Lista grafika
+switch (FEAT_ROADVEHS, SELF, sgw_FBi, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_FBi;    // Alap modell
+    1: return ss_FB_PUPi;    // Pantonograf (fel)
+}
+
+switch (FEAT_ROADVEHS, SELF, sw1_FBi, position_in_consist ) {
+    1: ss_toldat;
+    sgw_FBi;
+}
+
+// Játék grafika
 switch (FEAT_ROADVEHS, SELF, sgw_FB, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
@@ -26,66 +47,84 @@ switch (FEAT_ROADVEHS, SELF, sgw_FB, [
     1: return ss_FB_PUP;    // Pantonograf (fel)
 }
 
-switch (FEAT_ROADVEHS, SELF, sw_FB, position_in_consist ) {
+switch (FEAT_ROADVEHS, SELF, sw1_FB, position_in_consist ) {
     1: ss_toldat;
     sgw_FB;
 }
-switch (FEAT_ROADVEHS, SELF, sw1_FB_ss, cargo_subtype) {
-	0: sw_FB;
-	CB_RESULT_NO_TEXT;
+
+// Rajz
+switch(FEAT_ROADVEHS, SELF, sw_FB, (extra_callback_info1 & 0x12)) {
+   0x10: sw1_FBi; // Depó nézet
+   0x11: sw1_FBi; // Jármű infó/Refit nézet
+   0x12: sw1_FBi; // Jármű lista nézet
+   0x00: sw1_FB; // Játék nézet
 }
+
+// Csuklosítás
 switch (FEAT_ROADVEHS, SELF, sw_FB_articulated, extra_callback_info1) {
     0: item_FB;
     1: item_FB_T;
     CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
+
+// Modelhossz
 switch (FEAT_ROADVEHS, SELF, sw_FB_length, position_in_consist) {
 	1: return 8;
     return 2;
 }
-switch (FEAT_ROADVEHS, SELF, sw_FB_livery_text, cargo_subtype) {
-	0: return string(STR_COLOUR_SCHEME_BUDAPEST);
-	CB_RESULT_NO_TEXT;
+
+// Szövegek
+switch(FEAT_ROADVEHS, SELF, sw_FB_namep, (extra_callback_info1 >> 8) & 0xFFFF) {
+    1: return string(STR_FB_BUY);
+	return CB_RESULT_NO_TEXT;
+}
+switch(FEAT_ROADVEHS, SELF, sw_FB_name, extra_callback_info1 & 0xFF) {
+    0x11: return string(STR_FB_INFO); // Jármű infóban név
+    0x20: sw_FB_namep; // Vásárlási lista név
+	0x21: return string(STR_FB_NAME); // Elővásárlási név
+	return CB_RESULT_NO_TEXT;
 }
 
 
 item(FEAT_ROADVEHS, item_FB) {
 	property {
-        name:								string(STR_FB_NAME);
+        name:								string(STR_F_NAME);
         climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
         introduction_date:				date(1956,01,01);
         model_life:						20;
-        vehicle_life:						52;
-        reliability_decay:				10;
+        vehicle_life:						28;
+        reliability_decay:				20;
         refittable_cargo_classes:		bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
-        loading_speed:					24;
+        loading_speed:					10;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
         speed:								45 km/h;
         misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
         refit_cost:						0;
         running_cost_base:				RUNNING_COST_ROADVEH;
         power:								140 hp;
-        weight:							14 ton;
+        weight:							13 ton;
         cargo_capacity:					40;
-		cargo_age_period:					30;
+		cargo_age_period:					185;
         sound_effect:						SOUND_POWER_STATION;
+		variant_group:					item_FA;
     }
     graphics {
-		default:                 		sw1_FB_ss;
+		default:                 		sw_FB;
 		purchase:						swg_FB_purchase;
 		articulated_part:        		sw_FB_articulated;
 		length:                  		sw_FB_length;
-		cargo_subtype_text: 			sw_FB_livery_text;
-		cost_factor:					35 * parapuco;
-		running_cost_factor:			40 * pararuco;
+		cost_factor:					14 * parapuco;
+		running_cost_factor:			16 * pararuco;
 		additional_text: 				string(STR_FB_ADAT);
+		name:							sw_FB_name;
     }
 }
 item(FEAT_ROADVEHS, item_FB_T) {
 	property {
         name:								string(STR_BUG);
         climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
         refittable_cargo_classes:		bitmask(NO_CARGO_CLASS);
         non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
         loading_speed:					0;

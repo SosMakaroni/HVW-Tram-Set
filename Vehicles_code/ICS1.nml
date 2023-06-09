@@ -1,41 +1,79 @@
 // --------------------------------------------------------------------------------ICS1
 
-spriteset(ss_ICS1_purchase, "src/CSM/ICS_8bpp.png")		{tmpl_purchase()}  //Motorkocsi
-spriteset(ss_ICS1_PDO_purchase, "src/CSM/ICS_PDO_8bpp.png")		{tmpl_purchase()} //Áramszedő
+spriteset(ss_ICS1_purchase, "src/CSM/ICS_BUY_8bpp.png")		{tmpl_purchase()}  // Vásárlási jármű
+spriteset(ss_ICS1_PDO_purchase, "src/CSM/ICS_PDO_8bpp.png")		{tmpl_purchase()} // Vásárlási áramszedő
+
 spriteset(ss_ICS1_1, "src/CSM/ICS_1_1x_8bpp.png")		{tmpl_1(1)}
 alternative_sprites(ss_ICS1_1, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CSM/ICS_1_2x_8bpp.png") {tmpl_1(2)}
 alternative_sprites(ss_ICS1_1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CSM/ICS_1_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_ICS1_1i, "src/CSM/ICS_1_8bpp.png")		{tmpl_depo()}
 spriteset(ss_ICS1_1PUP, "src/CSM/ICS_PUP_1x_8bpp.png")		{tmpl_1(1)}
 alternative_sprites(ss_ICS1_1PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CSM/ICS_PUP_2x_8bpp.png") {tmpl_1(2)}
 alternative_sprites(ss_ICS1_1PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CSM/ICS_PUP_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_ICS1_1PUPi, "src/CSM/ICS_PUP_8bpp.png")		{tmpl_depo()}
 spriteset(ss_ICS1_2, "src/CSM/ICS_2_1x_8bpp.png")		{tmpl_1(1)}
 alternative_sprites(ss_ICS1_2, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CSM/ICS_2_2x_8bpp.png") {tmpl_1(2)}
 alternative_sprites(ss_ICS1_2, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CSM/ICS_2_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_ICS1_2i, "src/CSM/ICS_2_8bpp.png")		{tmpl_depo()}
 spriteset(ss_ICS1_2R1, "src/CSM/ICS_R1_1x_8bpp.png")		{tmpl_1(1)}
 alternative_sprites(ss_ICS1_2R1, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CSM/ICS_R1_2x_8bpp.png") {tmpl_1(2)}
 alternative_sprites(ss_ICS1_2R1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CSM/ICS_R1_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_ICS1_2R1i, "src/CSM/ICS_R1_8bpp.png")		{tmpl_depo()}
 spriteset(ss_ICS1_2R2, "src/CSM/ICS_R2_1x_8bpp.png")		{tmpl_1(1)}
 alternative_sprites(ss_ICS1_2R2, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CSM/ICS_R2_2x_8bpp.png") {tmpl_1(2)}
 alternative_sprites(ss_ICS1_2R2, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CSM/ICS_R2_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_ICS1_2R2i, "src/CSM/ICS_R2_8bpp.png")		{tmpl_depo()}
 spriteset(ss_ICS1_3, "src/CSM/ICS_3_1x_8bpp.png")		{tmpl_1(1)}
 alternative_sprites(ss_ICS1_3, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CSM/ICS_3_2x_8bpp.png") {tmpl_1(2)}
 alternative_sprites(ss_ICS1_3, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CSM/ICS_3_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_ICS1_3i, "src/CSM/ICS_3_8bpp.png")		{tmpl_depo()}
 
+// Rakodási grafika
 spritegroup sg_ICS1_1 {	loaded:  [ss_ICS1_1];	loading: [ss_ICS1_1];}
 spritegroup sg_ICS1_2 {	loaded:  [ss_ICS1_2];	loading: [ss_ICS1_2];}
 spritegroup sg_ICS1_3 {	loaded:  [ss_ICS1_3];	loading: [ss_ICS1_3];}
 
-random_switch(FEAT_ROADVEHS, SELF, ss_ICS1_2R) {
-	1: ss_ICS1_2R1;
-	1: ss_ICS1_2R2;
-}
-
+// Vásárlási grafika
 switch (FEAT_ROADVEHS, SELF, swg_ICS1_purchase, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: return ss_ICS1_purchase;    // Alap modell
     1: return ss_ICS1_PDO_purchase;    // Pantonograf (le)
+}
+
+// Lista grafika
+random_switch(FEAT_ROADVEHS, PARENT, ss_ICS1_2Ri) {
+	1: ss_ICS1_2R1i;
+	1: ss_ICS1_2R2i;
+}
+switch (FEAT_ROADVEHS, SELF, sgw_ICS1_1i, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_ICS1_1i;    // Alap modell
+    1: return ss_ICS1_1PUPi;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sgw_ICS1_2i, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_ICS1_2i;    // Alap modell
+    1: return ss_ICS1_2Ri;    // Reklámtábla
+}
+switch (FEAT_ROADVEHS, SELF, sw1_ICS1i, position_in_consist ) {
+    1: ss_toldat;
+	2: sgw_ICS1_2i;
+	3: ss_ICS1_3i;
+	4: ss_toldat;
+    sgw_ICS1_1i;
+}
+
+// Játék grafika
+random_switch(FEAT_ROADVEHS, PARENT, ss_ICS1_2R) {
+	dependent: ss_ICS1_2Ri;
+	1: ss_ICS1_2R1;
+	1: ss_ICS1_2R2;
 }
 switch (FEAT_ROADVEHS, SELF, sgw_ICS1_1, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
@@ -51,9 +89,7 @@ switch (FEAT_ROADVEHS, SELF, sgw_ICS1_2, [
     0: return sg_ICS1_2;    // Alap modell
     1: return ss_ICS1_2R;    // Reklámtábla
 }
-
-
-switch (FEAT_ROADVEHS, SELF, sw_ICS1_ss, position_in_consist ) {
+switch (FEAT_ROADVEHS, SELF, sw1_ICS1, position_in_consist ) {
     1: ss_toldat;
 	2: sgw_ICS1_2;
 	3: sg_ICS1_3;
@@ -61,10 +97,15 @@ switch (FEAT_ROADVEHS, SELF, sw_ICS1_ss, position_in_consist ) {
     sgw_ICS1_1;
 }
 
-switch (FEAT_ROADVEHS, SELF, sw1_ICS1_ss, cargo_subtype) {
-	0: sw_ICS1_ss;
-	CB_RESULT_NO_TEXT;
+// Rajz
+switch(FEAT_ROADVEHS, SELF, sw_ICS1, (extra_callback_info1 & 0x12)) {
+   0x10: sw1_ICS1i; // Depó nézet
+   0x11: sw1_ICS1i; // Jármű infó/Refit nézet
+   0x12: sw1_ICS1i; // Jármű lista nézet
+   0x00: sw1_ICS1; // Játék nézet
 }
+
+// Csuklosítás
 switch (FEAT_ROADVEHS, SELF, sw_ICS1_articulated, extra_callback_info1) {
     0: item_ICS1;
     1: item_ICS1_T;
@@ -73,6 +114,8 @@ switch (FEAT_ROADVEHS, SELF, sw_ICS1_articulated, extra_callback_info1) {
     4: item_ICS1_T;
     CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
+
+// Modelhossz
 switch (FEAT_ROADVEHS, SELF, sw_ICS1_length, position_in_consist) {
 	1: return 1;
 	2: return 6;
@@ -80,20 +123,28 @@ switch (FEAT_ROADVEHS, SELF, sw_ICS1_length, position_in_consist) {
 	4: return 8;
     return 8;
 }
-switch (FEAT_ROADVEHS, SELF, sw_ICS1_livery_text, cargo_subtype) {
-	0: return string(STR_COLOUR_SCHEME_BUDAPEST);
-	CB_RESULT_NO_TEXT;
+
+// Szövegek
+switch(FEAT_ROADVEHS, SELF, sw_ICS1_namep, (extra_callback_info1 >> 8) & 0xFFFF) {
+    1: return string(STR_ICS1_BUY);
+	return CB_RESULT_NO_TEXT;
+}
+switch(FEAT_ROADVEHS, SELF, sw_ICS1_name, extra_callback_info1 & 0xFF) {
+    0x11: return string(STR_ICS1_INFO); // Jármű infóban név
+    0x20: sw_ICS1_namep; // Vásárlási lista név
+	0x21: return string(STR_ICS1_NAME); // Elővásárlási név
+	return CB_RESULT_NO_TEXT;
 }
 
 
 item(FEAT_ROADVEHS, item_ICS1) {
 	property {
-        name:								string(STR_ICS1_NAME);
+        name:								string(STR_ICS_NAME);
         climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
         introduction_date:				date(1967,11,1);
         model_life:						20;
         vehicle_life:						50;
-        reliability_decay:				10;
+        reliability_decay:				20;
         refittable_cargo_classes:		bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
         loading_speed:					26;
@@ -105,27 +156,29 @@ item(FEAT_ROADVEHS, item_ICS1) {
         power:								264 kW;
         weight:							34 ton;
         cargo_capacity:					76;
-		cargo_age_period:					30;
+		cargo_age_period:					185;
         sound_effect:						SOUND_POWER_STATION;
+//		variant_group:					item_ICS1;
     }
     graphics {
-		default:                 		sw1_ICS1_ss;
+		default:                 		sw_ICS1;
 		purchase:						swg_ICS1_purchase;
 		articulated_part:        		sw_ICS1_articulated;
 		length:                  		sw_ICS1_length;
-		cargo_subtype_text: 			sw_ICS1_livery_text;
-		cost_factor:					70 * parapuco;
-		running_cost_factor:			70 * pararuco;
+		cost_factor:					35 * parapuco;
+		running_cost_factor:			40 * pararuco;
 		additional_text: 				string(STR_ICS1_ADAT);
+		name:							sw_ICS1_name;
     }
 }
 item(FEAT_ROADVEHS, item_ICS1_2) {
 	property {
         name:								string(STR_BUG);
         climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
         refittable_cargo_classes:		bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
-        loading_speed:					13;
+        loading_speed:					10;
         cost_factor:						0;
         running_cost_factor:				0;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
@@ -139,7 +192,7 @@ item(FEAT_ROADVEHS, item_ICS1_2) {
         sound_effect:						SOUND_POWER_STATION;
     }
     graphics {
-		default:                 		sw1_ICS1_ss;
+		default:                 		sw_ICS1;
 		length:                  		sw_ICS1_length;
     }
 }
@@ -147,9 +200,10 @@ item(FEAT_ROADVEHS, item_ICS1_3) {
 	property {
         name:								string(STR_BUG);
         climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
         refittable_cargo_classes:		bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
-        loading_speed:					26;
+        loading_speed:					20;
         cost_factor:						0;
         running_cost_factor:				0;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
@@ -163,7 +217,7 @@ item(FEAT_ROADVEHS, item_ICS1_3) {
         sound_effect:						SOUND_POWER_STATION;
     }
     graphics {
-		default:                 		sw1_ICS1_ss;
+		default:                 		sw_ICS1;
 		length:                  		sw_ICS1_length;
     }
 }
@@ -171,6 +225,7 @@ item(FEAT_ROADVEHS, item_ICS1_T) {
 	property {
         name:								string(STR_BUG);
         climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
         refittable_cargo_classes:		bitmask(NO_CARGO_CLASS);
         non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
         loading_speed:					0;

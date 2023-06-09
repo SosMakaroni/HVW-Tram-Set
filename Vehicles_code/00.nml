@@ -38,13 +38,44 @@ grf {
                     };
 				}
 			}
+	param 2 {
+		param_cargo_capacity {
+            type: int;
+            name: string(STR_PARAM_CARGOC_NAME);
+            desc: string(STR_PARAM_CARGOC_DESC);
+            min_value: 0;
+            max_value: 3;
+            def_value: 0;
+            names: {
+					0: string(STR_PARAM_CARGOC_1);
+                    1: string(STR_PARAM_CARGOC_2);
+					2: string(STR_PARAM_CARGOC_4);
+					3: string(STR_PARAM_CARGOC_8);
+                    };
+				}
+			}
 
 }
 
+paracapa = (param_cargo_capacity == 1) ? 2 : (param_cargo_capacity == 2) ? 4 : (param_cargo_capacity == 3) ? 8 : 1;
 parapuco = (param_cost_factor == 1) ? 2 : (param_cost_factor == 2) ? 4 : (param_cost_factor == 3) ? 8 : (param_cost_factor == 4) ? 16 : 1;
 pararuco = (param_running_cost_factor == 1) ? 2 : (param_running_cost_factor == 2) ? 4 : (param_running_cost_factor == 3) ? 8 : (param_running_cost_factor == 4) ? 16 : 1;
 
+tramtypetable  {
+	RAIL,	//SIMA
+	NBAN,	//Ufibi's Improved
+	NIAN,	//Ufibi's ISR
+	ELRL,	//FELSOVEZETEK
+	NBAE,	//Ufibi's Improved (EL)
+	NUAE,	//Ufibi's Urban (EL)
+	NUBE,	//Ufibi's Modern Urban (EL)
+	NUCE,	//Ufibi's Green (EL)
+	NIAN	//Ufibi's ISR (EL)
+}
+
 cargotable {
+PASS, COAL, MAIL, OIL_, LVST, GOOD, GRAI, WOOD, IORE, STEL, VALU, PAPR, WHEA, FOOD, GOLD,RUBR, FRUT, MAIZ, CORE, WATR, DIAM, SUGR, AORE, BDMT, BEAN, BEER, BOOM, BRCK, CBLK,CERA, CERE, CLAY, CMNT, COPR, CSTI, CTAR, DYES, ENSP, FECR, FERT, FICR, FISH, FMSP, GLAS, GRVL, JAVA, KAOL, LIME, MILK, OLSD, PEAT, PETR, PHOS, PLAS, PORE, POTA, TOUR, TYRE, URAN, VEHI, WDPR, WOOL, ZINC, ACID, ALUM, BAKE, CASS, CHLO, CHSE, CIGR, COAT, COBL, COKE, ELTR, EOIL, FRVG, FUEL, FURN, IRON, LYE_, MEAT, METL, MNO2, MNSP, MOLS, MPTS, NH3_, NUTS, NICK, NITR, NKOR, NUKF, NUKW, OILI, OILD, OTI1, OTI2, OYST, O2__, PCL_, PIPE, POWR, QLME, RCYC, SALT, SASH, SEED, SESP, SGBT, SGCN, SLAG, SOAP, STAL, STCB, STSE, STSH, STST, STWR, TATO, TEXT, TBCO, TWOD, VBOD, VENG, VPTS, WSTE
+/*
 //PASSENGERS CLASS
 PASS, TOUR, 
 //MAIL CLASS
@@ -82,42 +113,14 @@ MILK,
 //EXPRESS + PIECE + LOQUID CLASS
 BEER, 
 //EXPRESS + PIECE CLASS
-BOOM, ENSP, FMSP, JAVA, VPTS, VENG, VBOD,
-//Próba
-PRO1, PRO2,
+BOOM, ENSP, FMSP, JAVA, VPTS, VENG, VBOD,*/
 }
 
-item(FEAT_CARGOS, CargoProba1, 63)
-{
-	property
-	{
-		number:						0;
-		cargo_classes:				bitmask(CC_SPECIAL);
-		town_growth_effect:			TOWNGROWTH_NONE;
-		cargo_label:					"PRO1";		
-		type_name:						string(STR_CargoProba1__type_name);
-		unit_name:						string(STR_CargoProba1__unit_name);
-		units_of_cargo:				string(STR_CargoProba1__units_of_cargo);
-		items_of_cargo:				string(STR_CargoProba1__items_of_cargo);
-		type_abbreviation:			string(STR_CargoProba1__abbreviation);
-		sprite: 						NEW_CARGO_SPRITE;
-		weight:						1;
-		penalty_lowerbound:			30;
-		single_penalty_length:		255;
-		price_factor:					100.0;
-		station_list_colour:			0x01;
-		cargo_payment_list_colour:	0x01;
-		is_freight:					1;
-	}
-	graphics	
-	{	
-		default:	ss_toldat;
-	}
-}
 
 template tmpl_purchase() {
 	[0,	0,	99,	25,	-25,-15]}
-	
+template tmpl_depo() {
+	[98,	0,	90,	25,	-13,-15]}	
 template tmpl_1(z1){
 	[0		*z1,	0,	11	*z1,	49	*z1,	-5	*z1,	-13	*z1,	ANIM]
 	[19		*z1,	0,	54	*z1,	40	*z1,	-45	*z1,	-12	*z1,	ANIM]
@@ -132,6 +135,16 @@ template tmpl_toldat() {
 	[0,	0,	2,	2,	1,	1]}	
 
 spriteset(ss_toldat, "src/icons.png")		{tmpl_toldat()}
+
+template tmpl_semmi() {
+	[0,	0,	2,	2,	1,	1]
+	[0,	0,	2,	2,	1,	1]
+	[0,	0,	2,	2,	1,	1]
+	[0,	0,	2,	2,	1,	1]
+	[0,	0,	2,	2,	1,	1]
+	[0,	0,	2,	2,	1,	1]
+	[0,	0,	2,	2,	1,	1]
+	[0,	0,	2,	2,	1,	1]}
 
 //Wood logo, replaces ł 0x0142
 font_glyph (NORMAL, 0x0142, "src/icons.png") {[20,80,24,10,0,0]}
@@ -162,3 +175,4 @@ font_glyph (NORMAL, 0x0143, "src/icons.png") {[20,110,21,10,0,0]}
 font_glyph (SMALL, 0x0143, "src/icons.png") {[10,80,1,1,0,0]}
 font_glyph (LARGE, 0x0143, "src/icons.png") {[10,80,1,1,0,0]}
 font_glyph (MONO, 0x0143, "src/icons.png") {[10,80,1,1,0,0]}
+

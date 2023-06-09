@@ -1,23 +1,30 @@
 // --------------------------------------------------------------------------------FT
 
-spriteset(ss_FT_purchase, "src/BVV/FBT_BUY_8bpp.png")		{tmpl_purchase()}
-spriteset(ss_FT_P_purchase, "src/BVV/FBT_BUY_P_8bpp.png")		{tmpl_purchase()}
-spriteset(ss_FT_01, "src/BVV/FB_1x_8bpp.png")		{tmpl_1(1)}
-alternative_sprites(ss_FT_01, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/BVV/FB_2x_8bpp.png") {tmpl_1(2)}
-alternative_sprites(ss_FT_01, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/BVV/FB_4x_8bpp.png") {tmpl_1(4)}
-spriteset(ss_FT_01_PUP, "src/BVV/FB_PUP_1x_8bpp.png")		{tmpl_1(1)}
-alternative_sprites(ss_FT_01_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/BVV/FB_PUP_2x_8bpp.png") {tmpl_1(2)}
-alternative_sprites(ss_FT_01_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/BVV/FB_PUP_4x_8bpp.png") {tmpl_1(4)}
-spriteset(ss_FT_02, "src/BVV/FBT_1x_8bpp.png")		{tmpl_1(1)}
-alternative_sprites(ss_FT_02, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/BVV/FBT_2x_8bpp.png") {tmpl_1(2)}
-alternative_sprites(ss_FT_02, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/BVV/FBT_4x_8bpp.png") {tmpl_1(4)}
-spriteset(ss_FT_02_PUP, "src/BVV/FBT_PDO_1x_8bpp.png")		{tmpl_1(1)}
-alternative_sprites(ss_FT_02_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/BVV/FBT_PDO_2x_8bpp.png") {tmpl_1(2)}
-alternative_sprites(ss_FT_02_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/BVV/FBT_PDO_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_FT_purchase, "src/BVV/FBT_BUY_8bpp.png")		{tmpl_purchase()} // Vásárlási jármű
+spriteset(ss_FT_P_purchase, "src/BVV/FBT_BUY_P_8bpp.png")		{tmpl_purchase()} // Vásárlási áramszedő
 
-spritegroup sg_FT_01 {	loaded:  [ss_FT_01];	loading: [ss_FT_01];}
-spritegroup sg_FT_02 {	loaded:  [ss_FT_02];	loading: [ss_FT_02];}
+spriteset(ss_FT_1, "src/BVV/FB_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_FT_1, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/BVV/FB_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_FT_1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/BVV/FB_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_FT_1i, "src/BVV/FB_8bpp.png")		{tmpl_depo()}
+spriteset(ss_FT_1_PUP, "src/BVV/FB_PUP_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_FT_1_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/BVV/FB_PUP_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_FT_1_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/BVV/FB_PUP_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_FT_1_PUPi, "src/BVV/FB_PUP_8bpp.png")		{tmpl_depo()}
+spriteset(ss_FT_2, "src/BVV/FBT_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_FT_2, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/BVV/FBT_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_FT_2, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/BVV/FBT_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_FT_2i, "src/BVV/FBT_8bpp.png")		{tmpl_depo()}
+spriteset(ss_FT_2_PUP, "src/BVV/FBT_PDO_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_FT_2_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/BVV/FBT_PDO_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_FT_2_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/BVV/FBT_PDO_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_FT_2_PUPi, "src/BVV/FBT_PDO_8bpp.png")		{tmpl_depo()}
 
+// Rakodási grafika
+spritegroup sg_FT_1 {	loaded:  [ss_FT_1];	loading: [ss_FT_1];}
+spritegroup sg_FT_2 {	loaded:  [ss_FT_2];	loading: [ss_FT_2];}
+
+// Vásárlási grafika
 switch (FEAT_ROADVEHS, SELF, swg_FT_purchase, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
@@ -25,31 +32,62 @@ switch (FEAT_ROADVEHS, SELF, swg_FT_purchase, [
     0: return ss_FT_purchase;    // Alap modell
     1: return ss_FT_P_purchase;    // Pantonograf (le)
 }
-switch (FEAT_ROADVEHS, SELF, sgw_FT_01, [
+
+// Lista grafika
+switch (FEAT_ROADVEHS, SELF, sgw_FT_1i, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: return sg_FT_01;    // Alap modell
-    1: return ss_FT_01_PUP;    // Pantonograf (fel)
+    0: return ss_FT_1i;    // Alap modell
+    1: return ss_FT_1_PUPi;    // Pantonograf (fel)
 }
-switch (FEAT_ROADVEHS, SELF, sgw_FT_02, [
+switch (FEAT_ROADVEHS, SELF, sgw_FT_2i, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: return sg_FT_02;    // Alap modell
-    1: return ss_FT_02_PUP;    // Pantonograf (fel)
+    0: return ss_FT_2i;    // Alap modell
+    1: return ss_FT_2_PUPi;    // Pantonograf (fel)
 }
 
-switch (FEAT_ROADVEHS, SELF, sw_FT, position_in_consist ) {
+switch (FEAT_ROADVEHS, SELF, sw1_FTi, position_in_consist ) {
     1: ss_toldat;
-	2: sgw_FT_02;
+	2: sgw_FT_2i;
 	3: ss_toldat;
-    sgw_FT_01;
+    sgw_FT_1i;
 }
-switch (FEAT_ROADVEHS, SELF, sw1_FT_ss, cargo_subtype) {
-	0: sw_FT;
-	CB_RESULT_NO_TEXT;
+
+// Játék grafika
+switch (FEAT_ROADVEHS, SELF, sgw_FT_1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_FT_1;    // Alap modell
+    1: return ss_FT_1_PUP;    // Pantonograf (fel)
 }
+switch (FEAT_ROADVEHS, SELF, sgw_FT_2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_FT_2;    // Alap modell
+    1: return ss_FT_2_PUP;    // Pantonograf (fel)
+}
+
+switch (FEAT_ROADVEHS, SELF, sw1_FT, position_in_consist ) {
+    1: ss_toldat;
+	2: sgw_FT_2;
+	3: ss_toldat;
+    sgw_FT_1;
+}
+
+// Rajz
+switch(FEAT_ROADVEHS, SELF, sw_FT, (extra_callback_info1 & 0x12)) {
+   0x10: sw1_FTi; // Depó nézet
+   0x11: sw1_FTi; // Jármű infó/Refit nézet
+   0x12: sw1_FTi; // Jármű lista nézet
+   0x00: sw1_FT; // Játék nézet
+}
+
+// Csuklosítás
 switch (FEAT_ROADVEHS, SELF, sw_FT_articulated, extra_callback_info1) {
     0: item_FT;
     1: item_FT_T;
@@ -57,59 +95,69 @@ switch (FEAT_ROADVEHS, SELF, sw_FT_articulated, extra_callback_info1) {
     3: item_FT_T;
     CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
+
+// Modelhossz
 switch (FEAT_ROADVEHS, SELF, sw_FT_length, position_in_consist) {
 	1: return 1;
 	2: return 2;
 	3: return 8;
     return 8;
 }
-switch (FEAT_ROADVEHS, SELF, sw_FT_livery_text, cargo_subtype) {
-	0: return string(STR_COLOUR_SCHEME_BUDAPEST);
-	CB_RESULT_NO_TEXT;
-}
 
+// Szövegek
+switch(FEAT_ROADVEHS, SELF, sw_FT_namep, (extra_callback_info1 >> 8) & 0xFFFF) {
+    1: return string(STR_FT_BUY);
+	return CB_RESULT_NO_TEXT;
+}
+switch(FEAT_ROADVEHS, SELF, sw_FT_name, extra_callback_info1 & 0xFF) {
+    0x11: return string(STR_FT_INFO); // Jármű infóban név
+    0x20: sw_FT_namep; // Vásárlási lista név
+	0x21: return string(STR_FT_NAME); // Elővásárlási név
+	return CB_RESULT_NO_TEXT;
+}
 
 item(FEAT_ROADVEHS, item_FT) {
 	property {
-        name:								string(STR_FT_NAME);
+        name:								string(STR_F_NAME);
         climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
-        introduction_date:				date(1956,06,01);
-        model_life:						20;
-        vehicle_life:						52;
-        reliability_decay:				10;
+        introduction_date:				date(1963,01,01);
+        model_life:						18;
+        vehicle_life:						21;
+        reliability_decay:				20;
         refittable_cargo_classes:		bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
-        loading_speed:					24;
+        loading_speed:					10;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
         speed:								45 km/h;
         misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
         refit_cost:						0;
         running_cost_base:				RUNNING_COST_ROADVEH;
-        power:								280 hp;
-        weight:							28 ton;
+        power:								140 hp;
+        weight:							24 ton;
         cargo_capacity:					40;
-		cargo_age_period:					30;
+		cargo_age_period:					185;
         sound_effect:						SOUND_POWER_STATION;
-		variant_group:					item_FB;
+		variant_group:					item_FA;
     }
     graphics {
-		default:                 		sw1_FT_ss;
+		default:                 		sw_FT;
 		purchase:						swg_FT_purchase;
 		articulated_part:        		sw_FT_articulated;
 		length:                  		sw_FT_length;
-		cargo_subtype_text: 			sw_FT_livery_text;
-		cost_factor:					70 * parapuco;
-		running_cost_factor:			78 * pararuco;
+		cost_factor:					19 * parapuco;
+		running_cost_factor:			17 * pararuco;
 		additional_text: 				string(STR_FT_ADAT);
+		name:							sw_FT_name;
     }
 }
 item(FEAT_ROADVEHS, item_FT_2) {
 	property {
         name:								string(STR_BUG);
         climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
         refittable_cargo_classes:		bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
-        loading_speed:					24;
+        loading_speed:					10;
         cost_factor:						0;
         running_cost_factor:				0;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
@@ -123,7 +171,7 @@ item(FEAT_ROADVEHS, item_FT_2) {
         sound_effect:						SOUND_POWER_STATION;
     }
     graphics {
-		default:                 		sw1_FT_ss;
+		default:                 		sw_FT;
 		length:                  		sw_FT_length;
     }
 }
@@ -131,6 +179,7 @@ item(FEAT_ROADVEHS, item_FT_T) {
 	property {
         name:								string(STR_BUG);
         climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
         refittable_cargo_classes:		bitmask(NO_CARGO_CLASS);
         non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
         loading_speed:					0;

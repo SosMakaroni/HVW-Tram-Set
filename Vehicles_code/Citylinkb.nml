@@ -1,0 +1,230 @@
+// --------------------------------------------------------------------------------Citylinkb
+
+spriteset(ss_Citylinkb, "src/CityLink/CLb_BUY_8bpp.png")		{tmpl_purchase()} // Vásárlási jármű
+spriteset(ss_Citylinkb_PDO, "src/CityLink/CL_BUY_PDO_8bpp.png")		{tmpl_purchase()} // Vásárlási áramszedő
+
+spriteset(ss_Citylinkb_1, "src/CityLink/CLb_1_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_Citylinkb_1, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CityLink/CLb_1_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_Citylinkb_1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CityLink/CLb_1_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_Citylinkb_1i, "src/CityLink/CLb_1_8bpp.png")		{tmpl_depo()}
+spriteset(ss_Citylinkb_2, "src/CityLink/CLb_2_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_Citylinkb_2, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CityLink/CLb_2_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_Citylinkb_2, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CityLink/CLb_2_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_Citylinkb_2i, "src/CityLink/CLb_2_8bpp.png")		{tmpl_depo()}
+spriteset(ss_Citylinkb_2_PUP, "src/CityLink/CLb_2_PUP_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_Citylinkb_2_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CityLink/CLb_2_PUP_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_Citylinkb_2_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CityLink/CLb_2_PUP_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_Citylinkb_2_PUPi, "src/CityLink/CLb_2_PUP_8bpp.png")		{tmpl_depo()}
+spriteset(ss_Citylinkb_2_PDO, "src/CityLink/CLb_2_PDO_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_Citylinkb_2_PDO, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CityLink/CLb_2_PDO_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_Citylinkb_2_PDO, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CityLink/CLb_2_PDO_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_Citylinkb_2_PDOi, "src/CityLink/CLb_2_PDO_8bpp.png")		{tmpl_depo()}
+spriteset(ss_Citylinkb_3, "src/CityLink/CLb_3_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_Citylinkb_3, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CityLink/CLb_3_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_Citylinkb_3, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CityLink/CLb_3_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_Citylinkb_3i, "src/CityLink/CLb_3_8bpp.png")		{tmpl_depo()}
+
+// Rakodási grafika
+spritegroup sg_Citylinkb_1 {	loaded:  [ss_Citylinkb_1];	loading: [ss_Citylinkb_1];}
+spritegroup sg_Citylinkb_2 {	loaded:  [ss_Citylinkb_2];	loading: [ss_Citylinkb_2];}
+spritegroup sg_Citylinkb_3 {	loaded:  [ss_Citylinkb_3];	loading: [ss_Citylinkb_3];}
+
+// Vásárlási grafika
+switch (FEAT_ROADVEHS, SELF, swg_Citylinkb_purchase, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_Citylinkb;    // Alap modell
+    1: return ss_Citylinkb_PDO;    // Pantonograf (le)
+}
+
+// Lista grafika
+switch (FEAT_ROADVEHS, SELF, sgw_Citylinkb_2pi, current_tramtype) {
+	RAIL: ss_Citylinkb_2_PDOi;
+	NBAN: ss_Citylinkb_2_PDOi;
+	NIAN: ss_Citylinkb_2_PDOi;
+	ss_Citylinkb_2_PUPi;
+}
+switch (FEAT_ROADVEHS, SELF, sgw_Citylinkb_2i, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_Citylinkb_2i;    // Alap modell
+    1: return sgw_Citylinkb_2pi;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw1_Citylinkbi, position_in_consist ) {
+    1: ss_toldat;
+	2: sgw_Citylinkb_2i;
+	3: ss_toldat;
+	4: ss_Citylinkb_3i;
+	5: ss_toldat;
+    ss_Citylinkb_1i;
+}
+
+// Játék grafika
+switch (FEAT_ROADVEHS, SELF, sgw_Citylinkb_2p, current_tramtype) {
+	RAIL: ss_Citylinkb_2_PDO;
+	NBAN: ss_Citylinkb_2_PDO;
+	NIAN: ss_Citylinkb_2_PDO;
+	ss_Citylinkb_2_PUP;
+}
+switch (FEAT_ROADVEHS, SELF, sgw_Citylinkb_2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_Citylinkb_2;    // Alap modell
+    1: return sgw_Citylinkb_2p;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw1_Citylinkb, position_in_consist ) {
+    1: ss_toldat;
+	2: sgw_Citylinkb_2;
+	3: ss_toldat;
+	4: sg_Citylinkb_3;
+	5: ss_toldat;
+    sg_Citylinkb_1;
+}
+
+// Rajz
+switch(FEAT_ROADVEHS, SELF, sw_Citylinkb, (extra_callback_info1 & 0x12)) {
+   0x10: sw1_Citylinkbi; // Depó nézet
+   0x11: sw1_Citylinkbi; // Jármű infó/Refit nézet
+   0x12: sw1_Citylinkbi; // Jármű lista nézet
+   0x00: sw1_Citylinkb; // Játék nézet
+}
+
+// Csuklosítás
+switch (FEAT_ROADVEHS, SELF, sw_Citylinkb_articulated, extra_callback_info1) {
+    0: item_Citylinkb;
+    1: item_Citylinkb_T;
+    2: item_Citylinkb_2;
+    3: item_Citylinkb_T;
+    4: item_Citylinkb_2;
+    5: item_Citylinkb_T;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+// Modelhossz
+switch (FEAT_ROADVEHS, SELF, sw_Citylinkb_length, position_in_consist) {
+	1: return 4;
+	2: return 8;
+	3: return 2;
+	4: return 5;
+	5: return 8;
+    return 8;
+}
+
+// Szövegek
+switch(FEAT_ROADVEHS, SELF, sw_Citylinkb_namep, (extra_callback_info1 >> 8) & 0xFFFF) {
+    1: return string(STR_Citylinkb_BUY);
+	return CB_RESULT_NO_TEXT;
+}
+switch(FEAT_ROADVEHS, SELF, sw_Citylinkb_name, extra_callback_info1 & 0xFF) {
+    0x11: return string(STR_Citylinkb_INFO); // Jármű infóban név
+    0x20: sw_Citylinkb_namep; // Vásárlási lista név
+	0x21: return string(STR_Citylinkb_NAME); // Elővásárlási név
+	return CB_RESULT_NO_TEXT;
+}
+
+// Síntípus változók
+/*switch (FEAT_ROADVEHS, SELF, sw_Citylinkb_effect, current_tramtype) {
+	RAIL: return VISUAL_EFFECT_DIESEL;
+	ELRL: return VISUAL_EFFECT_ELECTRIC;	
+}*/
+switch (FEAT_ROADVEHS, SELF, sw_Citylinkb_power, current_tramtype) {
+	RAIL: return 1045 / 10;	// 780kW
+	NBAN: return 1045 / 10;	// 780kW
+	NIAN: return 1045 / 10;	// 780kW
+	return 778 / 10;	// 580kW
+}
+
+
+item(FEAT_ROADVEHS, item_Citylinkb) {
+	property {
+        name:								string(STR_Citylink_NAME);
+		tram_type:							RAIL;
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(2016,01,01);
+        model_life:						25;
+        vehicle_life:						40;
+        reliability_decay:				20;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					20;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								100 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								580 kW;
+        weight:							63 ton;
+        cargo_capacity:					72;
+		cargo_age_period:					185;
+        sound_effect:						SOUND_POWER_STATION;
+		variant_group:					item_Citylinka;
+    }
+    graphics {
+		default:                 		sw_Citylinkb;
+		purchase:						swg_Citylinkb_purchase;
+		articulated_part:        		sw_Citylinkb_articulated;
+		length:                  		sw_Citylinkb_length;
+		cost_factor:					127 * parapuco;
+		running_cost_factor:			191 * pararuco;
+		additional_text: 				string(STR_Citylinkb_ADAT);
+		name:							sw_Citylinkb_name;
+        power:							sw_Citylinkb_power;
+//		visual_effect:				sw_Citylinkb_effect;
+    }
+}
+item(FEAT_ROADVEHS, item_Citylinkb_2) {
+	property {
+        name:								string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					12;
+        cost_factor:						0;
+        running_cost_factor:				0;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:								0 kW;
+        weight:							0 ton;
+        cargo_capacity:					72;
+		cargo_age_period:					0;
+        sound_effect:						SOUND_POWER_STATION;
+    }
+    graphics {
+		default:                 		sw_Citylinkb;
+		length:                  		sw_Citylinkb_length;
+    }
+}
+item(FEAT_ROADVEHS, item_Citylinkb_T) {
+	property {
+        name:								string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
+        refittable_cargo_classes:		bitmask(NO_CARGO_CLASS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					0;
+        cost_factor:						0;
+        running_cost_factor:				0;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:								0 kW;
+        weight:							0 ton;
+        cargo_capacity:					0;
+		cargo_age_period:					0;
+    }
+    graphics {
+		default:                 		ss_toldat;
+		length:                  		sw_Citylinkb_length;
+    }
+}
+
+// --------------------------------------------------------------------------------Citylinkb End
+// --
+// --

@@ -1,0 +1,291 @@
+// --------------------------------------------------------------------------------MUKI1P
+
+spriteset(ss_MUKI1P_purchase, "src/MUKI/MUKI1P_BUY_8bpp.png")		{tmpl_purchase()} // Vásárlási jármű
+spriteset(ss_MUKI1P_PDO_purchase, "src/MUKI/MUKI1_PDO_8bpp.png")		{tmpl_purchase()} // Vásárlási áramszedő
+
+spriteset(ss_MUKI1P, "src/MUKI/MUKI11_1x_8bpp.png")		{tmpl_1(1)} //Motorkocsi
+alternative_sprites(ss_MUKI1P, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/MUKI/MUKI11_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_MUKI1P, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/MUKI/MUKI11_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_MUKI1Pi, "src/MUKI/MUKI11_8bpp.png")		{tmpl_depo()}
+spriteset(ss_MUKI1P_PUP, "src/MUKI/MUKI1_PUP_1x_8bpp.png")		{tmpl_1(1)} //Áramszedő
+alternative_sprites(ss_MUKI1P_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/MUKI/MUKI1_PUP_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_MUKI1P_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/MUKI/MUKI1_PUP_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_MUKI1P_PUPi, "src/MUKI/MUKI1_PUP_8bpp.png")		{tmpl_depo()}
+spriteset(ss_MUKI1P_URES, "src/MUKI/MUKI11_RAK_URES_1x_8bpp.png")		{tmpl_1(1)} //Motorkocsi nyitva
+alternative_sprites(ss_MUKI1P_URES, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/MUKI/MUKI11_RAK_URES_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_MUKI1P_URES, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/MUKI/MUKI11_RAK_URES_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_MUKI1P_URESi, "src/MUKI/MUKI11_RAK_URES_8bpp.png")		{tmpl_depo()}
+spriteset(ss_MUKI1P_DOBOZ, "src/MUKI/MUKI11_RAK_DOBOZ_1x_8bpp.png")		{tmpl_1(1)} //Motorkocsi doboz
+alternative_sprites(ss_MUKI1P_DOBOZ, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/MUKI/MUKI11_RAK_DOBOZ_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_MUKI1P_DOBOZ, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/MUKI/MUKI11_RAK_DOBOZ_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_MUKI1P_DOBOZi, "src/MUKI/MUKI11_RAK_DOBOZ_8bpp.png")		{tmpl_depo()}
+spriteset(ss_MUKI1P_ARAMSZEDO, "src/MUKI/MUKI11_RAK_ARAMSZEDO_1x_8bpp.png")		{tmpl_1(1)} //Motorkocsi ARAMSZEDO
+alternative_sprites(ss_MUKI1P_ARAMSZEDO, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/MUKI/MUKI11_RAK_ARAMSZEDO_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_MUKI1P_ARAMSZEDO, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/MUKI/MUKI11_RAK_ARAMSZEDO_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_MUKI1P_ARAMSZEDOi, "src/MUKI/MUKI11_RAK_ARAMSZEDO_8bpp.png")		{tmpl_depo()}
+
+spriteset(ss_PN_URES, "src/MUKI/PN_URES_1x_8bpp.png")		{tmpl_1(1)} //Pótkocsi üres
+alternative_sprites(ss_PN_URES, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/MUKI/PN_URES_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_PN_URES, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/MUKI/PN_URES_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_PN_URESi, "src/MUKI/PN_URES_8bpp.png")		{tmpl_depo()}
+spriteset(ss_PN_ARAMSZEDO_1, "src/MUKI/PN_ARAMSZEDO_1_1x_8bpp.png")		{tmpl_1(1)} //Pótkocsi ARAMSZEDO1
+alternative_sprites(ss_PN_ARAMSZEDO_1, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/MUKI/PN_ARAMSZEDO_1_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_PN_ARAMSZEDO_1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/MUKI/PN_ARAMSZEDO_1_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_PN_ARAMSZEDO_1i, "src/MUKI/PN_ARAMSZEDO_1_8bpp.png")		{tmpl_depo()}
+spriteset(ss_PN_ARAMSZEDO_2, "src/MUKI/PN_ARAMSZEDO_2_1x_8bpp.png")		{tmpl_1(1)} //Pótkocsi ARAMSZEDO2
+alternative_sprites(ss_PN_ARAMSZEDO_2, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/MUKI/PN_ARAMSZEDO_2_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_PN_ARAMSZEDO_2, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/MUKI/PN_ARAMSZEDO_2_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_PN_ARAMSZEDO_2i, "src/MUKI/PN_ARAMSZEDO_2_8bpp.png")		{tmpl_depo()}
+spriteset(ss_PN_ARAMSZEDO_3, "src/MUKI/PN_ARAMSZEDO_3_1x_8bpp.png")		{tmpl_1(1)} //Pótkocsi ARAMSZEDO3
+alternative_sprites(ss_PN_ARAMSZEDO_3, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/MUKI/PN_ARAMSZEDO_3_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_PN_ARAMSZEDO_3, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/MUKI/PN_ARAMSZEDO_3_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_PN_ARAMSZEDO_3i, "src/MUKI/PN_ARAMSZEDO_3_8bpp.png")		{tmpl_depo()}
+spriteset(ss_PN_FA, "src/MUKI/PN_FA_1x_8bpp.png")		{tmpl_1(1)} //Pótkocsi fa
+alternative_sprites(ss_PN_FA, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/MUKI/PN_FA_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_PN_FA, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/MUKI/PN_FA_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_PN_FAi, "src/MUKI/PN_FA_8bpp.png")		{tmpl_depo()}
+spriteset(ss_PN_VAS, "src/MUKI/PN_VAS_1x_8bpp.png")		{tmpl_1(1)} //Pótkocsi vas
+alternative_sprites(ss_PN_VAS, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/MUKI/PN_VAS_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_PN_VAS, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/MUKI/PN_VAS_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_PN_VASi, "src/MUKI/PN_VAS_8bpp.png")		{tmpl_depo()}
+spriteset(ss_PN_LADA_1, "src/MUKI/PN_LADA_1_1x_8bpp.png")		{tmpl_1(1)} //Pótkocsi láda1
+alternative_sprites(ss_PN_LADA_1, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/MUKI/PN_LADA_1_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_PN_LADA_1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/MUKI/PN_LADA_1_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_PN_LADA_1i, "src/MUKI/PN_LADA_1_8bpp.png")		{tmpl_depo()}
+spriteset(ss_PN_LADA_2, "src/MUKI/PN_LADA_2_1x_8bpp.png")		{tmpl_1(1)} //Pótkocsi láda2
+alternative_sprites(ss_PN_LADA_2, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/MUKI/PN_LADA_2_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_PN_LADA_2, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/MUKI/PN_LADA_2_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_PN_LADA_2i, "src/MUKI/PN_LADA_2_8bpp.png")		{tmpl_depo()}
+spriteset(ss_PN_LADA_3, "src/MUKI/PN_LADA_3_1x_8bpp.png")		{tmpl_1(1)} //Pótkocsi láda3
+alternative_sprites(ss_PN_LADA_3, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/MUKI/PN_LADA_3_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_PN_LADA_3, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/MUKI/PN_LADA_3_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_PN_LADA_3i, "src/MUKI/PN_LADA_3_8bpp.png")		{tmpl_depo()}
+spriteset(ss_PN_LADA_4, "src/MUKI/PN_LADA_4_1x_8bpp.png")		{tmpl_1(1)} //Pótkocsi láda4
+alternative_sprites(ss_PN_LADA_4, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/MUKI/PN_LADA_4_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_PN_LADA_4, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/MUKI/PN_LADA_4_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_PN_LADA_4i, "src/MUKI/PN_LADA_4_8bpp.png")		{tmpl_depo()}
+spriteset(ss_URES, "src/URES_1x_8bpp.png")		{tmpl_1(1)} //Üres
+alternative_sprites(ss_URES, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/URES_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_URES, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/URES_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_URESi, "src/URES_8bpp.png")		{tmpl_depo()}
+
+// Rakodási grafika
+spritegroup sg_MUKI1P_1_DOBOZ {	loaded:  [ss_MUKI1P];	loading: [ss_MUKI1P_URES, ss_MUKI1P_DOBOZ, ss_MUKI1P_DOBOZ];}
+spritegroup sg_MUKI1P_1_ARAMSZEDO {	loaded:  [ss_MUKI1P];	loading: [ss_MUKI1P_URES, ss_MUKI1P_ARAMSZEDO, ss_MUKI1P_ARAMSZEDO];}
+spritegroup sg_MUKI1P_2_ARAMSZEDO {	loaded:  [ss_URES, ss_PN_ARAMSZEDO_1, ss_PN_ARAMSZEDO_2, ss_PN_ARAMSZEDO_3];	loading: [ss_URES, ss_PN_ARAMSZEDO_1, ss_PN_ARAMSZEDO_2, ss_PN_ARAMSZEDO_3];}
+spritegroup sg_MUKI1P_2_LADA {	loaded:  [ss_URES, ss_PN_LADA_1, ss_PN_LADA_2, ss_PN_LADA_3, ss_PN_LADA_4];	loading: [ss_URES, ss_PN_LADA_1, ss_PN_LADA_2, ss_PN_LADA_3, ss_PN_LADA_4];}
+spritegroup sg_MUKI1P_2_FA {	loaded:  [ss_URES, ss_PN_FA, ss_PN_FA];	loading: [ss_URES, ss_PN_FA, ss_PN_FA];}
+spritegroup sg_MUKI1P_2_VAS {	loaded:  [ss_URES, ss_PN_VAS, ss_PN_VAS];	loading: [ss_URES, ss_PN_VAS, ss_PN_VAS];}
+
+spritegroup sg_MUKI1P_1_DOBOZi {	loaded:  [ss_MUKI1Pi];	loading: [ss_MUKI1P_URESi, ss_MUKI1P_DOBOZi, ss_MUKI1P_DOBOZi];}
+spritegroup sg_MUKI1P_1_ARAMSZEDOi {	loaded:  [ss_MUKI1Pi];	loading: [ss_MUKI1P_URESi, ss_MUKI1P_ARAMSZEDOi, ss_MUKI1P_ARAMSZEDOi];}
+spritegroup sg_MUKI1P_2_ARAMSZEDOi {	loaded:  [ss_URESi, ss_PN_ARAMSZEDO_1i, ss_PN_ARAMSZEDO_2i, ss_PN_ARAMSZEDO_3i];	loading: [ss_URESi, ss_PN_ARAMSZEDO_1i, ss_PN_ARAMSZEDO_2i, ss_PN_ARAMSZEDO_3i];}
+spritegroup sg_MUKI1P_2_LADAi {	loaded:  [ss_URESi, ss_PN_LADA_1i, ss_PN_LADA_2i, ss_PN_LADA_3i, ss_PN_LADA_4i];	loading: [ss_URESi, ss_PN_LADA_1i, ss_PN_LADA_2i, ss_PN_LADA_3i, ss_PN_LADA_4i];}
+spritegroup sg_MUKI1P_2_FAi {	loaded:  [ss_URESi, ss_PN_FAi, ss_PN_FAi];	loading: [ss_URESi, ss_PN_FAi, ss_PN_FAi];}
+spritegroup sg_MUKI1P_2_VASi {	loaded:  [ss_URESi, ss_PN_VASi, ss_PN_VASi];	loading: [ss_URESi, ss_PN_VASi, ss_PN_VASi];}
+
+// Vásárlási grafika
+switch (FEAT_ROADVEHS, SELF, swg_MUKI1P_purchase, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_MUKI1P_purchase;    // Alap modell
+    1: return ss_MUKI1P_PDO_purchase;    // Pantonograf (le)
+}
+
+// Lista grafika
+switch (FEAT_ROADVEHS, SELF, sw2_MUKI1P_1i, cargo_type_in_veh) {
+	ENSP: return sg_MUKI1P_1_ARAMSZEDOi;
+	sg_MUKI1P_1_DOBOZi;
+}
+switch (FEAT_ROADVEHS, SELF, swg_MUKI1P_1i, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sw2_MUKI1P_1i;    // Alap modell
+    1: return ss_MUKI1P_PUPi;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw2_MUKI1P_2i, cargo_type_in_veh) {
+	ENSP: return sg_MUKI1P_2_ARAMSZEDOi;
+	WOOD: return sg_MUKI1P_2_FAi;
+	STEL: return sg_MUKI1P_2_VASi;	
+	sg_MUKI1P_2_LADAi;
+}
+switch (FEAT_ROADVEHS, SELF, swg_MUKI1P_2i, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_PN_URESi;    // Alap modell
+    1: return sw2_MUKI1P_2i;    // Áru
+}
+switch (FEAT_ROADVEHS, SELF, sw1_MUKI1Pi, position_in_consist ) {
+	1: swg_MUKI1P_2i;
+    swg_MUKI1P_1i;
+}
+
+// Játék grafika
+switch (FEAT_ROADVEHS, SELF, sw2_MUKI1P_1, cargo_type_in_veh) {
+	ENSP: return sg_MUKI1P_1_ARAMSZEDO;
+	sg_MUKI1P_1_DOBOZ;
+}
+switch (FEAT_ROADVEHS, SELF, swg_MUKI1P_1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sw2_MUKI1P_1;    // Alap modell
+    1: return ss_MUKI1P_PUP;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw2_MUKI1P_2, cargo_type_in_veh) {
+	ENSP: return sg_MUKI1P_2_ARAMSZEDO;
+	WOOD: return sg_MUKI1P_2_FA;
+	STEL: return sg_MUKI1P_2_VAS;	
+	sg_MUKI1P_2_LADA;
+}
+switch (FEAT_ROADVEHS, SELF, swg_MUKI1P_2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_PN_URES;    // Alap modell
+    1: return sw2_MUKI1P_2;    // Áru
+}
+switch (FEAT_ROADVEHS, SELF, sw1_MUKI1P, position_in_consist ) {
+	1: swg_MUKI1P_2;
+    swg_MUKI1P_1;
+}
+// Rajz
+switch(FEAT_ROADVEHS, SELF, sw_MUKI1P, (extra_callback_info1 & 0x12)) {
+   0x10: sw1_MUKI1Pi; // Depó nézet
+   0x11: sw1_MUKI1Pi; // Jármű infó/Refit nézet
+   0x12: sw1_MUKI1Pi; // Jármű lista nézet
+   0x00: sw1_MUKI1P; // Játék nézet
+}
+
+
+// Csuklosítás
+switch (FEAT_ROADVEHS, SELF, sw_MUKI1P_articulated, extra_callback_info1) {
+    0: item_MUKI1P;
+	1: item_MUKI1P_2;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+// Modelhossz
+switch (FEAT_ROADVEHS, SELF, sw_MUKI1P_length, position_in_consist) {
+	1: return 8;
+    return 7;
+}
+
+// Szövegek
+switch(FEAT_ROADVEHS, SELF, sw_MUKI1P_namep, (extra_callback_info1 >> 8) & 0xFFFF) {
+    1: return string(STR_MUKI1P_BUY);
+	return CB_RESULT_NO_TEXT;
+}
+switch(FEAT_ROADVEHS, SELF, sw_MUKI1P_name, extra_callback_info1 & 0xFF) {
+    0x11: return string(STR_MUKI1P_INFO); // Jármű infóban név
+    0x20: sw_MUKI1P_namep; // Vásárlási lista név
+	0x21: return string(STR_MUKI1P_NAME); // Elővásárlási név
+	return CB_RESULT_NO_TEXT;
+}
+switch (FEAT_ROADVEHS, SELF, sw_MUKI1P_livery_text, cargo_type_in_veh) {
+	ENSP: return string(STR_COLOUR_SCHEME_PANTO);
+	WOOD: return string(STR_COLOUR_SCHEME_WOOD);
+	STEL: return string(STR_COLOUR_SCHEME_STEL);
+	return string(STR_COLOUR_SCHEME_LADA);
+}
+
+//Kapacitás
+
+item(FEAT_ROADVEHS, item_MUKI1P) {
+	property {
+        name:								string(STR_MUKI_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1927,01,01);
+        model_life:						51;
+        vehicle_life:						50;
+        reliability_decay:				20;
+		cargo_allow_refit:       			[STEL, ENSP, WOOD];
+		cargo_disallow_refit:			[LVST];
+        refittable_cargo_classes:		bitmask(CC_PIECE_GOODS);
+        non_refittable_cargo_classes:	bitmask(CC_PASSENGERS, CC_EXPRESS, CC_REFRIGERATED, CC_BULK);
+        loading_speed:					4;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								45 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								110 hp;
+        weight:							12 ton;
+        cargo_capacity:					4;
+		cargo_age_period:					185;
+        sound_effect:						SOUND_POWER_STATION;
+		variant_group:					item_MUKI1;
+    }
+    graphics {
+		default:                 		sw_MUKI1P;
+		purchase:						swg_MUKI1P_purchase;
+		articulated_part:        		sw_MUKI1P_articulated;
+		length:                  		sw_MUKI1P_length;
+		cargo_subtype_text: 			sw_MUKI1P_livery_text;
+		cargo_capacity: 				4 * paracapa;
+		purchase_cargo_capacity:		4 * paracapa;
+		cost_factor:					12 * parapuco;
+		running_cost_factor:			13 * pararuco;
+		additional_text: 				string(STR_MUKI1P_ADAT);
+		name:							sw_MUKI1P_name;
+    }
+}
+item(FEAT_ROADVEHS, item_MUKI1P_2) {
+	property {
+        name:								string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
+		cargo_allow_refit:       			[STEL, ENSP, WOOD];
+		cargo_disallow_refit:			[LVST];
+        refittable_cargo_classes:		bitmask(CC_PIECE_GOODS);
+        non_refittable_cargo_classes:	bitmask(CC_PASSENGERS, CC_EXPRESS, CC_REFRIGERATED, CC_BULK);
+        loading_speed:					4;
+        cost_factor:						0;
+        running_cost_factor:				0;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:								0 kW;
+        weight:							0 ton;
+        cargo_capacity:					8;
+		cargo_age_period:					0;
+        sound_effect:						SOUND_POWER_STATION;
+    }
+    graphics {
+		default:                 		sw_MUKI1P;
+		length:                  		sw_MUKI1P_length;
+		cargo_capacity: 				8 * paracapa;
+		purchase_cargo_capacity:		8 * paracapa;
+    }
+}
+/*item(FEAT_ROADVEHS, item_MUKI1P_T) {
+	property {
+        name:								string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
+        refittable_cargo_classes:		bitmask(NO_CARGO_CLASS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					0;
+        cost_factor:						0;
+        running_cost_factor:				0;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:								0 kW;
+        weight:							0 ton;
+        cargo_capacity:					0;
+		cargo_age_period:					0;
+    }
+    graphics {
+		default:                 		ss_toldat;
+		length:                  		sw_MUKI1P_length;
+    }
+}*/
+
+// --------------------------------------------------------------------------------MUKI1P End
+

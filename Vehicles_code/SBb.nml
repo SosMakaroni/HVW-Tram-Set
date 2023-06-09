@@ -1,0 +1,151 @@
+// --------------------------------------------------------------------------------SBb
+
+spriteset(ss_SBb_purchase, "src/GANZBUS/SBb_BUY_8bpp.png")		{tmpl_purchase()} // Vásárlási jármű
+spriteset(ss_SBb_P_purchase, "src/GANZBUS/SBb_PDO_8bpp.png")		{tmpl_purchase()} // Vásárlási áramszedő
+
+spriteset(ss_SBb, "src/GANZBUS/SBb_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_SBb, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/GANZBUS/SBb_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_SBb, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/GANZBUS/SBb_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_SBbi, "src/GANZBUS/SBb_8bpp.png")		{tmpl_depo()}
+spriteset(ss_SBb_PUP, "src/GANZBUS/SBb_PUP_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_SBb_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/GANZBUS/SBb_PUP_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_SBb_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/GANZBUS/SBb_PUP_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_SBb_PUPi, "src/GANZBUS/SBb_PUP_8bpp.png")		{tmpl_depo()}
+
+// Rakodási grafika
+spritegroup sg_SBb {	loaded:  [ss_SBb];	loading: [ss_SBb];}
+
+// Vásárlási grafika
+switch (FEAT_ROADVEHS, SELF, swg_SBb_purchase, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_SBb_purchase;    // Alap modell
+    1: return ss_SBb_P_purchase;    // Pantonograf (le)
+}
+
+// Lista grafika
+switch (FEAT_ROADVEHS, SELF, sgw_SBbi, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_SBbi;    // Alap modell
+    1: return ss_SBb_PUPi;    // Pantonograf (fel)
+}
+
+switch (FEAT_ROADVEHS, SELF, sw1_SBbi, position_in_consist ) {
+    1: ss_toldat;
+    sgw_SBbi;
+}
+
+// Játék grafika
+switch (FEAT_ROADVEHS, SELF, sgw_SBb, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_SBb;    // Alap modell
+    1: return ss_SBb_PUP;    // Pantonograf (fel)
+}
+
+switch (FEAT_ROADVEHS, SELF, sw1_SBb, position_in_consist ) {
+    1: ss_toldat;
+    sgw_SBb;
+}
+
+// Rajz
+switch(FEAT_ROADVEHS, SELF, sw_SBb, (extra_callback_info1 & 0x12)) {
+   0x10: sw1_SBbi; // Depó nézet
+   0x11: sw1_SBbi; // Jármű infó/Refit nézet
+   0x12: sw1_SBbi; // Jármű lista nézet
+   0x00: sw1_SBb; // Játék nézet
+}
+
+// Csuklosítás
+switch (FEAT_ROADVEHS, SELF, sw_SBb_articulated, extra_callback_info1) {
+    0: item_SBb;
+    1: item_SBb_T;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+// Modelhossz
+switch (FEAT_ROADVEHS, SELF, sw_SBb_length, position_in_consist) {
+	1: return 8;
+    return 2;
+}
+
+// Szövegek
+switch(FEAT_ROADVEHS, SELF, sw_SBb_namep, (extra_callback_info1 >> 8) & 0xFFFF) {
+    1: return string(STR_SBb_BUY);
+	return CB_RESULT_NO_TEXT;
+}
+switch(FEAT_ROADVEHS, SELF, sw_SBb_name, extra_callback_info1 & 0xFF) {
+    0x11: return string(STR_SBb_INFO); // Jármű infóban név
+    0x20: sw_SBb_namep; // Vásárlási lista név
+	0x21: return string(STR_SBb_NAME); // Elővásárlási név
+	return CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_SBb) {
+	property {
+        name:								string(STR_SB_NAME);
+		tram_type:							ELRL;
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1951,01,01);
+        model_life:						10;
+        vehicle_life:						23;
+        reliability_decay:				20;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					12;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								45 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								37 hp;
+        weight:							11 ton;
+        cargo_capacity:					32;
+		cargo_age_period:					185;
+        sound_effect:						SOUND_POWER_STATION;
+		visual_effect:					visual_effect(VISUAL_EFFECT_ELECTRIC, 2);
+		variant_group:					item_SBa;
+    }
+    graphics {
+		default:                 		sw_SBb;
+		purchase:						swg_SBb_purchase;
+		articulated_part:        		sw_SBb_articulated;
+		length:                  		sw_SBb_length;
+		cost_factor:					7 * parapuco;
+		running_cost_factor:			5 * pararuco;
+		additional_text: 				string(STR_SBb_ADAT);
+		name:							sw_SBb_name;
+    }
+}
+item(FEAT_ROADVEHS, item_SBb_T) {
+	property {
+        name:								string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
+        refittable_cargo_classes:		bitmask(NO_CARGO_CLASS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					0;
+        cost_factor:						0;
+        running_cost_factor:				0;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:								0 kW;
+        weight:							0 ton;
+        cargo_capacity:					0;
+		cargo_age_period:					0;
+    }
+    graphics {
+		default:                 		ss_toldat;
+		length:                  		sw_SBb_length;
+    }
+}
+// --------------------------------------------------------------------------------SBb End
+// --
+// --
