@@ -94,6 +94,7 @@ switch (FEAT_ROADVEHS, SELF, sw_TW6000b_length, position_in_consist) {
 // Szövegek
 switch(FEAT_ROADVEHS, SELF, sw_TW6000b_namep, (extra_callback_info1 >> 8) & 0xFFFF) {
     1: return string(STR_TW6000b_BUY);
+    2: return string(STR_TW6000b2_BUY);
 	return CB_RESULT_NO_TEXT;
 }
 switch(FEAT_ROADVEHS, SELF, sw_TW6000b_name, extra_callback_info1 & 0xFF) {

@@ -1,0 +1,265 @@
+// --------------------------------------------------------------------------------TW6002b
+
+spriteset(ss_TW6002b_purchase, "src/Duwag/TW6b_8bpp.png")		{tmpl_purchase()}  //Motorkocsi
+spriteset(ss_TW6002b_PDO_purchase, "src/Duwag/TW6b_PDO_8bpp.png")		{tmpl_purchase()} //Áramszedő
+spriteset(ss_TW6002b_1, "src/Duwag/TW6b_1_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_TW6002b_1, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/Duwag/TW6b_1_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_TW6002b_1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/Duwag/TW6b_1_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_TW6002b_1i, "src/Duwag/TW6b_1_8bpp.png")		{tmpl_depo()}
+spriteset(ss_TW6002b_2PUP, "src/Duwag/TW6b_PUP_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_TW6002b_2PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/Duwag/TW6b_PUP_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_TW6002b_2PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/Duwag/TW6b_PUP_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_TW6002b_2PUPi, "src/Duwag/TW6b_PUP_8bpp.png")		{tmpl_depo()}
+spriteset(ss_TW6002b_2, "src/Duwag/TW6b_2_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_TW6002b_2, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/Duwag/TW6b_2_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_TW6002b_2, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/Duwag/TW6b_2_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_TW6002b_2i, "src/Duwag/TW6b_2_8bpp.png")		{tmpl_depo()}
+spriteset(ss_TW6002b_3, "src/Duwag/TW6b_3_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_TW6002b_3, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/Duwag/TW6b_3_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_TW6002b_3, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/Duwag/TW6b_3_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_TW6002b_3i, "src/Duwag/TW6b_3_8bpp.png")		{tmpl_depo()}
+
+spritegroup sg_TW6002b_1 {	loaded:  [ss_TW6002b_1];	loading: [ss_TW6002b_1];}
+spritegroup sg_TW6002b_2 {	loaded:  [ss_TW6002b_2];	loading: [ss_TW6002b_2];}
+spritegroup sg_TW6002b_3 {	loaded:  [ss_TW6002b_3];	loading: [ss_TW6002b_3];}
+
+// Vásárlási grafika
+switch (FEAT_ROADVEHS, SELF, swg_TW6002b_purchase, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_TW6002b_purchase;    // Alap modell
+    1: return ss_TW6002b_PDO_purchase;    // Pantonograf (le)
+}
+// Lista grafika
+switch (FEAT_ROADVEHS, SELF, sgw_TW6002b_2i, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_TW6002b_2i;    // Alap modell
+    1: return ss_TW6002b_2PUPi;    // Pantonograf (fel)
+}
+
+switch (FEAT_ROADVEHS, SELF, sw1_TW6002bi, position_in_consist ) {
+    1: ss_toldat;
+	2: sgw_TW6002b_2i;
+	3: ss_TW6002b_3i;
+	4: ss_toldat;
+    5: ss_TW6002b_1i;
+    6: ss_toldat;
+	7: sgw_TW6002b_2i;
+	8: ss_TW6002b_3i;
+	9: ss_toldat;
+    ss_TW6002b_1i;
+}
+
+// Játék grafika
+switch (FEAT_ROADVEHS, SELF, sgw_TW6002b_2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_TW6002b_2;    // Alap modell
+    1: return ss_TW6002b_2PUP;    // Pantonograf (fel)
+}
+
+switch (FEAT_ROADVEHS, SELF, sw1_TW6002b, position_in_consist ) {
+    1: ss_toldat;
+	2: sgw_TW6002b_2;
+	3: sg_TW6002b_3;
+	4: ss_toldat;
+    5: sg_TW6002b_1;
+    6: ss_toldat;
+	7: sgw_TW6002b_2;
+	8: sg_TW6002b_3;
+	9: ss_toldat;
+    sg_TW6002b_1;
+}
+
+// Rajz
+switch(FEAT_ROADVEHS, SELF, sw_TW6002b, (extra_callback_info1 & 0x12)) {
+   0x10: sw1_TW6002bi; // Depot GUI
+   0x11: sw1_TW6002bi; // Vehicle Details/Refit GUI
+   0x12: sw1_TW6002bi; // Vehicle List
+   0x00: sw1_TW6002b; // Vehicle in game
+}
+
+
+// Csuklosítás
+switch (FEAT_ROADVEHS, SELF, sw_TW6002b_articulated, extra_callback_info1) {
+    0: item_TW6002b;
+    1: item_TW6002b_T;
+    2: item_TW6002b_2;
+    3: item_TW6002b_3;
+    4: item_TW6002b_T;
+    5: item_TW6002b_1;
+    6: item_TW6002b_T;
+    7: item_TW6002b_2;
+    8: item_TW6002b_3;
+    9: item_TW6002b_T;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+// Modelhossz
+switch (FEAT_ROADVEHS, SELF, sw_TW6002b_length, position_in_consist) {
+	1: return 1;
+	2: return 6;
+	3: return 3;
+	4: return 8;
+    5: return 8;
+	6: return 1;
+	7: return 6;
+	8: return 3;
+	9: return 8;
+    return 8;
+}
+// Szövegek
+switch(FEAT_ROADVEHS, SELF, sw_TW6002b_namep, (extra_callback_info1 >> 8) & 0xFFFF) {
+    1: return string(STR_TW6002b_BUY);
+    2: return string(STR_TW6002b2_BUY);
+	return CB_RESULT_NO_TEXT;
+}
+switch(FEAT_ROADVEHS, SELF, sw_TW6002b_name, extra_callback_info1 & 0xFF) {
+    0x11: return string(STR_TW6002b_INFO); // Jármű infóban név
+    0x20: sw_TW6002b_namep; // Vásárlási lista név
+	0x21: return string(STR_TW6002b_NAME); // Elővásárlási név
+	return CB_RESULT_NO_TEXT;
+}
+
+
+
+item(FEAT_ROADVEHS, item_TW6002b) {
+	property {
+        name:								string(STR_TW6_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1975,01,01);
+        model_life:						46;
+        vehicle_life:						30;
+        reliability_decay:				20;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					20;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								80 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								868 kW;
+        weight:							63 ton;
+        cargo_capacity:					55;
+		cargo_age_period:					185;
+        sound_effect:						SOUND_POWER_STATION;
+		variant_group:					item_TW6000b;
+    }
+    graphics {
+		default:                 		sw_TW6002b;
+		purchase:						swg_TW6002b_purchase;
+		articulated_part:        		sw_TW6002b_articulated;
+		length:                  		sw_TW6002b_length;
+		cost_factor:					97 * parapuco;
+		running_cost_factor:			126 * pararuco;
+		additional_text: 				string(STR_TW6002b_ADAT);
+		name:							sw_TW6002b_name;
+    }
+}
+item(FEAT_ROADVEHS, item_TW6002b_1) {
+	property {
+        name:								string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					20;
+        cost_factor:						0;
+        running_cost_factor:				0;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:								0 kW;
+        weight:							0 ton;
+        cargo_capacity:					55;
+		cargo_age_period:					0;
+        sound_effect:						SOUND_POWER_STATION;
+    }
+    graphics {
+		default:                 		sw_TW6002b;
+		length:                  		sw_TW6002b_length;
+    }
+}
+item(FEAT_ROADVEHS, item_TW6002b_2) {
+	property {
+        name:								string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					10;
+        cost_factor:						0;
+        running_cost_factor:				0;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:								0 kW;
+        weight:							0 ton;
+        cargo_capacity:					40;
+		cargo_age_period:					0;
+        sound_effect:						SOUND_POWER_STATION;
+    }
+    graphics {
+		default:                 		sw_TW6002b;
+		length:                  		sw_TW6002b_length;
+    }
+}
+item(FEAT_ROADVEHS, item_TW6002b_3) {
+	property {
+        name:								string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					20;
+        cost_factor:						0;
+        running_cost_factor:				0;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:								0 kW;
+        weight:							0 ton;
+        cargo_capacity:					55;
+		cargo_age_period:					0;
+        sound_effect:						SOUND_POWER_STATION;
+    }
+    graphics {
+		default:                 		sw_TW6002b;
+		length:                  		sw_TW6002b_length;
+    }
+}
+item(FEAT_ROADVEHS, item_TW6002b_T) {
+	property {
+        name:								string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
+        refittable_cargo_classes:		bitmask(NO_CARGO_CLASS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					0;
+        cost_factor:						0;
+        running_cost_factor:				0;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:								0 kW;
+        weight:							0 ton;
+        cargo_capacity:					0;
+		cargo_age_period:					0;
+    }
+    graphics {
+		default:                 		ss_toldat;
+		length:                  		sw_TW6002b_length;
+    }
+}
+
+// --------------------------------------------------------------------------------TW6002b End
+// --
+// --
