@@ -1,0 +1,68 @@
+// --------------------------------------------------------------------------------COMbase
+
+/*
+
+COM7base
+	ss_COMF_base
+		ss_COMFp_base_PUP
+	ss_COML_base
+	ss_COMM_base
+	ss_COML_base
+	ss_COMM_base
+	ss_COML_base
+	ss_COMR_base
+
+*/
+//	Front
+spriteset(ss_COMF_basea, "src/SIEMENS/BASE/COMfront_basea_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMF_basea, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BASE/COMfront_basea_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMF_basea, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BASE/COMfront_basea_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMF_basea_info, "src/SIEMENS/BASE/COMfront_basea_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMF_baseb, "src/SIEMENS/BASE/COMfront_baseb_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMF_baseb, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BASE/COMfront_baseb_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMF_baseb, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BASE/COMfront_baseb_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMF_baseb_info, "src/SIEMENS/BASE/COMfront_baseb_INFO_8bpp.png") {tmpl_depo()}
+
+spriteset(ss_COMFp_basea_PUP, "src/SIEMENS/BASE/COMfrontp_basea_PUP_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMFp_basea_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BASE/COMfrontp_basea_PUP_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMFp_basea_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BASE/COMfrontp_basea_PUP_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMFp_basea_PUP_info, "src/SIEMENS/BASE/COMfrontp_basea_PUP_INFO_8bpp.png") {tmpl_depo()}
+//	Long
+spriteset(ss_COML_basea, "src/SIEMENS/BASE/COMlong_basea_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COML_basea, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BASE/COMlong_basea_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COML_basea, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BASE/COMlong_basea_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COML_basea_info, "src/SIEMENS/BASE/COMlong_basea_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COML_baseb, "src/SIEMENS/BASE/COMlong_baseb_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COML_baseb, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BASE/COMlong_baseb_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COML_baseb, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BASE/COMlong_baseb_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COML_baseb_info, "src/SIEMENS/BASE/COMlong_baseb_INFO_8bpp.png") {tmpl_depo()}
+//	Middle
+spriteset(ss_COMM_baseaa, "src/SIEMENS/BASE/COMmiddle_baseaa_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMM_baseaa, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BASE/COMmiddle_baseaa_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMM_baseaa, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BASE/COMmiddle_baseaa_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMM_baseaa_info, "src/SIEMENS/BASE/COMmiddle_baseaa_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMM_baseab, "src/SIEMENS/BASE/COMmiddle_baseab_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMM_baseab, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BASE/COMmiddle_baseab_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMM_baseab, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BASE/COMmiddle_baseab_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMM_baseab_info, "src/SIEMENS/BASE/COMmiddle_baseab_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMM_baseba, "src/SIEMENS/BASE/COMmiddle_baseba_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMM_baseba, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BASE/COMmiddle_baseba_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMM_baseba, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BASE/COMmiddle_baseba_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMM_baseba_info, "src/SIEMENS/BASE/COMmiddle_baseba_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMM_basebb, "src/SIEMENS/BASE/COMmiddle_basebb_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMM_basebb, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BASE/COMmiddle_basebb_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMM_basebb, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BASE/COMmiddle_basebb_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMM_basebb_info, "src/SIEMENS/BASE/COMmiddle_basebb_INFO_8bpp.png") {tmpl_depo()}
+//	Rear
+spriteset(ss_COMR_basea, "src/SIEMENS/BASE/COMrear_basea_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMR_basea, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BASE/COMrear_basea_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMR_basea, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BASE/COMrear_basea_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMR_basea_info, "src/SIEMENS/BASE/COMrear_basea_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMR_baseb, "src/SIEMENS/BASE/COMrear_baseb_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMR_baseb, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BASE/COMrear_baseb_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMR_baseb, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BASE/COMrear_baseb_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMR_baseb_info, "src/SIEMENS/BASE/COMrear_baseb_INFO_8bpp.png") {tmpl_depo()}
+
+// --------------------------------------------------------------------------------COMbase End
+// --
+// --

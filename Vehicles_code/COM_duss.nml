@@ -1,0 +1,66 @@
+// --------------------------------------------------------------------------------COMduss
+
+/*
+COM5dussa
+	ss_COMF_dussa
+	ss_COML_dussa
+	ss_COMMp_dussa
+		ss_COMMp_dussa_PUP
+	ss_COMS_dussa
+	ss_COMR_dussa
+COM5dussb
+*/
+//	Front
+spriteset(ss_COMF_dussa, "src/SIEMENS/DUSS/COMfront_dussa_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMF_dussa, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/DUSS/COMfront_dussa_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMF_dussa, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/DUSS/COMfront_dussa_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMF_dussa_info, "src/SIEMENS/DUSS/COMfront_dussa_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMF_dussb, "src/SIEMENS/DUSS/COMfront_dussb_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMF_dussb, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/DUSS/COMfront_dussb_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMF_dussb, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/DUSS/COMfront_dussb_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMF_dussb_info, "src/SIEMENS/DUSS/COMfront_dussb_INFO_8bpp.png") {tmpl_depo()}
+//	Middle
+spriteset(ss_COMM_dussa, "src/SIEMENS/DUSS/COMmiddle_dussa_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMM_dussa, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/DUSS/COMmiddle_dussa_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMM_dussa, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/DUSS/COMmiddle_dussa_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMM_dussa_info, "src/SIEMENS/DUSS/COMmiddle_dussa_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMM_dussb, "src/SIEMENS/DUSS/COMmiddle_dussb_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMM_dussb, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/DUSS/COMmiddle_dussb_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMM_dussb, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/DUSS/COMmiddle_dussb_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMM_dussb_info, "src/SIEMENS/DUSS/COMmiddle_dussb_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMM_dussc, "src/SIEMENS/DUSS/COMmiddle_dussc_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMM_dussc, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/DUSS/COMmiddle_dussc_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMM_dussc, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/DUSS/COMmiddle_dussc_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMM_dussc_info, "src/SIEMENS/DUSS/COMmiddle_dussc_INFO_8bpp.png") {tmpl_depo()}
+//	Short
+spriteset(ss_COMS_dussa, "src/SIEMENS/DUSS/COMshort_dussa_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMS_dussa, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/DUSS/COMshort_dussa_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMS_dussa, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/DUSS/COMshort_dussa_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMS_dussa_info, "src/SIEMENS/DUSS/COMshort_dussa_INFO_8bpp.png") {tmpl_depo()}
+//	Short panto
+spriteset(ss_COMSp_dussa, "src/SIEMENS/DUSS/COMshortp_dussa_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMSp_dussa, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/DUSS/COMshortp_dussa_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMSp_dussa, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/DUSS/COMshortp_dussa_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMSp_dussa_info, "src/SIEMENS/DUSS/COMshortp_dussa_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMSp_dussb, "src/SIEMENS/DUSS/COMshortp_dussb_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMSp_dussb, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/DUSS/COMshortp_dussb_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMSp_dussb, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/DUSS/COMshortp_dussb_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMSp_dussb_info, "src/SIEMENS/DUSS/COMshortp_dussb_INFO_8bpp.png") {tmpl_depo()}
+
+spriteset(ss_COMSp_dussa_PUP, "src/SIEMENS/DUSS/COMshortp_dussa_PUP_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMSp_dussa_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/DUSS/COMshortp_dussa_PUP_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMSp_dussa_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/DUSS/COMshortp_dussa_PUP_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMSp_dussa_PUP_info, "src/SIEMENS/DUSS/COMshortp_dussa_PUP_INFO_8bpp.png") {tmpl_depo()}
+//	Rear
+spriteset(ss_COMR_dussa, "src/SIEMENS/DUSS/COMrear_dussa_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMR_dussa, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/DUSS/COMrear_dussa_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMR_dussa, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/DUSS/COMrear_dussa_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMR_dussa_info, "src/SIEMENS/DUSS/COMrear_dussa_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMR_dussb, "src/SIEMENS/DUSS/COMrear_dussb_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMR_dussb, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/DUSS/COMrear_dussb_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMR_dussb, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/DUSS/COMrear_dussb_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMR_dussb_info, "src/SIEMENS/DUSS/COMrear_dussb_INFO_8bpp.png") {tmpl_depo()}
+
+// --------------------------------------------------------------------------------COMduss End
+// --
+// --

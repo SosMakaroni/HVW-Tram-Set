@@ -3,7 +3,7 @@
 
 # GRF name and description definitions	
 STR_GRF_NAME	:HVW Tram Set
-STR_GRF_DESC	:{}{LTBLUE}Tram Set{}{BLACK}Code and model:{GREEN}SosMakaroni{} {COPYRIGHT}2022 SosMakaroni{}{GRAY}License: GPLv2{}{BLACK}Ver.18 2023.07.20.
+STR_GRF_DESC	:{}{LTBLUE}Tram Set{}{BLACK}Code and model:{GREEN}SosMakaroni{} {COPYRIGHT}2022 SosMakaroni{}{GRAY}License: GPLv2{}{BLACK}Ver.205 2024.08.26.
 
 STR_BUG	:HVW Toyland bug, sorry :(
 
@@ -27,32 +27,32 @@ STR_PARAM_CARGOC_8:x8
 STR_F_NAME	:Schlick F
 
 STR_FA_NAME	:Schlick F {BROWN}Wood{BLACK}
-STR_FA_ADAT	:{GOLD}----------{}The{BLACK} Schlick {GOLD}factory built 50 {BLACK}F-type{GOLD} motor cars during 1904-1905,{} which were given track number 196-245 at the Budapest City Electric Railway (BVVV).{BLACK}{}
+STR_FA_ADAT	:{GOLD}----------{}{BLACK}{}
 STR_FA_INFO	:Schlick F
 STR_FA_BUY		:Wood body
 
 STR_FAP_NAME	:Schlick F + M trailer {BROWN}Wood{BLACK}
-STR_FAP_ADAT	:{GOLD}----------{}The{BLACK} Schlick {GOLD}factory built 50 {BLACK}F-type{GOLD} motor cars during 1904-1905,{} which were given track number 196-245 at the Budapest City Electric Railway (BVVV).{BLACK}{}
+STR_FAP_ADAT	:{GOLD}----------{}{BLACK}{}
 STR_FAP_INFO	:Schlick F with M trailer
 STR_FAP_BUY	:Wood body with M trailer
 
 STR_FB_NAME	:Schlick F
-STR_FB_ADAT	:{GOLD}----------{}In 1956, the steel frame conversions of the{BLACK} Schlick F-type {GOLD}motor cars began.{} During the conversion, several developments were launched at later times, so the trams came out of the main workshop in several versions.{BLACK}{}
+STR_FB_ADAT	:{GOLD}----------{}{BLACK}{}
 STR_FB_INFO	:Schlick F
 STR_FB_BUY		:Steel body
 
 STR_FBP_NAME	:Schlick F + N trailer
-STR_FBP_ADAT	:{GOLD}----------{}In 1956, the steel frame conversions of the{BLACK} Schlick F-type {GOLD}motor cars began.{} During the conversion, several developments were launched at later times, so the trams came out of the main workshop in several versions.{BLACK}{}
+STR_FBP_ADAT	:{GOLD}----------{}{BLACK}{}
 STR_FBP_INFO	:Schlick F with N trailer
 STR_FBP_BUY	:Steel body with N trailer
 
 STR_FBPP_NAME	:Schlick F + 2 N trailer
-STR_FBPP_ADAT	:{GOLD}----------{}In 1956, the steel frame conversions of the{BLACK} Schlick F-type {GOLD}motor cars began.{} During the conversion, several developments were launched at later times, so the trams came out of the main workshop in several versions.{BLACK}{}
+STR_FBPP_ADAT	:{GOLD}----------{}{BLACK}{}
 STR_FBPP_INFO	:Schlick F with 2 N trailer
 STR_FBPP_BUY	:Steel body with 2 N trailer
 
 STR_FT_NAME	:Schlick F twin
-STR_FT_ADAT	:{GOLD}----------{}In 1956, the steel frame conversions of the{BLACK} Schlick F-type {GOLD}motor cars began.{} During the conversion, several developments were launched at later times, so the trams came out of the main workshop in several versions.{BLACK}{}
+STR_FT_ADAT	:{GOLD}----------{}{BLACK}{}
 STR_FT_INFO	:Schlick F twin
 STR_FT_BUY		:Steel body twin
 
@@ -65,55 +65,55 @@ STR_RVpp_BUY	:Double with 2 trailer
 STR_RVpmp_BUY	:Triple with 2 trailer
 
 STR_OPIa_NAME	:Ganz OPI twin
-STR_OPIa_ADAT	:{GOLD}----------{}The central-entrance{BLACK} O{GOLD} cars were made in the early '30s by Ganz, for Budapest Capitol TransportationCompany (BSzKRt).{} These were the first fully steel-bodied tramcars in Budapest.{BLACK}{}
+STR_OPIa_ADAT	:{GOLD}----------{}{BLACK}Nickname:{GOLD} Somersault{BLACK}{}
 STR_OPIa_INFO	:Ganz OPI twin
-STR_OPIa_BUY	:Twin - B.Sz.K.Rt. style
+STR_OPIa_BUY	:Twin - B.Sz.K.Rt. livery
 
 STR_OPIb_NAME	:Ganz OPI twin
-STR_OPIb_ADAT	:{GOLD}----------{}The central-entrance{BLACK} O{GOLD} cars were made in the early '30s by Ganz, for Budapest Capitol TransportationCompany (BSzKRt).{} These were the first fully steel-bodied tramcars in Budapest.{BLACK}{}
+STR_OPIb_ADAT	:{GOLD}----------{}{BLACK}Nickname:{GOLD} Somersault{BLACK}{}
 STR_OPIb_INFO	:Ganz OPI twin
-STR_OPIb_BUY	:Twin - F.V.V. style
+STR_OPIb_BUY	:Twin - F.V.V. livery
 
 STR_RVap_NAME	:Ganz RV double + trailer
-STR_RVap_ADAT	:{GOLD}----------{}The central-entrance{BLACK} RV{GOLD} cars were made in the early '30s by Ganz, for Budapest Capitol TransportationCompany (BSzKRt).{} These were the first fully steel-bodied tramcars in Budapest.{BLACK}{}
+STR_RVap_ADAT	:{GOLD}----------{}{BLACK}Nickname:{GOLD} Somersault{BLACK}{}
 STR_RVap_INFO	:Ganz RV double with trailer
-STR_RVap_BUY	:B.Sz.K.Rt. style
+STR_RVap_BUY	:B.Sz.K.Rt. livery
 
 STR_RVbp_NAME	:Ganz RV double + trailer
-STR_RVbp_ADAT	:{GOLD}----------{}The central-entrance{BLACK} RV{GOLD} cars were made in the early '30s by Ganz, for Budapest Capitol TransportationCompany (BSzKRt).{} These were the first fully steel-bodied tramcars in Budapest.{BLACK}{}
+STR_RVbp_ADAT	:{GOLD}----------{}{BLACK}Nickname:{GOLD} Somersault{BLACK}{}
 STR_RVbp_INFO	:Ganz RV double with trailer
-STR_RVbp_BUY	:F.V.V. style
+STR_RVbp_BUY	:F.V.V. livery
 
 STR_RVapp_NAME	:Ganz RV double + 2 trailer
-STR_RVapp_ADAT	:{GOLD}----------{}The central-entrance{BLACK} RV{GOLD} cars were made in the early '30s by Ganz, for Budapest Capitol TransportationCompany (BSzKRt).{} These were the first fully steel-bodied tramcars in Budapest.{BLACK}{}
+STR_RVapp_ADAT	:{GOLD}----------{}{BLACK}Nickname:{GOLD} Somersault{BLACK}{}
 STR_RVapp_INFO	:Ganz RV double with 2 trailer
-STR_RVapp_BUY	:B.Sz.K.Rt. style
+STR_RVapp_BUY	:B.Sz.K.Rt. livery
 
 STR_RVbpp_NAME	:Ganz RV double + 2 trailer
-STR_RVbpp_ADAT	:{GOLD}----------{}The central-entrance{BLACK} RV{GOLD} cars were made in the early '30s by Ganz, for Budapest Capitol TransportationCompany (BSzKRt).{} These were the first fully steel-bodied tramcars in Budapest.{BLACK}{}
+STR_RVbpp_ADAT	:{GOLD}----------{}{BLACK}Nickname:{GOLD} Somersault{BLACK}{}
 STR_RVbpp_INFO	:Ganz RV double with 2 trailer
-STR_RVbpp_BUY	:F.V.V. style
+STR_RVbpp_BUY	:F.V.V. livery
 
 STR_RVapmp_NAME	:Ganz RV triple + 2 trailer
-STR_RVapmp_ADAT	:{GOLD}----------{}The central-entrance{BLACK} RV{GOLD} cars were made in the early '30s by Ganz, for Budapest Capitol TransportationCompany (BSzKRt).{} These were the first fully steel-bodied tramcars in Budapest.{BLACK}{}
+STR_RVapmp_ADAT	:{GOLD}----------{}{BLACK}Nickname:{GOLD} Somersault{BLACK}{}
 STR_RVapmp_INFO	:Ganz RV triple with 2 trailer
-STR_RVapmp_BUY	:B.Sz.K.Rt. style
+STR_RVapmp_BUY	:B.Sz.K.Rt. livery
 
 STR_RVbpmp_NAME	:Ganz RV triple + 2 trailer
-STR_RVbpmp_ADAT	:{GOLD}----------{}The central-entrance{BLACK} RV{GOLD} cars were made in the early '30s by Ganz, for Budapest Capitol TransportationCompany (BSzKRt).{} These were the first fully steel-bodied tramcars in Budapest.{BLACK}{}
+STR_RVbpmp_ADAT	:{GOLD}----------{}{BLACK}Nickname:{GOLD} Somersault{BLACK}{}
 STR_RVbpmp_INFO	:Ganz RV triple with 2 trailer
-STR_RVbpmp_BUY	:F.V.V. style
+STR_RVbpmp_BUY	:F.V.V. livery
 
 
 STR_SB_NAME	:Ganz RailCar
 
 STR_SBa_NAME	:Ganz RailCar
-STR_SBa_ADAT	:{GOLD}----------{}In 1927, the BSzKRt. also purchased five gasoline-mechanical, riveted steel frame railcars from Ganz for night routes.{BLACK}{}
+STR_SBa_ADAT	:{GOLD}----------{}{BLACK}{}
 STR_SBa_INFO	:Ganz RailCar
 STR_SBa_BUY		:Gasoline engine
 
 STR_SBb_NAME	:Ganz RailCar
-STR_SBb_ADAT	:{GOLD}----------{}In 1951 FVV. handed over to Szombathely. The cars were equipped with a Electric 37HP Unió engine in the Dózsa main workshop.{BLACK}{}
+STR_SBb_ADAT	:{GOLD}----------{}{BLACK}{}
 STR_SBb_INFO	:Ganz RailCar
 STR_SBb_BUY	:Electric engine
 
@@ -123,66 +123,66 @@ STR_BE3_BUY	:3 doors
 STR_BE1_BUY	:8/10 doors
 
 STR_BE3a_NAME	:FVV CSM - 3 doors
-STR_BE3a_ADAT	:{GOLD}----------{}The {BLACK}FVV CSM{GOLD} is a four-axis articulated tram manufactured by FVV, between 1961 and 1963.{}{BLACK}Nickname:{GOLD} "Bengáli" unwieldy{BLACK}{}{BLACK}Version: {GOLD}3 doors, 1 driving positions{BLACK}{}
+STR_BE3a_ADAT	:{GOLD}----------{}{BLACK}Nickname:{GOLD} "Bengáli" unwieldy{BLACK}{}{BLACK}Version: {GOLD}3 doors, 1 driving positions{BLACK}{}
 STR_BE3a_INFO	:FVV CSM
-STR_BE3a_BUY	:Budapest style
+STR_BE3a_BUY	:Budapest livery
 
 STR_BE3proto_NAME	:FVV CSM prototype - 3 doors
-STR_BE3proto_ADAT	:{GOLD}----------{}The {BLACK}FVV CSM{GOLD} is a four-axis articulated tram manufactured by FVV, between 1961 and 1963.{}{BLACK}Nickname:{GOLD} "Bengáli" unwieldy{BLACK}{}{BLACK}Version: {GOLD}3 doors, 1 driving positions{BLACK}{}
+STR_BE3proto_ADAT	:{GOLD}----------{}{BLACK}Nickname:{GOLD} "Bengáli" unwieldy{BLACK}{}{BLACK}Version: {GOLD}3 doors, 1 driving positions{BLACK}{}
 STR_BE3proto_INFO	:FVV CSM
 STR_BE3proto_BUY	:Prototype
 
-STR_BE3pepsi_NAME	:FVV CSM Pepsi advertising style - 3 doors
-STR_BE3pepsi_ADAT	:{GOLD}----------{}The {BLACK}FVV CSM{GOLD} is a four-axis articulated tram manufactured by FVV, between 1961 and 1963.{}{BLACK}Nickname:{GOLD} "Bengáli" unwieldy{BLACK}{}{BLACK}Version: {GOLD}3 doors, 1 driving positions{BLACK}{}
+STR_BE3pepsi_NAME	:FVV CSM Pepsi advertising livery - 3 doors
+STR_BE3pepsi_ADAT	:{GOLD}----------{}{BLACK}Nickname:{GOLD} "Bengáli" unwieldy{BLACK}{}{BLACK}Version: {GOLD}3 doors, 1 driving positions{BLACK}{}
 STR_BE3pepsi_INFO	:FVV CSM
-STR_BE3pepsi_BUY	:Pepsi advertising style
+STR_BE3pepsi_BUY	:Pepsi advertising livery
 
 STR_BE4a_NAME	:FVV CSM - 3 doors
-STR_BE4a_ADAT	:{GOLD}----------{}The {BLACK}FVV CSM{GOLD} is a four-axis articulated tram manufactured by FVV, between 1963 and 1965.{}{BLACK}Nickname:{GOLD} "Bengáli" unwieldy{BLACK}{}{BLACK}Version: {GOLD}3 doors, 2 driving positions{BLACK}{}
+STR_BE4a_ADAT	:{GOLD}----------{}{BLACK}Nickname:{GOLD} "Bengáli" unwieldy{BLACK}{}{BLACK}Version: {GOLD}3 doors, 2 driving positions{BLACK}{}
 STR_BE4a_INFO	:FVV CSM
-STR_BE4a_BUY	:2 directions - Budapest style
+STR_BE4a_BUY	:2 directions - Budapest livery
 
 STR_BE5_NAME	:FVV CSM - 5 doors
-STR_BE5_ADAT	:{GOLD}----------{}The {BLACK}FVV CSM{GOLD} is a four-axis articulated tram manufactured by FVV, between 1967 and 1973.{}{BLACK}Nickname:{GOLD} "Bengáli" unwieldy{BLACK}{}{BLACK}Version: {GOLD}5 doors, 2 driving positions{BLACK}{}
+STR_BE5_ADAT	:{GOLD}----------{}{BLACK}Nickname:{GOLD} "Bengáli" unwieldy{BLACK}{}{BLACK}Version: {GOLD}5 doors, 2 driving positions{BLACK}{}
 STR_BE5_INFO	:FVV CSM
 STR_BE5_BUY	:5 doors, 2 directions 
 
 STR_BE6_NAME	:FVV CSM - 6 doors
-STR_BE6_ADAT	:{GOLD}----------{}The {BLACK}FVV CSM{GOLD} is a four-axis articulated tram manufactured by FVV, between 1969 and 1970.{}{BLACK}Nickname:{GOLD} "Bengáli" unwieldy{BLACK}{}{BLACK}Version: {GOLD}6 doors, 2 driving positions{BLACK}{}
+STR_BE6_ADAT	:{GOLD}----------{}{BLACK}Nickname:{GOLD} "Bengáli" unwieldy{BLACK}{}{BLACK}Version: {GOLD}6 doors, 2 driving positions{BLACK}{}
 STR_BE6_INFO	:FVV CSM
 STR_BE6_BUY	:6 doors, 2 directions
 
 STR_BE1a_NAME	:FVV CSM prototype - 8 doors
-STR_BE1a_ADAT	:{GOLD}----------{}The {BLACK}FVV CSM{GOLD} is a four-axis, 2 driving positions articulated prototype tram manufactured by FVV, 1963.{}{BLACK}Nickname:{GOLD} "Bengáli" unwieldy{BLACK}{}{BLACK}Version: {GOLD}8 doors, 2 driving positions{BLACK}{}
+STR_BE1a_ADAT	:{GOLD}----------{}{BLACK}Nickname:{GOLD} "Bengáli" unwieldy{BLACK}{}{BLACK}Version: {GOLD}8 doors, 2 driving positions{BLACK}{}
 STR_BE1a_INFO	:FVV CSM
 STR_BE1a_BUY	:8 doors, 2 directions - Prototype
 
-STR_BE1b_NAME	:FVV CSM Budapest style - 10 doors
-STR_BE1b_ADAT	:{GOLD}----------{}The {BLACK}FVV CSM{GOLD} is a four-axis articulated tram manufactured by FVV, between 1963 and 1978.{}{BLACK}Nickname:{GOLD} "Bengáli" unwieldy{BLACK}{}{BLACK}Version: {GOLD}10 doors, 2 driving positions{BLACK}{}
+STR_BE1b_NAME	:FVV CSM Budapest livery - 10 doors
+STR_BE1b_ADAT	:{GOLD}----------{}{BLACK}Nickname:{GOLD} "Bengáli" unwieldy{BLACK}{}{BLACK}Version: {GOLD}10 doors, 2 driving positions{BLACK}{}
 STR_BE1b_INFO	:FVV CSM
-STR_BE1b_BUY	:10 doors, 2 directions - Budapest style
+STR_BE1b_BUY	:10 doors, 2 directions - Budapest livery
 
-STR_BE1c_NAME	:FVV CSM Newer Budapest style - 10 doors
-STR_BE1c_ADAT	:{GOLD}----------{}The {BLACK}FVV CSM{GOLD} is a four-axis articulated tram manufactured by FVV, between 1963 and 1978.{}{BLACK}Nickname:{GOLD} "Bengáli" unwieldy{BLACK}{}{BLACK}Version: {GOLD}10 doors, 2 driving positions{BLACK}{}
+STR_BE1c_NAME	:FVV CSM Budapest livery - 10 doors
+STR_BE1c_ADAT	:{GOLD}----------{}{BLACK}Nickname:{GOLD} "Bengáli" unwieldy{BLACK}{}{BLACK}Version: {GOLD}10 doors, 2 driving positions{BLACK}{}
 STR_BE1c_INFO	:FVV CSM
-STR_BE1c_BUY	:10 doors, 2 directions - Newer Budapest style
+STR_BE1c_BUY	:10 doors, 2 directions - Budapest livery
 
 
 STR_ICS_NAME	:Ganz ICS
 STR_KCSV_NAME	:Ganz KCSV
 
 STR_ICS1_NAME	:Ganz ICS
-STR_ICS1_ADAT	:{GOLD}----------{}The {BLACK}Ganz ICS{GOLD} is a eight-axis tram manufactured by Ganz between 1967 and 1978.{}{BLACK}Nickname:{GOLD} Industrial articulation{BLACK}{}
+STR_ICS1_ADAT	:{GOLD}----------{}{BLACK}Nickname:{GOLD} Industrial articulation{BLACK}{}
 STR_ICS1_INFO	:Ganz ICS
 STR_ICS1_BUY	:ICS
 
 STR_ICS2_NAME	:Ganz ICS double
-STR_ICS2_ADAT	:{GOLD}----------{}The {BLACK}Ganz ICS{GOLD} is a eight-axis tram manufactured by Ganz between 1967 and 1978.{}{BLACK}Nickname:{GOLD} Industrial articulation{BLACK}{}
+STR_ICS2_ADAT	:{GOLD}----------{}{BLACK}Nickname:{GOLD} Industrial articulation{BLACK}{}
 STR_ICS2_INFO	:Ganz ICS
 STR_ICS2_BUY	:ICS double
 
 STR_KCSV7_NAME	:Ganz KCSV7
-STR_KCSV7_ADAT	:{GOLD}----------{}The {BLACK}Ganz KCSV7{GOLD} type name covers the 30 vehicles rebuilt between 1996 and 1999 by the Ganz ICS articulated vehicles.{}{BLACK}Nickname:{GOLD} Industrial articulation{BLACK}{}
+STR_KCSV7_ADAT	:{GOLD}----------{}{BLACK}{}
 STR_KCSV7_INFO	:Ganz KCSV7
 STR_KCSV7_BUY		:KCSV7
 
@@ -190,40 +190,79 @@ STR_KCSV7_BUY		:KCSV7
 STR_T5C5_NAME	:Tatra T5C5
 
 STR_T5C51a_NAME	:Tatra T5C5
-STR_T5C51a_ADAT	:{GOLD}----------{}The{BLACK} Tatra T5C5 {GOLD}is a single-car tram built by ČKD Tatra in Prague, between 1978 and 1984, 322 vehicles were supplied to Budapest.{}{BLACK}T5C5{GOLD} differed in many ways to earlier Tatra products, most notably that the vehicle was controlled by a hand lever rather than a foot pedal.{BLACK}{}
+STR_T5C51a_ADAT	:{GOLD}----------{BLACK}{}
 STR_T5C51a_INFO	:Tatra T5C5
-STR_T5C51a_BUY	:Single - Budapest style
+STR_T5C51a_BUY	:Single - Budapest livery
 
 STR_T5C51b_NAME	:Tatra T5C5 Prototype
-STR_T5C51b_ADAT	:{GOLD}----------{}The{BLACK} Tatra T5C5 {GOLD}is a single-car tram built by ČKD Tatra in Prague, between 1978 and 1984, 322 vehicles were supplied to Budapest.{}{BLACK}T5C5{GOLD} differed in many ways to earlier Tatra products, most notably that the vehicle was controlled by a hand lever rather than a foot pedal.{BLACK}{}
+STR_T5C51b_ADAT	:{GOLD}----------{BLACK}{}
 STR_T5C51b_INFO	:Tatra T5C5
 STR_T5C51b_BUY	:Single - Prototype
 
 STR_T5C52a_NAME	:Tatra T5C5 double
-STR_T5C52a_ADAT	:{GOLD}----------{}The{BLACK} Tatra T5C5 {GOLD}is a single-car tram built by ČKD Tatra in Prague, between 1978 and 1984, 322 vehicles were supplied to Budapest.{}{BLACK}T5C5{GOLD} differed in many ways to earlier Tatra products, most notably that the vehicle was controlled by a hand lever rather than a foot pedal.{BLACK}{}
+STR_T5C52a_ADAT	:{GOLD}----------{BLACK}{}
 STR_T5C52a_INFO	:Tatra T5C5
-STR_T5C52a_BUY	:Double - Budapest style
+STR_T5C52a_BUY	:Double - Budapest livery
 
 STR_T5C53a_NAME	:Tatra T5C5 triple
-STR_T5C53a_ADAT	:{GOLD}----------{}The{BLACK} Tatra T5C5 {GOLD}is a single-car tram built by ČKD Tatra in Prague, between 1978 and 1984, 322 vehicles were supplied to Budapest.{}{BLACK}T5C5{GOLD} differed in many ways to earlier Tatra products, most notably that the vehicle was controlled by a hand lever rather than a foot pedal.{BLACK}{}
+STR_T5C53a_ADAT	:{GOLD}----------{BLACK}{}
 STR_T5C53a_INFO	:Tatra T5C5
-STR_T5C53a_BUY	:Triple - Budapest style
+STR_T5C53a_BUY	:Triple - Budapest livery
+
+STR_T6A2_NAME	:Tatra T6A2
+
+STR_T6A2a_NAME	:Tatra T6A2 Szeged livery
+STR_T6A2a_ADAT	:{GOLD}----------{}{BLACK}{}
+STR_T6A2a_INFO	:Tatra T6A2
+STR_T6A2a_BUY	:Single - Szeged livery
+
+STR_T6A5_NAME	:Tatra T6A5
+STR_T6A5_ADAT	:{GOLD}----------{}{BLACK}Color variations:{GOLD} Bratislava, Brno, Ostrava{BLACK}{}
+STR_T6A5_INFO	:Tatra T6A5
+STR_T6A5_BUY	:Single
+STR_T6A52_BUY	:Double
+
+STR_T6A5a_VER	: - Bratislava livery
+STR_T6A5b_VER	: - Bratislava livery - new pantograph
+STR_T6A5c_VER	: - Bratislava monocolor livery
+STR_T6A5d_VER	: - Bratislava livery
+STR_T6A5e_VER	: - Brno livery
+STR_T6A5f_VER	: - Brno livery
+STR_T6A5g_VER	: - Ostrava livery
+
+
+STR_KT8D5_NAME	:Tatra KT8D5
+
+STR_KT8D5a_NAME	:Tatra KT8D5 Proto livery
+STR_KT8D5a_ADAT	:{GOLD}----------{}{BLACK}{}
+STR_KT8D5a_INFO	:Tatra KT8D5
+STR_KT8D5a_BUY	:Proto livery
+
+STR_KT8D5b_NAME	:Tatra KT8D5 Miskolc old livery
+STR_KT8D5b_ADAT	:{GOLD}----------{}{BLACK}{}
+STR_KT8D5b_INFO	:Tatra KT8D5
+STR_KT8D5b_BUY	:Miskolc livery
+
+STR_KT8D5c_NAME	:Tatra KT8D5 Miskolc newer livery
+STR_KT8D5c_ADAT	:{GOLD}----------{}{BLACK}{}
+STR_KT8D5c_INFO	:Tatra KT8D5
+STR_KT8D5c_BUY	:Miskolc livery
 
 
 STR_T_NAME	:Ganz TM/TV
 
 STR_TM_NAME	:Ganz TM
-STR_TM_ADAT	:{GOLD}----------{}The {BLACK}GanzTM{GOLD} is a four-axis, two-way, solo tram manufactured by Ganz between 1940 and 1943.{}The type was built based on the American PCC design that became famous in the 1930s.{}{BLACK}Nickname:{GOLD} Stuka (Ju 87){BLACK}{}
+STR_TM_ADAT	:{GOLD}----------{}{BLACK}Nickname:{GOLD} Stuka (Ju 87){BLACK}{}
 STR_TM_INFO	:Ganz TM
 STR_TM_BUY		:TM
 
 STR_TMP_NAME	:Ganz TM + 5800 trailer
-STR_TMP_ADAT	:{GOLD}----------{}The {BLACK}GanzTM{GOLD} is a four-axis, two-way, solo tram manufactured by Ganz between 1940 and 1943.{}The type was built based on the American PCC design that became famous in the 1930s.{}{BLACK}Nickname:{GOLD} Stuka (Ju 87){BLACK}{}
+STR_TMP_ADAT	:{GOLD}----------{}{BLACK}Nickname:{GOLD} Stuka (Ju 87){BLACK}{}
 STR_TMP_INFO	:Ganz TM
 STR_TMP_BUY	:TM with 5800 trailer
 
 STR_TV_NAME	:Ganz TV triple
-STR_TV_ADAT	:{GOLD}----------{}The {BLACK}Ganz TV{GOLD} was made from three TM cars damaged in World War II.{}The remote control of the electric braking of the cars was also solved, their middle door became double-leaf.{}{BLACK}Nickname:{GOLD} Szellem (Ghost){BLACK}{}
+STR_TV_ADAT	:{GOLD}----------{}{BLACK}Nickname:{GOLD} Ghost{BLACK}{}
 STR_TV_INFO	:Ganz TV
 STR_TV_BUY		:TV triple
 
@@ -231,120 +270,268 @@ STR_TV_BUY		:TV triple
 STR_UV_NAME	:Ganz UV
 
 STR_UV11_NAME	:Ganz UV1
-STR_UV11_ADAT	:{GOLD}----------{}The {BLACK}Ganz UV{GOLD} type was developed from TM cars.{}{BLACK}Version: {GOLD}2 driving positions{BLACK}{}
+STR_UV11_ADAT	:{GOLD}----------{}{BLACK}Version: {GOLD}2 driving positions{BLACK}{}
 STR_UV11_INFO	:Ganz UV
 STR_UV11_BUY	:2 directions motorcar
 
 STR_UV12_NAME	:Ganz UV1 double
-STR_UV12_ADAT	:{GOLD}----------{}The {BLACK}Ganz UV{GOLD} type was developed from TM cars.{}{BLACK}Version: {GOLD}2 driving positions{BLACK}{}
+STR_UV12_ADAT	:{GOLD}----------{}{BLACK}Version: {GOLD}2 driving positions{BLACK}{}
 STR_UV12_INFO	:Ganz UV
 STR_UV12_BUY	:Double 2 directions motorcar
 
 STR_UV32_NAME	:Ganz UV3 double
-STR_UV32_ADAT	:{GOLD}----------{}The {BLACK}Ganz UV{GOLD} type was developed from TM cars.{}{BLACK}Version: {GOLD}1 driving positions{BLACK}{}
+STR_UV32_ADAT	:{GOLD}----------{}{BLACK}Version: {GOLD}1 driving positions{BLACK}{}
 STR_UV32_INFO	:Ganz UV
 STR_UV32_BUY	:Double
-STR_UV322_BUY	:Budapest style
+STR_UV322_BUY	:Budapest livery
 
-STR_UV32pepsi_NAME	:Ganz UV3 double Pepsi advertising style
-STR_UV32pepsi_ADAT	:{GOLD}----------{}The {BLACK}Ganz UV{GOLD} type was developed from TM cars.{}{BLACK}Version: {GOLD}1 driving positions{BLACK}{}
+STR_UV32pepsi_NAME	:Ganz UV3 double Pepsi advertising livery
+STR_UV32pepsi_ADAT	:{GOLD}----------{}{BLACK}Version: {GOLD}1 driving positions{BLACK}{}
 STR_UV32pepsi_INFO	:Ganz UV
 STR_UV32pepsi_BUY		:Double
-STR_UV32pepsi2_BUY		:Pepsi advertising style
+STR_UV32pepsi2_BUY		:Pepsi advertising livery
 
 STR_UV3P_NAME	:Ganz UV3 double + 5900 trailer
-STR_UV3P_ADAT	:{GOLD}----------{}The {BLACK}Ganz UV{GOLD} type was developed from TM cars.{}{BLACK}Version: {GOLD}1 driving positions{BLACK}{}
+STR_UV3P_ADAT	:{GOLD}----------{}{BLACK}Version: {GOLD}1 driving positions{BLACK}{}
 STR_UV3P_INFO	:Ganz UV + 5900
 STR_UV3P_BUY	:Double + 5900 trailer
 
 STR_UV52_NAME	:Ganz UV5 double
-STR_UV52_ADAT	:{GOLD}----------{}The {BLACK}Ganz UV{GOLD} type was developed from TM cars.{}{BLACK}Version: {GOLD}Wide middle door{BLACK}{}
+STR_UV52_ADAT	:{GOLD}----------{}{BLACK}Version: {GOLD}Wide middle door{BLACK}{}
 STR_UV52_INFO	:Ganz UV
 STR_UV52_BUY	:Double wide middle doors
 
 STR_UV5P_NAME	:Ganz UV5 double + 6000 trailer
-STR_UV5P_ADAT	:{GOLD}----------{}The {BLACK}Ganz UV{GOLD} type was developed from TM cars.{}{BLACK}Version: {GOLD}Wide middle door{BLACK}{}
+STR_UV5P_ADAT	:{GOLD}----------{}{BLACK}Version: {GOLD}Wide middle door{BLACK}{}
 STR_UV5P_INFO	:Ganz UV + 6000
 STR_UV5P_BUY	:Double wide middle doors + 6000 trailer
 
 
 STR_TW6_NAME	:Düwag TW6000
 
-STR_TW6000a_NAME	:Düwag TW6000 Budapest style
-STR_TW6000a_ADAT	:{GOLD}----------{}The {BLACK}TW6000{GOLD} is a type of articulated light rail vehicle used on the Hanover Stadtbahn system, manufactured by Duewag, Linke-Hofmann-Busch, AEG, Kiepe and Siemens.{}{BLACK}Nickname:{GOLD} Banana{BLACK}{}
+STR_TW6000a_NAME	:Düwag TW6000 Budapest livery
+STR_TW6000a_ADAT	:{GOLD}----------{}{BLACK}Nickname:{GOLD} Banana{BLACK}{}
 STR_TW6000a_INFO	:Düwag TW6000
-STR_TW6000a_BUY	:Budapest style
+STR_TW6000a_BUY	:Budapest livery
 
-STR_TW6000b_NAME	:Düwag TW6000 Hanover style
-STR_TW6000b_ADAT	:{GOLD}----------{}The {BLACK}TW6000{GOLD} is a type of articulated light rail vehicle used on the Hanover Stadtbahn system, manufactured by Duewag, Linke-Hofmann-Busch, AEG, Kiepe and Siemens.{}
+STR_TW6000b_NAME	:Düwag TW6000 Hanover livery
+STR_TW6000b_ADAT	:{GOLD}----------{}{BLACK}{}
 STR_TW6000b_INFO	:Düwag TW6000
-STR_TW6000b_BUY	:Hanover style
+STR_TW6000b_BUY	:Hanover livery
 STR_TW6000b2_BUY		:Single
 
-STR_TW6002b_NAME	:Düwag TW6000 double Hanover style
-STR_TW6002b_ADAT	:{GOLD}----------{}The {BLACK}TW6000{GOLD} is a type of articulated light rail vehicle used on the Hanover Stadtbahn system, manufactured by Duewag, Linke-Hofmann-Busch, AEG, Kiepe and Siemens.{}
+STR_TW6002b_NAME	:Düwag TW6000 double Hanover livery
+STR_TW6002b_ADAT	:{GOLD}----------{}{BLACK}{}
 STR_TW6002b_INFO	:Düwag TW6000
-STR_TW6002b_BUY	:Hanover style
+STR_TW6002b_BUY	:Hanover livery
 STR_TW6002b2_BUY		:Double
 
-STR_TW6000c_NAME	:Düwag TW6000 The Hague style
-STR_TW6000c_ADAT	:{GOLD}----------{}The {BLACK}TW6000{GOLD} is a type of articulated light rail vehicle used on the Hanover Stadtbahn system, manufactured by Duewag, Linke-Hofmann-Busch, AEG, Kiepe and Siemens.{}
+STR_TW6000c_NAME	:Düwag TW6000 The Hague livery
+STR_TW6000c_ADAT	:{GOLD}----------{}{BLACK}{}
 STR_TW6000c_INFO	:Düwag TW6000
-STR_TW6000c_BUY	:The Hague style
+STR_TW6000c_BUY	:The Hague livery
 
-STR_TW6000d_NAME	:Düwag TW6000 Houten style
-STR_TW6000d_ADAT	:{GOLD}----------{}The {BLACK}TW6000{GOLD} is a type of articulated light rail vehicle used on the Hanover Stadtbahn system, manufactured by Duewag, Linke-Hofmann-Busch, AEG, Kiepe and Siemens.{}
+STR_TW6000d_NAME	:Düwag TW6000 Houten livery
+STR_TW6000d_ADAT	:{GOLD}----------{}{BLACK}{}
 STR_TW6000d_INFO	:Düwag TW6000
-STR_TW6000d_BUY	:Houten style
+STR_TW6000d_BUY	:Houten livery
 
-STR_TW6000e_NAME	:Düwag TW6000 Tampere test style
-STR_TW6000e_ADAT	:{GOLD}----------{}The {BLACK}TW6000{GOLD} is a type of articulated light rail vehicle used on the Hanover Stadtbahn system, manufactured by Duewag, Linke-Hofmann-Busch, AEG, Kiepe and Siemens.{}
+STR_TW6000e_NAME	:Düwag TW6000 Tampere test livery
+STR_TW6000e_ADAT	:{GOLD}----------{}{BLACK}{}
 STR_TW6000e_INFO	:Düwag TW6000
-STR_TW6000e_BUY	:Tampere test style
+STR_TW6000e_BUY	:Tampere test livery
+
+
+STR_COM_NAME	:Siemens Combino
+
+STR_COMbp_NAME	:Siemens Combino Supra NF12B - 6 modules
+STR_COMbp_ADAT	:{GOLD}----------{BLACK}{}
+STR_COMbp_INFO	:Siemens Combino Supra
+STR_COMbp_BUY	:Supra 6 modules - Budapest livery
+
+STR_COM5potsa_NAME	:Siemens Combino - 5 modules
+STR_COM5potsa_ADAT	:{GOLD}----------{}{BLACK}Doors: {GOLD}1/2-2/0/2-2/1{}{BLACK}{}
+STR_COM5potsa_INFO	:Siemens Combino
+STR_COM5potsa_BUY	:5 modules - Potsdam livery
+
+STR_COM7augs_NAME	:Siemens Combino - 7 modules
+STR_COM7augs_ADAT	:{GOLD}----------{}{BLACK}Doors: {GOLD}1/2-2/0/2-2/0/2-2/1{}{BLACK}{}
+STR_COM7augs_INFO	:Siemens Combino
+STR_COM7augs_BUY	:7 modules - Augsburg livery
+
+STR_COM7basea_NAME	:Siemens Combino - 7 modules
+STR_COM7basea_ADAT	:{GOLD}----------{}{BLACK}Doors: {GOLD}1/2-2/0/2-2/0/2-2/1{}{BLACK}{}
+STR_COM7basea_INFO	:Siemens Combino
+STR_COM7basea_BUY	:7 modules - Basel livery
+
+STR_COM7baseb_NAME	:Siemens Combino - 7 modules
+STR_COM7baseb_ADAT	:{GOLD}----------{}{BLACK}Doors: {GOLD}1/2-2/0/2-2/0/2-2/1{}{BLACK}{}
+STR_COM7baseb_INFO	:Siemens Combino
+STR_COM7baseb_BUY	:7 modules - Basel livery
+
+STR_COM3erfuc_NAME	:Siemens Combino - 3 modules
+STR_COM3erfuc_ADAT	:{GOLD}----------{}{BLACK}Doors: {GOLD}1/2-2/1{}{BLACK}{}
+STR_COM3erfuc_INFO	:Siemens Combino
+STR_COM3erfuc_BUY	:3 modules - Erfurt livery
+
+STR_COM3erfub_NAME	:Siemens Combino - 3 modules
+STR_COM3erfub_ADAT	:{GOLD}----------{}{BLACK}Doors: {GOLD}1/2-2/1{}{BLACK}{}
+STR_COM3erfub_INFO	:Siemens Combino
+STR_COM3erfub_BUY	:3 modules - Erfurt livery
+
+STR_COM5erfub_NAME	:Siemens Combino - 5 modules
+STR_COM5erfub_ADAT	:{GOLD}----------{}{BLACK}Doors: {GOLD}1/2-2/0/2-2/1{}{BLACK}{}
+STR_COM5erfub_INFO	:Siemens Combino
+STR_COM5erfub_BUY	:5 modules - Erfurt livery
+
+STR_COM5erfua_NAME	:Siemens Combino - 5 modules
+STR_COM5erfua_ADAT	:{GOLD}----------{}{BLACK}Doors: {GOLD}1/2-2/0/2-2/1{}{BLACK}{}
+STR_COM5erfua_INFO	:Siemens Combino
+STR_COM5erfua_BUY	:5 modules - Erfurt livery
+
+STR_COM3melba_NAME	:Siemens Combino - 3 modules
+STR_COM3melba_ADAT	:{GOLD}----------{}{BLACK}Doors: {GOLD}1/2-2/0{}{BLACK}{}
+STR_COM3melba_INFO	:Siemens Combino
+STR_COM3melba_BUY	:3 modules - Melbourne livery
+
+STR_COM5melba_NAME	:Siemens Combino - 5 modules
+STR_COM5melba_ADAT	:{GOLD}----------{}{BLACK}Doors: {GOLD}1/2-2/0/2/0{}{BLACK}{}
+STR_COM5melba_INFO	:Siemens Combino
+STR_COM5melba_BUY	:5 modules - Melbourne livery
+
+STR_COM5bernaa_NAME	:Siemens Combino - 5 modules
+STR_COM5bernaa_ADAT	:{GOLD}----------{}{BLACK}Doors: {GOLD}1/2-2/0/2-2/1{}{BLACK}{}
+STR_COM5bernaa_INFO	:Siemens Combino
+STR_COM5bernaa_BUY	:5 modules - Bern livery
+
+STR_COM5bernab_NAME	:Siemens Combino - 5 modules
+STR_COM5bernab_ADAT	:{GOLD}----------{}{BLACK}Doors: {GOLD}1/2-2/0/2-2/1{}{BLACK}{}
+STR_COM5bernab_INFO	:Siemens Combino
+STR_COM5bernab_BUY	:5 modules - Bern livery
+
+STR_COM7bernaa_NAME	:Siemens Combino - 7 modules
+STR_COM7bernaa_ADAT	:{GOLD}----------{}{BLACK}Doors: {GOLD}1/2-2/0/1/0/2-2/1{}{BLACK}{}
+STR_COM7bernaa_INFO	:Siemens Combino
+STR_COM7bernaa_BUY	:7 modules - Bern livery
+
+STR_COM7bernab_NAME	:Siemens Combino - 7 modules
+STR_COM7bernab_ADAT	:{GOLD}----------{}{BLACK}Doors: {GOLD}1/2-2/0/1/0/2-2/1{}{BLACK}{}
+STR_COM7bernab_INFO	:Siemens Combino
+STR_COM7bernab_BUY	:7 modules - Bern livery
+
+STR_COM7bernba_NAME	:Siemens Combino - 7 modules
+STR_COM7bernba_ADAT	:{GOLD}----------{}{BLACK}Doors: {GOLD}1/2-2/0/1/0/2-2/1{}{BLACK}{}
+STR_COM7bernba_INFO	:Siemens Combino
+STR_COM7bernba_BUY	:7 modules - Bern livery
+
+STR_COM7bernbb_NAME	:Siemens Combino - 7 modules
+STR_COM7bernbb_ADAT	:{GOLD}----------{}{BLACK}Doors: {GOLD}1/2-2/0/1/0/2-2/1{}{BLACK}{}
+STR_COM7bernbb_INFO	:Siemens Combino
+STR_COM7bernbb_BUY	:7 modules - Bern livery
+
+STR_COM5ulm_NAME	:Siemens Combino - 5 modules
+STR_COM5ulm_ADAT	:{GOLD}----------{}{BLACK}Doors: {GOLD}1/2-2/0/2-2/1{}{BLACK}{}
+STR_COM5ulm_INFO	:Siemens Combino
+STR_COM5ulm_BUY		:5 modules - Ulm livery
+
+STR_COM3norda_NAME	:Siemens Combino - 3 modules
+STR_COM3norda_ADAT	:{GOLD}----------{}{BLACK}Doors: {GOLD}1/2-2/1{}{BLACK}{}
+STR_COM3norda_INFO	:Siemens Combino
+STR_COM3norda_BUY	:3 modules - Nordhausen livery
+
+STR_COM3nordba_NAME	:Siemens Combino - 3 modules
+STR_COM3nordba_ADAT	:{GOLD}----------{}{BLACK}Doors: {GOLD}1/2-2/0{}{BLACK}{}
+STR_COM3nordba_INFO	:Siemens Combino
+STR_COM3nordba_BUY	:3 modules - Nordhausen livery
+
+STR_COM3nordbb_NAME	:Siemens Combino - 3 modules
+STR_COM3nordbb_ADAT	:{GOLD}----------{}{BLACK}Doors: {GOLD}1/2-2/0{}{BLACK}{}
+STR_COM3nordbb_INFO	:Siemens Combino
+STR_COM3nordbb_BUY	:3 modules - Nordhausen livery - DUO
+
+STR_COM3nordc_NAME	:Siemens Combino - 3 modules
+STR_COM3nordc_ADAT	:{GOLD}----------{}{BLACK}Doors: {GOLD}1/2-2/1{}{BLACK}{}
+STR_COM3nordc_INFO	:Siemens Combino
+STR_COM3nordc_BUY	:3 modules - Nordhausen livery
+
+STR_COM5amsta_NAME	:Siemens Combino - 5 modules
+STR_COM5amsta_ADAT	:{GOLD}----------{}{BLACK}Doors: {GOLD}1/2/0/2-2/1{}{BLACK}{}
+STR_COM5amsta_INFO	:Siemens Combino
+STR_COM5amsta_BUY	:5 modules - Amsterdam livery
+
+STR_COM5amstb_NAME	:Siemens Combino - 5 modules
+STR_COM5amstb_ADAT	:{GOLD}----------{}{BLACK}Doors: {GOLD}0/2/0/2-2/1{}{BLACK}{}
+STR_COM5amstb_INFO	:Siemens Combino
+STR_COM5amstb_BUY	:5 modules - Amsterdam livery
+
+STR_COM5pozna_NAME	:Siemens Combino - 5 modules
+STR_COM5pozna_ADAT	:{GOLD}----------{}{BLACK}Doors: {GOLD}1/2/0/2-2/1{}{BLACK}{}
+STR_COM5pozna_INFO	:Siemens Combino
+STR_COM5pozna_BUY	:5 modules - Poznań livery
+
+STR_COM5poznb_NAME	:Siemens Combino - 5 modules
+STR_COM5poznb_ADAT	:{GOLD}----------{}{BLACK}Doors: {GOLD}1/2/0/2-2/1{}{BLACK}{}
+STR_COM5poznb_INFO	:Siemens Combino
+STR_COM5poznb_BUY	:5 modules - Poznań livery
+
+STR_COM5dussa_NAME	:Siemens Combino - 5 modules
+STR_COM5dussa_ADAT	:{GOLD}----------{}{BLACK}Doors: {GOLD}2/0/2-2/0/2-2{}{BLACK}{}
+STR_COM5dussa_INFO	:Siemens Combino
+STR_COM5dussa_BUY	:5 modules - Dusseldorf livery
+
+STR_COM5dussb_NAME	:Siemens Combino - 5 modules
+STR_COM5dussb_ADAT	:{GOLD}----------{}{BLACK}Doors: {GOLD}2/0/2-2/0/2-2{}{BLACK}{}
+STR_COM5dussb_INFO	:Siemens Combino
+STR_COM5dussb_BUY	:5 modules - Dusseldorf livery
+
+STR_COM7dussa_NAME	:Siemens Combino - 7 modules
+STR_COM7dussa_ADAT	:{GOLD}----------{}{BLACK}Doors: {GOLD}2/0/2-2/0/2/0/2-2{}{BLACK}{}
+STR_COM7dussa_INFO	:Siemens Combino
+STR_COM7dussa_BUY	:7 modules - Dusseldorf livery
 
 
 STR_CAF_NAME	:CAF Urbos 3
 
-STR_CAFBPH_NAME	:CAF Urbos 3 Budapest style - 9 modules
-STR_CAFBPH_ADAT	:{GOLD}----------{BLACK}{}Urbos 3 {GOLD}(9 modules) is a most longer tram with 100% low floor design.{BLACK}{}
+STR_CAFBPH_NAME	:CAF Urbos 3 Budapest livery - 9 modules
+STR_CAFBPH_ADAT	:{GOLD}----------{}{BLACK}{}
 STR_CAFBPH_INFO	:CAF Urbos 3
-STR_CAFBPH_BUY	:9 modules - Budapest style
+STR_CAFBPH_BUY	:9 modules - Budapest livery
 
-STR_CAFBPR_NAME	:CAF Urbos 3 Budapest style - 5 modules
-STR_CAFBPR_ADAT	:{GOLD}----------{BLACK}{}Urbos 3 {GOLD}(5 modules) is a 100% low floor design.{BLACK}{}
+STR_CAFBPR_NAME	:CAF Urbos 3 Budapest livery - 5 modules
+STR_CAFBPR_ADAT	:{GOLD}----------{}{BLACK}{}
 STR_CAFBPR_INFO	:CAF Urbos 3
-STR_CAFBPR_BUY	:5 modules - Budapest style
+STR_CAFBPR_BUY	:5 modules - Budapest livery
 
-STR_CAFD_NAME	:CAF Urbos 3 Debrecen style - 5 modules
-STR_CAFD_ADAT	:{GOLD}----------{BLACK}{}Urbos 3 {GOLD}(5 modules) is a 100% low floor design.{BLACK}{}
+STR_CAFD_NAME	:CAF Urbos 3 Debrecen livery - 5 modules
+STR_CAFD_ADAT	:{GOLD}----------{}{BLACK}{}
 STR_CAFD_INFO	:CAF Urbos 3
-STR_CAFD_BUY	:5 modules - Debrecen style
+STR_CAFD_BUY	:5 modules - Debrecen livery
 
 
 STR_SKODA_NAME	:Skoda ForCity Classic 26T
 
-STR_S26Ta_NAME	:Skoda ForCity Classic 26T - Miskolc style
-STR_S26Ta_ADAT	:{GOLD}----------{BLACK}{}26T {GOLD} is a most longer tram with 100% low floor design.{BLACK}{}
+STR_S26Ta_NAME	:Skoda ForCity Classic 26T - Miskolc livery
+STR_S26Ta_ADAT	:{GOLD}----------{}{BLACK}{}
 STR_S26Ta_INFO	:Skoda 26T
-STR_S26Ta_BUY	:Miskolc style
+STR_S26Ta_BUY	:Miskolc livery
 
 
 STR_Citylink_NAME	:Stadler Citylink
 
 STR_Citylinka_NAME	:Stadler Citylink
-STR_Citylinka_ADAT	:{GOLD}----------{BLACK}{}CITYLINK {GOLD}is a clever design of tram which can be configured as an urban tram or as an inter-city train.{}The barrier-free {BLACK}CITYLINK{GOLD} type tram has a low-floor design throughout.{BLACK}{}
+STR_Citylinka_ADAT	:{GOLD}----------{}{BLACK}{}
 STR_Citylinka_INFO	:Stadler Citylink
-STR_Citylinka_BUY		:Szeged style
+STR_Citylinka_BUY	:Szeged livery
 
 STR_Citylinkb_NAME	:Stadler Citylink
-STR_Citylinkb_ADAT	:{GOLD}----------{BLACK}{}CITYLINK {GOLD}is a clever design of tram which can be configured as an urban tram or as an inter-city train.{}The barrier-free {BLACK}CITYLINK{GOLD} type tram has a low-floor design throughout.{BLACK}{}
+STR_Citylinkb_ADAT	:{GOLD}----------{}{BLACK}{}
 STR_Citylinkb_INFO	:Stadler Citylink
-STR_Citylinkb_BUY		:Chemnitz style
+STR_Citylinkb_BUY	:Chemnitz livery
 
 STR_Citylinkc_NAME	:Stadler Citylink
-STR_Citylinkc_ADAT	:{GOLD}----------{BLACK}{}CITYLINK {GOLD}is a clever design of tram which can be configured as an urban tram or as an inter-city train.{}The barrier-free {BLACK}CITYLINK{GOLD} type tram has a low-floor design throughout.{BLACK}{}
+STR_Citylinkc_ADAT	:{GOLD}----------{}{BLACK}{}
 STR_Citylinkc_INFO	:Stadler Citylink
-STR_Citylinkc_BUY		:Karlsruhe style
+STR_Citylinkc_BUY	:Karlsruhe livery
 
 STR_COLOUR_SCHEME_GOODS	: - goods
 STR_COLOUR_SCHEME_PANTO	: - pantographs
@@ -352,24 +539,24 @@ STR_COLOUR_SCHEME_WOOD	: - logs
 STR_COLOUR_SCHEME_STEL	: - steel rods
 STR_COLOUR_SCHEME_LADA	: - crates
 
-STR_MUKI_NAME	:Muki
+STR_MUKI_NAME	:Motorized covered wagon
 
-STR_MUKI1_NAME	:Muki
-STR_MUKI1_ADAT	:{GOLD}----------{}The car bodies were made by Roessemann and Kühnemann Rt. on behalf of the {BLACK}BSZKRT{GOLD} in 1926/1927. {}Then the {BLACK}BSZKRT{GOLD} itself installed the electric drive system in the wagons, with the parts of the electric motor cars running at that time.{}The nickname {BLACK}MUKI{GOLD} comes from the hungarian word "worker" (Munkás).{BLACK}{}
-STR_MUKI1_INFO	:Muki
-STR_MUKI1_BUY		:Motorcar
+STR_MUKI1_NAME	:BSzKRt Motorized covered wagon
+STR_MUKI1_ADAT	:{GOLD}----------{}Nickname: {BLACK}MUKI{GOLD} comes from the hungarian word "worker" (Munkás).{BLACK}{}
+STR_MUKI1_INFO	:Motorized covered wagon
+STR_MUKI1_BUY	:Motorcar
 
-STR_MUKI1P_NAME	:Muki + trailer
-STR_MUKI1P_ADAT	:{GOLD}----------{}The car bodies were made by Roessemann and Kühnemann Rt. on behalf of the {BLACK}BSZKRT{GOLD} in 1926/1927. {}Then the {BLACK}BSZKRT{GOLD} itself installed the electric drive system in the wagons, with the parts of the electric motor cars running at that time.{}The nickname {BLACK}MUKI{GOLD} comes from the hungarian word "worker" (Munkás).{BLACK}{}
-STR_MUKI1P_INFO	:Muki
+STR_MUKI1P_NAME	:BSzKRt Motorized covered wagon + tram trailer
+STR_MUKI1P_ADAT	:{GOLD}----------{}Nickname: {BLACK}MUKI{GOLD} comes from the hungarian word "worker" (Munkás).{BLACK}{}
+STR_MUKI1P_INFO	:Motorized covered wagon
 STR_MUKI1P_BUY	:With tram trailer
 
-STR_MUKI1PP_NAME	:Muki + 2 trailer
-STR_MUKI1PP_ADAT	:{GOLD}----------{}The car bodies were made by Roessemann and Kühnemann Rt. on behalf of the {BLACK}BSZKRT{GOLD} in 1926/1927. {}Then the {BLACK}BSZKRT{GOLD} itself installed the electric drive system in the wagons, with the parts of the electric motor cars running at that time.{}The nickname {BLACK}MUKI{GOLD} comes from the hungarian word "worker" (Munkás).{BLACK}{}
-STR_MUKI1PP_INFO	:Muki
-STR_MUKI1PP_BUY	:With 2 tram trailer
+STR_MUKI1PP_NAME	:BSzKRt Motorized covered wagon + 2 tram trailer
+STR_MUKI1PP_ADAT	:{GOLD}----------{}Nickname: {BLACK}MUKI{GOLD} comes from the hungarian word "worker" (Munkás).{BLACK}{}
+STR_MUKI1PP_INFO	:Motorized covered wagon
+STR_MUKI1PP_BUY		:With 2 tram trailer
 
-STR_MUKI2_NAME	:Muki
-STR_MUKI2_ADAT	:{GOLD}----------{}The car bodies were made by Roessemann and Kühnemann Rt. on behalf of the {BLACK}BSZKRT{GOLD} in 1926/1927. {}Then the {BLACK}BSZKRT{GOLD} itself installed the electric drive system in the wagons, with the parts of the electric motor cars running at that time.{}The nickname {BLACK}MUKI{GOLD} comes from the hungarian word "worker" (Munkás).{BLACK}{}
-STR_MUKI2_INFO	:Muki
-STR_MUKI2_BUY		:Motorcar - Newer style
+STR_MUKI2_NAME	:BSzKRt Motorized covered wagon
+STR_MUKI2_ADAT	:{GOLD}----------{}Nickname: {BLACK}MUKI{GOLD} comes from the hungarian word "worker" (Munkás).{BLACK}{}
+STR_MUKI2_INFO	:Motorized covered wagon
+STR_MUKI2_BUY	:Motorcar

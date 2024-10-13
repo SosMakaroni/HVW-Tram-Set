@@ -61,16 +61,17 @@ paracapa = (param_cargo_capacity == 1) ? 2 : (param_cargo_capacity == 2) ? 4 : (
 parapuco = (param_cost_factor == 1) ? 2 : (param_cost_factor == 2) ? 4 : (param_cost_factor == 3) ? 8 : (param_cost_factor == 4) ? 16 : 1;
 pararuco = (param_running_cost_factor == 1) ? 2 : (param_running_cost_factor == 2) ? 4 : (param_running_cost_factor == 3) ? 8 : (param_running_cost_factor == 4) ? 16 : 1;
 
+
 tramtypetable  {
 	RAIL,	//SIMA
-	NBAN,	//Ufibi's Improved
-	NIAN,	//Ufibi's ISR
+	NBAN: [RAIL],	//Ufibi's Improved
+	NIAN: [RAIL],	//Ufibi's ISR
 	ELRL,	//FELSOVEZETEK
-	NBAE,	//Ufibi's Improved (EL)
-	NUAE,	//Ufibi's Urban (EL)
-	NUBE,	//Ufibi's Modern Urban (EL)
-	NUCE,	//Ufibi's Green (EL)
-	NIAN	//Ufibi's ISR (EL)
+	NBAE: [ELRL],	//Ufibi's Improved (EL)
+	NUAE: [ELRL],	//Ufibi's Urban (EL)
+	NUBE: [ELRL],	//Ufibi's Modern Urban (EL)
+	NUCE: [ELRL],	//Ufibi's Green (EL)
+	NIAN: [ELRL]	//Ufibi's ISR (EL)
 }
 
 cargotable {
@@ -122,17 +123,19 @@ template tmpl_purchase() {
 template tmpl_depo() {
 	[98,	0,	90,	25,	-13,-15]}	
 template tmpl_1(z1){
-	[0		*z1,	0,	11	*z1,	49	*z1,	-5	*z1,	-13	*z1,	ANIM]
-	[19		*z1,	0,	54	*z1,	40	*z1,	-45	*z1,	-12	*z1,	ANIM]
-	[81		*z1,	0,	69	*z1,	15	*z1,	-54	*z1,	-10	*z1,	ANIM]
-	[158	*z1,	0,	54	*z1,	40	*z1,	-41	*z1,	-29	*z1,	ANIM]
-	[220	*z1,	0,	11	*z1,	49	*z1,	-6	*z1,	-32	*z1,	ANIM]
-	[239	*z1,	0,	54	*z1,	40	*z1,	-15	*z1,	-28	*z1,	ANIM]
-	[301	*z1,	0,	69	*z1,	15	*z1,	-11	*z1,	-9	*z1,	ANIM]
-	[378	*z1,	0,	54	*z1,	40	*z1,	-8	*z1,	-14	*z1,	ANIM]}
+	[0		*z1,	0,	11	*z1,	49	*z1,	-5	*z1,	-13	*z1,	ANIM]	//
+	[19		*z1,	0,	54	*z1,	40	*z1,	-45	*z1,	-12	*z1,	ANIM]	//-14 -6
+	[81		*z1,	0,	69	*z1,	15	*z1,	-54	*z1,	-10	*z1,	ANIM]	//
+	[158	*z1,	0,	54	*z1,	40	*z1,	-41	*z1,	-29	*z1,	ANIM]	//-10 -9
+	[220	*z1,	0,	11	*z1,	49	*z1,	-6	*z1,	-32	*z1,	ANIM]	//
+	[239	*z1,	0,	54	*z1,	40	*z1,	-15	*z1,	-28	*z1,	ANIM]	//-12 -8
+	[301	*z1,	0,	69	*z1,	15	*z1,	-11	*z1,	-9	*z1,	ANIM]	//
+	[378	*z1,	0,	54	*z1,	40	*z1,	-8	*z1,	-14	*z1,	ANIM]	//-6 -8
+	}
 
 template tmpl_toldat() {
-	[0,	0,	2,	2,	1,	1]}	
+	[0,	0,	2,	2,	1,	1]
+	}
 
 spriteset(ss_toldat, "src/icons.png")		{tmpl_toldat()}
 
@@ -144,7 +147,8 @@ template tmpl_semmi() {
 	[0,	0,	2,	2,	1,	1]
 	[0,	0,	2,	2,	1,	1]
 	[0,	0,	2,	2,	1,	1]
-	[0,	0,	2,	2,	1,	1]}
+	[0,	0,	2,	2,	1,	1]
+	}
 
 //Wood logo, replaces ł 0x0142
 font_glyph (NORMAL, 0x0142, "src/icons.png") {[20,80,24,10,0,0]}
@@ -176,3 +180,52 @@ font_glyph (SMALL, 0x0143, "src/icons.png") {[10,80,1,1,0,0]}
 font_glyph (LARGE, 0x0143, "src/icons.png") {[10,80,1,1,0,0]}
 font_glyph (MONO, 0x0143, "src/icons.png") {[10,80,1,1,0,0]}
 
+//Egy kerék, Ԁ 0x0500
+font_glyph (NORMAL, 0x0500, "src/icons.png") {[20,200,12,9,0,0]}
+//Egy zsámoly, Ԑ 0x0510
+font_glyph (NORMAL, 0x0510, "src/icons.png") {[60,200,12,9,0,0]}
+//Váz, Ԡ 0x0520
+font_glyph (NORMAL, 0x0520, "src/icons.png") {[110,200,12,9,0,0]}
+//Egy ajtó, ԁ 0x0501
+font_glyph (NORMAL, 0x0501, "src/icons.png") {[20,230,12,9,0,0]}
+//Dupla ajtó, ԑ 0x0511
+font_glyph (NORMAL, 0x0511, "src/icons.png") {[60,230,12,9,0,0]}
+//Csukló, ԡ 0x0521
+font_glyph (NORMAL, 0x0521, "src/icons.png") {[110,230,12,9,0,0]}
+//Eleje, Ԃ 0x0502
+font_glyph (NORMAL, 0x0502, "src/icons.png") {[20,260,12,9,0,0]}
+//Hátulja vezérlő, Ԓ 0x0512
+font_glyph (NORMAL, 0x0512, "src/icons.png") {[60,260,12,9,0,0]}
+//Hátulja, Ԣ 0x0522
+font_glyph (NORMAL, 0x0522, "src/icons.png") {[110,260,12,9,0,0]}
+//Hátulja, ԃ 0x0503
+font_glyph (NORMAL, 0x0503, "src/icons.png") {[20,290,12,9,0,0]}
+//Hátulja, ԓ 0x0513
+font_glyph (NORMAL, 0x0513, "src/icons.png") {[60,290,12,9,0,0]}
+//Hátulja, Ԥ 0x0523
+font_glyph (NORMAL, 0x0523, "src/icons.png") {[110,290,12,9,0,0]}
+
+//Egy kerék, ԅ 0x0505
+font_glyph (NORMAL, 0x0505, "src/icons.png") {[160,200,12,9,0,0]}
+//Egy zsámoly, ԕ 0x0515
+font_glyph (NORMAL, 0x0515, "src/icons.png") {[200,200,12,9,0,0]}
+//Váz, ԥ 0x0525
+font_glyph (NORMAL, 0x0525, "src/icons.png") {[250,200,12,9,0,0]}
+//Egy ajtó, Ԇ 0x0506
+font_glyph (NORMAL, 0x0506, "src/icons.png") {[160,230,12,9,0,0]}
+//Dupla ajtó, Ԗ 0x0516
+font_glyph (NORMAL, 0x0516, "src/icons.png") {[200,230,12,9,0,0]}
+//Csukló, Ԧ 0x0526
+font_glyph (NORMAL, 0x0526, "src/icons.png") {[250,230,12,9,0,0]}
+//Eleje, ԇ 0x0507
+font_glyph (NORMAL, 0x0507, "src/icons.png") {[160,260,12,9,0,0]}
+//Hátulja vezérlő, ԗ 0x0517
+font_glyph (NORMAL, 0x0517, "src/icons.png") {[200,260,12,9,0,0]}
+//Hátulja, ԧ 0x0527
+font_glyph (NORMAL, 0x0527, "src/icons.png") {[250,260,12,9,0,0]}
+//Hátulja, Ԉ 0x0508
+font_glyph (NORMAL, 0x0508, "src/icons.png") {[160,290,12,9,0,0]}
+//Hátulja, Ԙ 0x0518
+font_glyph (NORMAL, 0x0518, "src/icons.png") {[200,290,12,9,0,0]}
+//Hátulja, Ԩ 0x0528
+font_glyph (NORMAL, 0x0528, "src/icons.png") {[250,290,12,9,0,0]}

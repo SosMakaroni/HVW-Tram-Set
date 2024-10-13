@@ -1,0 +1,130 @@
+// --------------------------------------------------------------------------------COM
+
+item(FEAT_ROADVEHS, item_COM_long) {
+	property {
+        name:							string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					28;
+        cost_factor:					0;
+        running_cost_factor:			0;
+        sprite_id:						SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:							0 kW;
+        weight:							0 ton;
+        cargo_capacity:					50;
+		cargo_age_period:				0;
+        sound_effect:					SOUND_POWER_STATION;
+		length:                  		7;
+    }
+    graphics {
+		default:                 		ss_toldat;
+    }
+}
+item(FEAT_ROADVEHS, item_COM_short) {
+	property {
+        name:							string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					14;
+        cost_factor:					0;
+        running_cost_factor:			0;
+        sprite_id:						SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:							0 kW;
+        weight:							0 ton;
+        cargo_capacity:					40;
+		cargo_age_period:				0;
+        sound_effect:					SOUND_POWER_STATION;
+		length:                  		5;
+    }
+    graphics {
+		default:                 		ss_toldat;
+    }
+}
+item(FEAT_ROADVEHS, item_COM_middle) {
+	property {
+        name:							string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					10;
+        cost_factor:					0;
+        running_cost_factor:			0;
+        sprite_id:						SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:							0 kW;
+        weight:							0 ton;
+        cargo_capacity:					24;
+		cargo_age_period:				0;
+        sound_effect:					SOUND_POWER_STATION;
+		length:                  		4;
+    }
+    graphics {
+		default:                 		ss_toldat;
+    }
+}
+item(FEAT_ROADVEHS, item_COM_rear) {
+	property {
+        name:							string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					12;
+        cost_factor:					0;
+        running_cost_factor:			0;
+        sprite_id:						SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:							0 kW;
+        weight:							0 ton;
+        cargo_capacity:					36;
+		cargo_age_period:				0;
+        sound_effect:					SOUND_POWER_STATION;
+		length:                  		8;
+    }
+    graphics {
+		default:                 		ss_toldat;
+    }
+}
+item(FEAT_ROADVEHS, item_COM_toldat) {
+	property {
+        name:							string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
+        refittable_cargo_classes:		bitmask(NO_CARGO_CLASS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					0;
+        cost_factor:					0;
+        running_cost_factor:			0;
+        sprite_id:						SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:							0 kW;
+        weight:							0 ton;
+        cargo_capacity:					0;
+		cargo_age_period:				0;
+		length:                  		1;
+    }
+    graphics {
+		default:                 		ss_toldat;
+    }
+}
+
+// --------------------------------------------------------------------------------COM3mela End
+// --
+// --

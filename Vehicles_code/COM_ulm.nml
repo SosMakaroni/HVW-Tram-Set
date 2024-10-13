@@ -1,0 +1,42 @@
+// --------------------------------------------------------------------------------COMulm
+
+/*
+COM5ulm
+	ss_COMF_ulm
+	ss_COML_ulm
+	ss_COMMp_ulm
+		ss_COMMp_ulm_PUP
+	ss_COML_ulm
+	ss_COMR_ulm
+COM5erfub
+
+*/
+//	Front
+spriteset(ss_COMF_ulm, "src/SIEMENS/ULM/COMfront_ulm_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMF_ulm, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/ULM/COMfront_ulm_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMF_ulm, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/ULM/COMfront_ulm_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMF_ulm_info, "src/SIEMENS/ULM/COMfront_ulm_INFO_8bpp.png") {tmpl_depo()}
+//	Long
+spriteset(ss_COML_ulm, "src/SIEMENS/ULM/COMlong_ulm_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COML_ulm, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/ULM/COMlong_ulm_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COML_ulm, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/ULM/COMlong_ulm_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COML_ulm_info, "src/SIEMENS/ULM/COMlong_ulm_INFO_8bpp.png") {tmpl_depo()}
+//	Middle panto
+spriteset(ss_COMMp_ulm, "src/SIEMENS/ULM/COMmiddlep_ulm_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMMp_ulm, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/ULM/COMmiddlep_ulm_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMMp_ulm, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/ULM/COMmiddlep_ulm_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMMp_ulm_info, "src/SIEMENS/ULM/COMmiddlep_ulm_INFO_8bpp.png") {tmpl_depo()}
+
+spriteset(ss_COMMp_ulm_PUP, "src/SIEMENS/ULM/COMmiddlep_ulm_PUP_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMMp_ulm_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/ULM/COMmiddlep_ulm_PUP_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMMp_ulm_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/ULM/COMmiddlep_ulm_PUP_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMMp_ulm_PUP_info, "src/SIEMENS/ULM/COMmiddlep_ulm_PUP_INFO_8bpp.png") {tmpl_depo()}
+//	Rear
+spriteset(ss_COMR_ulm, "src/SIEMENS/ULM/COMrear_ulm_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMR_ulm, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/ULM/COMrear_ulm_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMR_ulm, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/ULM/COMrear_ulm_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMR_ulm_info, "src/SIEMENS/ULM/COMrear_ulm_INFO_8bpp.png") {tmpl_depo()}
+
+// --------------------------------------------------------------------------------COMulm End
+// --
+// --

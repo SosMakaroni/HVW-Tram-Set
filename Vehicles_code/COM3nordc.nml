@@ -1,0 +1,117 @@
+// --------------------------------------------------------------------------------COM3nordc
+
+spriteset(ss_COM3nordc_BUY, "src/SIEMENS/NORD/COM3_nordc_BUY_8bpp.png")		{tmpl_purchase()}  // Vásárlási jármű
+spriteset(ss_COM3nordc_BUY_P, "src/SIEMENS/NORD/COM3_norda_BUY_P_8bpp.png")		{tmpl_purchase()} // Vásárlási áramszedő
+
+// Rakodási grafika
+
+// Vásárlási grafika
+switch (FEAT_ROADVEHS, SELF, sw_COM3nordc_purchase, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 8 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_COM3nordc_BUY;    // Alap modell
+    1: return ss_COM3nordc_BUY_P;    // Alap modell
+}
+
+// Lista grafika
+switch (FEAT_ROADVEHS, SELF, sw_COMLp_nordc_info, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 8 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_COMLp_nordc_info;    // Alap modell
+    1: return ss_COMLp_norda_PUP_info;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw_COM3nordc_info, position_in_consist ) {
+	1: sw_COMLp_nordc_info;
+	2: ss_COMR_nordc_info;
+    ss_COMF_nordc_info;
+}
+
+// Játék grafika
+switch (FEAT_ROADVEHS, SELF, sw_COMLp_nordc, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 8 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_COMLp_nordc;    // Alap modell
+    1: return ss_COMLp_norda_PUP;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw1_COM3nordc, position_in_consist ) {
+	1: sw_COMLp_nordc;
+	2: ss_COMR_nordc;
+    ss_COMF_nordc;
+}
+
+// Rajz
+switch(FEAT_ROADVEHS, SELF, sw_COM3nordc, (extra_callback_info1 & 0x12)) {
+   0x10: sw_COM3nordc_info; // Depó nézet
+   0x11: sw_COM3nordc_info; // Jármű infó/Refit nézet
+   0x12: sw_COM3nordc_info; // Jármű lista nézet
+   0x00: sw1_COM3nordc; // Játék nézet
+}
+
+// Csuklosítás
+switch (FEAT_ROADVEHS, SELF, sw_COM3nordc_articulated, extra_callback_info1) {
+	0: item_COM3nordc;
+	1: item_COM_long;
+	2: item_COM_rear;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+// Szövegek
+switch(FEAT_ROADVEHS, SELF, sw_COM3nordc_namep, (extra_callback_info1 >> 8) & 0xFFFF) {
+    1: return string(STR_COM3nordc_BUY);
+	return CB_RESULT_NO_TEXT;
+}
+switch(FEAT_ROADVEHS, SELF, sw_COM3nordc_name, extra_callback_info1 & 0xFF) {
+    0x11: return string(STR_COM3nordc_INFO); // Jármű infóban név
+    0x20: sw_COM3nordc_namep; // Vásárlási lista név
+	0x21: return string(STR_COM_NAME); // Elővásárlási név
+	return CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_COM3nordc) {
+	property {
+        name:							string(STR_COM_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(2011,02,1);
+        model_life:						20;
+        vehicle_life:					40;
+        reliability_decay:				18;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					12;
+        sprite_id:						SPRITE_ID_NEW_ROADVEH;
+        speed:							70 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:							400 kW;
+        weight:							26 ton;
+        cargo_capacity:					36;
+		cargo_age_period:				185;
+        sound_effect:					SOUND_POWER_STATION;
+		length:                  		6;
+		variant_group:					item_COM5potsa;
+    }
+    graphics {
+		default:                 		sw_COM3nordc;
+		purchase:						sw_COM3nordc_purchase;
+		articulated_part:        		sw_COM3nordc_articulated;
+		cost_factor:					40 * parapuco;
+		running_cost_factor:			68 * pararuco;
+		additional_text: 				string(STR_COM3nordc_ADAT);
+		name:							sw_COM3nordc_name;
+    }
+	livery_override (item_COM_long ) {
+		default:						sw_COM3nordc;
+	}
+	livery_override (item_COM_rear ) {
+		default:						sw_COM3nordc;
+	}
+}
+
+// --------------------------------------------------------------------------------COM3nordc End
+// --
+// --

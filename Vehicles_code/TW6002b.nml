@@ -112,13 +112,13 @@ switch (FEAT_ROADVEHS, SELF, sw_TW6002b_length, position_in_consist) {
     return 8;
 }
 // Szövegek
-switch(FEAT_ROADVEHS, SELF, sw_TW6002b_namep, (extra_callback_info1 >> 8) & 0xFFFF) {
-    1: return string(STR_TW6002b_BUY);
-    2: return string(STR_TW6002b2_BUY);
+switch(FEAT_ROADVEHS, SELF, sw_TW6002b_namep, (extra_callback_info1 >> 8) & 0xFFFF) {	//Vásárlási nevek
+    1: return string(STR_TW6002b_BUY);	// Első alszint
+    2: return string(STR_TW6002b2_BUY); 	// Második alszint
 	return CB_RESULT_NO_TEXT;
 }
 switch(FEAT_ROADVEHS, SELF, sw_TW6002b_name, extra_callback_info1 & 0xFF) {
-    0x11: return string(STR_TW6002b_INFO); // Jármű infóban név
+    0x11: return string(STR_TW6002b_INFO); // Jármű infóban név és Vásárlási név legfelső szint
     0x20: sw_TW6002b_namep; // Vásárlási lista név
 	0x21: return string(STR_TW6002b_NAME); // Elővásárlási név
 	return CB_RESULT_NO_TEXT;

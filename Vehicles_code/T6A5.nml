@@ -1,0 +1,350 @@
+// --------------------------------------------------------------------------------T6A5
+
+spriteset(ss_T6A5_purchase, "src/T6A5/T6A5_01_BUY_8bpp.png")		{tmpl_purchase()} // Vásárlási jármű
+spriteset(ss_T6A5_P_purchase, "src/T6A5/T6A5_01_BUY_P_8bpp.png")		{tmpl_purchase()} // Vásárlási áramszedő
+
+spriteset(ss_T6A5a_1, "src/T6A5/T6A5a_01_1x_8bpp.png")		{tmpl_1(1)}
+	alternative_sprites(ss_T6A5a_1, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/T6A5/T6A5a_01_2x_8bpp.png") {tmpl_1(2)}
+	alternative_sprites(ss_T6A5a_1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/T6A5/T6A5a_01_4x_8bpp.png") {tmpl_1(4)}
+	spriteset(ss_T6A5a_1i, "src/T6A5/T6A5a_01_INFO_8bpp.png")		{tmpl_depo()}
+spriteset(ss_T6A5a_1_PUP, "src/T6A5/T6A5a_01_PUP_1x_8bpp.png")		{tmpl_1(1)}
+	alternative_sprites(ss_T6A5a_1_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/T6A5/T6A5a_01_PUP_2x_8bpp.png") {tmpl_1(2)}
+	alternative_sprites(ss_T6A5a_1_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/T6A5/T6A5a_01_PUP_4x_8bpp.png") {tmpl_1(4)}
+	spriteset(ss_T6A5a_1_PUPi, "src/T6A5/T6A5a_01_PUP_INFO_8bpp.png")		{tmpl_depo()}
+spriteset(ss_T6A5a_1_PDO, "src/T6A5/T6A5a_01_PDO_1x_8bpp.png")		{tmpl_1(1)}
+	alternative_sprites(ss_T6A5a_1_PDO, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/T6A5/T6A5a_01_PDO_2x_8bpp.png") {tmpl_1(2)}
+	alternative_sprites(ss_T6A5a_1_PDO, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/T6A5/T6A5a_01_PDO_4x_8bpp.png") {tmpl_1(4)}
+	spriteset(ss_T6A5a_1_PDOi, "src/T6A5/T6A5a_01_PDO_INFO_8bpp.png")		{tmpl_depo()}
+
+spriteset(ss_T6A5b_1, "src/T6A5/T6A5b_01_1x_8bpp.png")		{tmpl_1(1)}
+	alternative_sprites(ss_T6A5b_1, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/T6A5/T6A5b_01_2x_8bpp.png") {tmpl_1(2)}
+	alternative_sprites(ss_T6A5b_1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/T6A5/T6A5b_01_4x_8bpp.png") {tmpl_1(4)}
+	spriteset(ss_T6A5b_1i, "src/T6A5/T6A5b_01_INFO_8bpp.png")		{tmpl_depo()}
+spriteset(ss_T6A5b_1_PUP, "src/T6A5/T6A5b_01_PUP_1x_8bpp.png")		{tmpl_1(1)}
+	alternative_sprites(ss_T6A5b_1_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/T6A5/T6A5b_01_PUP_2x_8bpp.png") {tmpl_1(2)}
+	alternative_sprites(ss_T6A5b_1_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/T6A5/T6A5b_01_PUP_4x_8bpp.png") {tmpl_1(4)}
+	spriteset(ss_T6A5b_1_PUPi, "src/T6A5/T6A5b_01_PUP_INFO_8bpp.png")		{tmpl_depo()}
+spriteset(ss_T6A5b_1_PDO, "src/T6A5/T6A5b_01_PUP_1x_8bpp.png")		{tmpl_1(1)}
+	alternative_sprites(ss_T6A5b_1_PDO, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/T6A5/T6A5b_01_PUP_2x_8bpp.png") {tmpl_1(2)}
+	alternative_sprites(ss_T6A5b_1_PDO, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/T6A5/T6A5b_01_PUP_4x_8bpp.png") {tmpl_1(4)}
+	spriteset(ss_T6A5b_1_PDOi, "src/T6A5/T6A5b_01_PUP_INFO_8bpp.png")		{tmpl_depo()}
+
+spriteset(ss_T6A5c_1, "src/T6A5/T6A5c_01_1x_8bpp.png")		{tmpl_1(1)}
+	alternative_sprites(ss_T6A5c_1, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/T6A5/T6A5c_01_2x_8bpp.png") {tmpl_1(2)}
+	alternative_sprites(ss_T6A5c_1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/T6A5/T6A5c_01_4x_8bpp.png") {tmpl_1(4)}
+	spriteset(ss_T6A5c_1i, "src/T6A5/T6A5c_01_INFO_8bpp.png")		{tmpl_depo()}
+spriteset(ss_T6A5c_1_PUP, "src/T6A5/T6A5c_01_PUP_1x_8bpp.png")		{tmpl_1(1)}
+	alternative_sprites(ss_T6A5c_1_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/T6A5/T6A5c_01_PUP_2x_8bpp.png") {tmpl_1(2)}
+	alternative_sprites(ss_T6A5c_1_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/T6A5/T6A5c_01_PUP_4x_8bpp.png") {tmpl_1(4)}
+	spriteset(ss_T6A5c_1_PUPi, "src/T6A5/T6A5c_01_PUP_INFO_8bpp.png")		{tmpl_depo()}
+spriteset(ss_T6A5c_1_PDO, "src/T6A5/T6A5c_01_PDO_1x_8bpp.png")		{tmpl_1(1)}
+	alternative_sprites(ss_T6A5c_1_PDO, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/T6A5/T6A5c_01_PDO_2x_8bpp.png") {tmpl_1(2)}
+	alternative_sprites(ss_T6A5c_1_PDO, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/T6A5/T6A5c_01_PDO_4x_8bpp.png") {tmpl_1(4)}
+	spriteset(ss_T6A5c_1_PDOi, "src/T6A5/T6A5c_01_PDO_INFO_8bpp.png")		{tmpl_depo()}
+
+spriteset(ss_T6A5d_1, "src/T6A5/T6A5d_01_1x_8bpp.png")		{tmpl_1(1)}
+	alternative_sprites(ss_T6A5d_1, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/T6A5/T6A5d_01_2x_8bpp.png") {tmpl_1(2)}
+	alternative_sprites(ss_T6A5d_1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/T6A5/T6A5d_01_4x_8bpp.png") {tmpl_1(4)}
+	spriteset(ss_T6A5d_1i, "src/T6A5/T6A5d_01_INFO_8bpp.png")		{tmpl_depo()}
+spriteset(ss_T6A5d_1_PUP, "src/T6A5/T6A5d_01_PUP_1x_8bpp.png")		{tmpl_1(1)}
+	alternative_sprites(ss_T6A5d_1_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/T6A5/T6A5d_01_PUP_2x_8bpp.png") {tmpl_1(2)}
+	alternative_sprites(ss_T6A5d_1_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/T6A5/T6A5d_01_PUP_4x_8bpp.png") {tmpl_1(4)}
+	spriteset(ss_T6A5d_1_PUPi, "src/T6A5/T6A5d_01_PUP_INFO_8bpp.png")		{tmpl_depo()}
+spriteset(ss_T6A5d_1_PDO, "src/T6A5/T6A5d_01_PDO_1x_8bpp.png")		{tmpl_1(1)}
+	alternative_sprites(ss_T6A5d_1_PDO, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/T6A5/T6A5d_01_PDO_2x_8bpp.png") {tmpl_1(2)}
+	alternative_sprites(ss_T6A5d_1_PDO, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/T6A5/T6A5d_01_PDO_4x_8bpp.png") {tmpl_1(4)}
+	spriteset(ss_T6A5d_1_PDOi, "src/T6A5/T6A5d_01_PDO_INFO_8bpp.png")		{tmpl_depo()}
+
+spriteset(ss_T6A5e_1, "src/T6A5/T6A5e_01_1x_8bpp.png")		{tmpl_1(1)}
+	alternative_sprites(ss_T6A5e_1, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/T6A5/T6A5e_01_2x_8bpp.png") {tmpl_1(2)}
+	alternative_sprites(ss_T6A5e_1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/T6A5/T6A5e_01_4x_8bpp.png") {tmpl_1(4)}
+	spriteset(ss_T6A5e_1i, "src/T6A5/T6A5e_01_INFO_8bpp.png")		{tmpl_depo()}
+spriteset(ss_T6A5e_1_PUP, "src/T6A5/T6A5e_01_PUP_1x_8bpp.png")		{tmpl_1(1)}
+	alternative_sprites(ss_T6A5e_1_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/T6A5/T6A5e_01_PUP_2x_8bpp.png") {tmpl_1(2)}
+	alternative_sprites(ss_T6A5e_1_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/T6A5/T6A5e_01_PUP_4x_8bpp.png") {tmpl_1(4)}
+	spriteset(ss_T6A5e_1_PUPi, "src/T6A5/T6A5e_01_PUP_INFO_8bpp.png")		{tmpl_depo()}
+spriteset(ss_T6A5e_1_PDO, "src/T6A5/T6A5e_01_PDO_1x_8bpp.png")		{tmpl_1(1)}
+	alternative_sprites(ss_T6A5e_1_PDO, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/T6A5/T6A5e_01_PDO_2x_8bpp.png") {tmpl_1(2)}
+	alternative_sprites(ss_T6A5e_1_PDO, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/T6A5/T6A5e_01_PDO_4x_8bpp.png") {tmpl_1(4)}
+	spriteset(ss_T6A5e_1_PDOi, "src/T6A5/T6A5e_01_PDO_INFO_8bpp.png")		{tmpl_depo()}
+
+spriteset(ss_T6A5f_1, "src/T6A5/T6A5f_01_1x_8bpp.png")		{tmpl_1(1)}
+	alternative_sprites(ss_T6A5f_1, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/T6A5/T6A5f_01_2x_8bpp.png") {tmpl_1(2)}
+	alternative_sprites(ss_T6A5f_1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/T6A5/T6A5f_01_4x_8bpp.png") {tmpl_1(4)}
+	spriteset(ss_T6A5f_1i, "src/T6A5/T6A5f_01_INFO_8bpp.png")		{tmpl_depo()}
+spriteset(ss_T6A5f_1_PUP, "src/T6A5/T6A5f_01_PUP_1x_8bpp.png")		{tmpl_1(1)}
+	alternative_sprites(ss_T6A5f_1_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/T6A5/T6A5f_01_PUP_2x_8bpp.png") {tmpl_1(2)}
+	alternative_sprites(ss_T6A5f_1_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/T6A5/T6A5f_01_PUP_4x_8bpp.png") {tmpl_1(4)}
+	spriteset(ss_T6A5f_1_PUPi, "src/T6A5/T6A5f_01_PUP_INFO_8bpp.png")		{tmpl_depo()}
+spriteset(ss_T6A5f_1_PDO, "src/T6A5/T6A5f_01_PDO_1x_8bpp.png")		{tmpl_1(1)}
+	alternative_sprites(ss_T6A5f_1_PDO, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/T6A5/T6A5f_01_PDO_2x_8bpp.png") {tmpl_1(2)}
+	alternative_sprites(ss_T6A5f_1_PDO, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/T6A5/T6A5f_01_PDO_4x_8bpp.png") {tmpl_1(4)}
+	spriteset(ss_T6A5f_1_PDOi, "src/T6A5/T6A5f_01_PDO_INFO_8bpp.png")		{tmpl_depo()}
+
+spriteset(ss_T6A5g_1, "src/T6A5/T6A5g_01_1x_8bpp.png")		{tmpl_1(1)}
+	alternative_sprites(ss_T6A5g_1, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/T6A5/T6A5g_01_2x_8bpp.png") {tmpl_1(2)}
+	alternative_sprites(ss_T6A5g_1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/T6A5/T6A5g_01_4x_8bpp.png") {tmpl_1(4)}
+	spriteset(ss_T6A5g_1i, "src/T6A5/T6A5g_01_INFO_8bpp.png")		{tmpl_depo()}
+spriteset(ss_T6A5g_1_PUP, "src/T6A5/T6A5g_01_PUP_1x_8bpp.png")		{tmpl_1(1)}
+	alternative_sprites(ss_T6A5g_1_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/T6A5/T6A5g_01_PUP_2x_8bpp.png") {tmpl_1(2)}
+	alternative_sprites(ss_T6A5g_1_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/T6A5/T6A5g_01_PUP_4x_8bpp.png") {tmpl_1(4)}
+	spriteset(ss_T6A5g_1_PUPi, "src/T6A5/T6A5g_01_PUP_INFO_8bpp.png")		{tmpl_depo()}
+spriteset(ss_T6A5g_1_PDO, "src/T6A5/T6A5g_01_PDO_1x_8bpp.png")		{tmpl_1(1)}
+	alternative_sprites(ss_T6A5g_1_PDO, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/T6A5/T6A5g_01_PDO_2x_8bpp.png") {tmpl_1(2)}
+	alternative_sprites(ss_T6A5g_1_PDO, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/T6A5/T6A5g_01_PDO_4x_8bpp.png") {tmpl_1(4)}
+	spriteset(ss_T6A5g_1_PDOi, "src/T6A5/T6A5g_01_PDO_INFO_8bpp.png")		{tmpl_depo()}
+
+// Rakodási grafika
+spritegroup sg_T6A5a_1 {	loaded:  [ss_T6A5a_1];	loading: [ss_T6A5a_1];}
+spritegroup sg_T6A5b_1 {	loaded:  [ss_T6A5b_1];	loading: [ss_T6A5b_1];}
+spritegroup sg_T6A5c_1 {	loaded:  [ss_T6A5c_1];	loading: [ss_T6A5c_1];}
+spritegroup sg_T6A5d_1 {	loaded:  [ss_T6A5d_1];	loading: [ss_T6A5d_1];}
+spritegroup sg_T6A5e_1 {	loaded:  [ss_T6A5e_1];	loading: [ss_T6A5e_1];}
+spritegroup sg_T6A5f_1 {	loaded:  [ss_T6A5f_1];	loading: [ss_T6A5f_1];}
+spritegroup sg_T6A5g_1 {	loaded:  [ss_T6A5g_1];	loading: [ss_T6A5g_1];}
+
+// Vásárlási grafika
+switch (FEAT_ROADVEHS, SELF, sw1_T6A5_purchase, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_T6A5_purchase;    // Alap modell
+    1: return ss_T6A5_P_purchase;    // Pantonograf (le)
+}
+
+// Lista grafika
+switch (FEAT_ROADVEHS, SELF, sw3_T6A5a_1i, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_T6A5a_1i;    // Alap modell
+    1: return ss_T6A5a_1_PUPi;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw3_T6A5b_1i, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_T6A5b_1i;    // Alap modell
+    1: return ss_T6A5b_1_PUPi;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw3_T6A5c_1i, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_T6A5c_1i;    // Alap modell
+    1: return ss_T6A5c_1_PUPi;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw3_T6A5d_1i, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_T6A5d_1i;    // Alap modell
+    1: return ss_T6A5d_1_PUPi;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw3_T6A5e_1i, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_T6A5e_1i;    // Alap modell
+    1: return ss_T6A5e_1_PUPi;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw3_T6A5f_1i, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_T6A5f_1i;    // Alap modell
+    1: return ss_T6A5f_1_PUPi;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw3_T6A5g_1i, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_T6A5g_1i;    // Alap modell
+    1: return ss_T6A5g_1_PUPi;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw2_T6A5_1i, cargo_subtype) {
+	1: sw3_T6A5b_1i;
+	2: sw3_T6A5d_1i;
+	3: sw3_T6A5c_1i;
+	4: sw3_T6A5e_1i;
+	5: sw3_T6A5f_1i;
+	6: sw3_T6A5g_1i;
+	sw3_T6A5a_1i;
+}
+switch (FEAT_ROADVEHS, SELF, sw1_T6A5_1i, position_in_consist ) {
+    1: ss_toldat;
+    sw2_T6A5_1i;
+}
+
+// Játék grafika
+switch (FEAT_ROADVEHS, SELF, sw3_T6A5a_1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_T6A5a_1;    // Alap modell
+    1: return ss_T6A5a_1_PUP;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw3_T6A5b_1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_T6A5b_1;    // Alap modell
+    1: return ss_T6A5b_1_PUP;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw3_T6A5c_1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_T6A5c_1;    // Alap modell
+    1: return ss_T6A5c_1_PUP;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw3_T6A5d_1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_T6A5d_1;    // Alap modell
+    1: return ss_T6A5d_1_PUP;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw3_T6A5e_1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_T6A5e_1;    // Alap modell
+    1: return ss_T6A5e_1_PUP;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw3_T6A5f_1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_T6A5f_1;    // Alap modell
+    1: return ss_T6A5f_1_PUP;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw3_T6A5g_1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_T6A5g_1;    // Alap modell
+    1: return ss_T6A5g_1_PUP;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw2_T6A5_1, cargo_subtype) {
+	1: sw3_T6A5b_1;
+	2: sw3_T6A5d_1;
+	3: sw3_T6A5c_1;
+	4: sw3_T6A5e_1;
+	5: sw3_T6A5f_1;
+	6: sw3_T6A5g_1;
+	sw3_T6A5a_1;
+}
+
+switch (FEAT_ROADVEHS, SELF, sw1_T6A5_1, position_in_consist ) {
+    1: ss_toldat;
+    sw2_T6A5_1;
+}
+
+// Rajz
+switch(FEAT_ROADVEHS, SELF, sw_T6A5, (extra_callback_info1 & 0x12)) {
+   0x10: sw1_T6A5_1i; // Depó nézet
+   0x11: sw1_T6A5_1i; // Jármű infó/Refit nézet
+   0x12: sw1_T6A5_1i; // Jármű lista nézet
+   0x00: sw1_T6A5_1; // Játék nézet
+}
+
+// Csuklosítás
+switch (FEAT_ROADVEHS, SELF, sw_T6A5_articulated, extra_callback_info1) {
+    0: item_T6A5;
+    1: item_T6A5_T;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+// Modelhossz
+switch (FEAT_ROADVEHS, SELF, sw_T6A5_length, position_in_consist) {
+	1: return 8;
+    return 7;
+}
+
+// Szövegek
+switch(FEAT_ROADVEHS, SELF, sw_T6A5_namep, (extra_callback_info1 >> 8) & 0xFFFF) {
+    1: return string(STR_T6A5_BUY);
+	return CB_RESULT_NO_TEXT;
+}
+switch(FEAT_ROADVEHS, SELF, sw_T6A5_name, extra_callback_info1 & 0xFF) {
+    0x11: return string(STR_T6A5_INFO); // Jármű infóban név
+    0x20: sw_T6A5_namep; // Vásárlási lista név
+	0x21: return string(STR_T6A5_NAME); // Elővásárlási név
+	return CB_RESULT_NO_TEXT;
+}
+switch (FEAT_ROADVEHS, SELF, sw_T6A5_subtype_text, cargo_subtype) {
+	0: return string(STR_T6A5a_VER);
+	1: return string(STR_T6A5b_VER);
+	2: return string(STR_T6A5d_VER);
+	3: return string(STR_T6A5c_VER);
+	4: return string(STR_T6A5e_VER);
+	5: return string(STR_T6A5f_VER);
+	6: return string(STR_T6A5g_VER);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_T6A5) {
+	property {
+        name:								string(STR_T6A5_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1991,02,01);
+        model_life:						4;
+        vehicle_life:						20;
+        reliability_decay:				20;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					30;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								65 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								180 kW;
+        weight:							19 ton;
+        cargo_capacity:					100;
+		cargo_age_period:					185;
+        sound_effect:						SOUND_POWER_STATION;
+//		variant_group:					item_T6A5b;
+    }
+    graphics {
+		default:                 		sw_T6A5;
+		purchase:						sw1_T6A5_purchase;
+		articulated_part:        		sw_T6A5_articulated;
+		length:                  		sw_T6A5_length;
+		cost_factor:					22 * parapuco;
+		running_cost_factor:			27 * pararuco;
+		additional_text: 				string(STR_T6A5_ADAT);
+		name:							sw_T6A5_name;
+		cargo_subtype_text: 			sw_T6A5_subtype_text;
+    }
+}
+item(FEAT_ROADVEHS, item_T6A5_T) {
+	property {
+        name:								string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
+        refittable_cargo_classes:		bitmask(NO_CARGO_CLASS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					0;
+        cost_factor:						0;
+        running_cost_factor:				0;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:								0 kW;
+        weight:							0 ton;
+        cargo_capacity:					0;
+		cargo_age_period:					0;
+    }
+    graphics {
+		default:                 		ss_toldat;
+		length:                  		sw_T6A5_length;
+    }
+}
+
+// --------------------------------------------------------------------------------T6A5 End
+// --
+// --

@@ -89,7 +89,7 @@ switch(FEAT_ROADVEHS, SELF, sw_SBa_name, extra_callback_info1 & 0xFF) {
 item(FEAT_ROADVEHS, item_SBa) {
 	property {
         name:								string(STR_SB_NAME);
-		tram_type:							RAIL;
+//		tram_type:							RAIL;
         climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
         introduction_date:				date(1927,01,01);
         model_life:						10;

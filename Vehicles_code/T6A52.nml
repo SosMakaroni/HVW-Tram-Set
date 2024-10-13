@@ -1,0 +1,272 @@
+// --------------------------------------------------------------------------------T6A52
+
+spriteset(ss_T6A52_purchase, "src/T6A5/T6A5_02_BUY_8bpp.png")		{tmpl_purchase()} // Vásárlási jármű
+spriteset(ss_T6A52_P_purchase, "src/T6A5/T6A5_02_BUY_P_8bpp.png")		{tmpl_purchase()} // Vásárlási áramszedő
+
+// Vásárlási grafika
+switch (FEAT_ROADVEHS, SELF, sw1_T6A52_purchase, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_T6A52_purchase;    // Alap modell
+    1: return ss_T6A52_P_purchase;    // Pantonograf (le)
+}
+
+// Lista grafika
+switch (FEAT_ROADVEHS, SELF, sw3_T6A5a_2i, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_T6A5a_1i;    // Alap modell
+    1: return ss_T6A5a_1_PDOi;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw3_T6A5b_2i, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_T6A5b_1i;    // Alap modell
+    1: return ss_T6A5b_1_PDOi;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw3_T6A5c_2i, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_T6A5c_1i;    // Alap modell
+    1: return ss_T6A5c_1_PDOi;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw3_T6A5d_2i, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_T6A5d_1i;    // Alap modell
+    1: return ss_T6A5d_1_PDOi;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw3_T6A5e_2i, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_T6A5e_1i;    // Alap modell
+    1: return ss_T6A5e_1_PDOi;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw3_T6A5f_2i, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_T6A5f_1i;    // Alap modell
+    1: return ss_T6A5f_1_PDOi;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw3_T6A5g_2i, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_T6A5g_1i;    // Alap modell
+    1: return ss_T6A5g_1_PDOi;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw2_T6A5_2i, cargo_subtype) {
+	1: sw3_T6A5b_2i;
+	2: sw3_T6A5d_2i;
+	3: sw3_T6A5c_2i;
+	4: sw3_T6A5e_2i;
+	5: sw3_T6A5f_2i;
+	6: sw3_T6A5g_2i;
+	sw3_T6A5a_2i;
+}
+switch (FEAT_ROADVEHS, SELF, sw1_T6A52_1i, position_in_consist ) {
+    1: ss_toldat;
+    2: sw2_T6A5_2i;
+    3: ss_toldat;
+    sw2_T6A5_1i;
+}
+
+// Játék grafika
+switch (FEAT_ROADVEHS, SELF, sw3_T6A5a_2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_T6A5a_1;    // Alap modell
+    1: return ss_T6A5a_1_PDO;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw3_T6A5b_2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_T6A5b_1;    // Alap modell
+    1: return ss_T6A5b_1_PDO;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw3_T6A5c_2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_T6A5c_1;    // Alap modell
+    1: return ss_T6A5c_1_PDO;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw3_T6A5d_2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_T6A5d_1;    // Alap modell
+    1: return ss_T6A5d_1_PDO;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw3_T6A5e_2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_T6A5e_1;    // Alap modell
+    1: return ss_T6A5e_1_PDO;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw3_T6A5f_2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_T6A5f_1;    // Alap modell
+    1: return ss_T6A5f_1_PDO;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw3_T6A5g_2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sg_T6A5g_1;    // Alap modell
+    1: return ss_T6A5g_1_PDO;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw2_T6A5_2, cargo_subtype) {
+	1: sw3_T6A5b_2;
+	2: sw3_T6A5d_2;
+	3: sw3_T6A5c_2;
+	4: sw3_T6A5e_2;
+	5: sw3_T6A5f_2;
+	6: sw3_T6A5g_2;
+	sw3_T6A5a_2;
+}
+
+switch (FEAT_ROADVEHS, SELF, sw1_T6A52_1, position_in_consist ) {
+    1: ss_toldat;
+    2: sw2_T6A5_2;
+    3: ss_toldat;
+    sw2_T6A5_1;
+}
+
+// Rajz
+switch(FEAT_ROADVEHS, SELF, sw_T6A52, (extra_callback_info1 & 0x12)) {
+   0x10: sw1_T6A52_1i; // Depó nézet
+   0x11: sw1_T6A52_1i; // Jármű infó/Refit nézet
+   0x12: sw1_T6A52_1i; // Jármű lista nézet
+   0x00: sw1_T6A52_1; // Játék nézet
+}
+
+// Csuklosítás
+switch (FEAT_ROADVEHS, SELF, sw_T6A52_articulated, extra_callback_info1) {
+    0: item_T6A52;
+    1: item_T6A52_T;
+    2: item_T6A52_2;
+    3: item_T6A52_T;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+// Modelhossz
+switch (FEAT_ROADVEHS, SELF, sw_T6A52_length, position_in_consist) {
+	1: return 6;
+	2: return 7;
+	3: return 8;
+    return 8;
+}
+
+// Szövegek
+switch(FEAT_ROADVEHS, SELF, sw_T6A52_namep, (extra_callback_info1 >> 8) & 0xFFFF) {
+    1: return string(STR_T6A52_BUY);
+	return CB_RESULT_NO_TEXT;
+}
+switch(FEAT_ROADVEHS, SELF, sw_T6A52_name, extra_callback_info1 & 0xFF) {
+    0x11: return string(STR_T6A5_INFO); // Jármű infóban név
+    0x20: sw_T6A52_namep; // Vásárlási lista név
+	0x21: return string(STR_T6A5_NAME); // Elővásárlási név
+	return CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_T6A52) {
+	property {
+        name:								string(STR_T6A5_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1991,02,01);
+        model_life:						4;
+        vehicle_life:						20;
+        reliability_decay:				20;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					30;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								65 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								180 kW;
+        weight:							19 ton;
+        cargo_capacity:					100;
+		cargo_age_period:					185;
+        sound_effect:						SOUND_POWER_STATION;
+		variant_group:					item_T6A5;
+    }
+    graphics {
+		default:                 		sw_T6A52;
+		purchase:						sw1_T6A52_purchase;
+		articulated_part:        		sw_T6A52_articulated;
+		length:                  		sw_T6A52_length;
+		cost_factor:					22 * parapuco;
+		running_cost_factor:			27 * pararuco;
+		additional_text: 				string(STR_T6A5_ADAT);
+		name:							sw_T6A52_name;
+		cargo_subtype_text: 			sw_T6A5_subtype_text;
+    }
+}
+item(FEAT_ROADVEHS, item_T6A52_2) {
+	property {
+        name:								string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
+        refittable_cargo_classes:		bitmask(NO_CARGO_CLASS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					0;
+        cost_factor:						0;
+        running_cost_factor:				0;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:								180 kW;
+        weight:							19 ton;
+        cargo_capacity:					100;
+		cargo_age_period:					185;
+    }
+    graphics {
+		default:                 		sw_T6A52;
+		length:                  		sw_T6A52_length;
+    }
+}
+item(FEAT_ROADVEHS, item_T6A52_T) {
+	property {
+        name:								string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
+        refittable_cargo_classes:		bitmask(NO_CARGO_CLASS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					0;
+        cost_factor:						0;
+        running_cost_factor:				0;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:								0 kW;
+        weight:							0 ton;
+        cargo_capacity:					0;
+		cargo_age_period:					0;
+    }
+    graphics {
+		default:                 		ss_toldat;
+		length:                  		sw_T6A52_length;
+    }
+}
+
+// --------------------------------------------------------------------------------T6A52 End
+// --
+// --

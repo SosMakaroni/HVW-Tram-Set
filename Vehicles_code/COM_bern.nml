@@ -1,0 +1,119 @@
+// --------------------------------------------------------------------------------COMberna
+
+/*
+
+COM7berna
+	ss_COMF_bernaa
+	ss_COMLp_berna
+		ss_COMLp_berna_PUP
+	ss_COMM_bernab
+	ss_COML_berna
+	ss_COMM_bernac
+	ss_COML_berna
+	ss_COMR_bernaa
+
+*/
+//	Front
+spriteset(ss_COMF_bernaa, "src/SIEMENS/BERN/COMfront_bernaa_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMF_bernaa, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMfront_bernaa_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMF_bernaa, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMfront_bernaa_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMF_bernaa_info, "src/SIEMENS/BERN/COMfront_bernaa_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMF_bernab, "src/SIEMENS/BERN/COMfront_bernab_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMF_bernab, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMfront_bernab_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMF_bernab, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMfront_bernab_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMF_bernab_info, "src/SIEMENS/BERN/COMfront_bernab_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMF_bernba, "src/SIEMENS/BERN/COMfront_bernba_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMF_bernba, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMfront_bernba_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMF_bernba, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMfront_bernba_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMF_bernba_info, "src/SIEMENS/BERN/COMfront_bernba_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMF_bernbb, "src/SIEMENS/BERN/COMfront_bernbb_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMF_bernbb, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMfront_bernbb_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMF_bernbb, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMfront_bernbb_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMF_bernbb_info, "src/SIEMENS/BERN/COMfront_bernbb_INFO_8bpp.png") {tmpl_depo()}
+//	Long panto
+spriteset(ss_COMLp_berna, "src/SIEMENS/BERN/COMlongp_berna_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMLp_berna, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMlongp_berna_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMLp_berna, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMlongp_berna_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMLp_berna_info, "src/SIEMENS/BERN/COMlongp_berna_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMLp_bernb, "src/SIEMENS/BERN/COMlongp_bernb_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMLp_bernb, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMlongp_bernb_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMLp_bernb, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMlongp_bernb_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMLp_bernb_info, "src/SIEMENS/BERN/COMlongp_bernb_INFO_8bpp.png") {tmpl_depo()}
+
+spriteset(ss_COMLp_berna_PUP, "src/SIEMENS/BERN/COMlongp_berna_PUP_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMLp_berna_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMlongp_berna_PUP_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMLp_berna_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMlongp_berna_PUP_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMLp_berna_PUP_info, "src/SIEMENS/BERN/COMlongp_berna_PUP_INFO_8bpp.png") {tmpl_depo()}
+//	Long
+spriteset(ss_COML_berna, "src/SIEMENS/BERN/COMlong_berna_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COML_berna, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMlong_berna_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COML_berna, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMlong_berna_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COML_berna_info, "src/SIEMENS/BERN/COMlong_berna_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COML_bernb, "src/SIEMENS/BERN/COMlong_bernb_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COML_bernb, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMlong_bernb_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COML_bernb, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMlong_bernb_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COML_bernb_info, "src/SIEMENS/BERN/COMlong_bernb_INFO_8bpp.png") {tmpl_depo()}
+
+//	Middle
+spriteset(ss_COMM_bernaa, "src/SIEMENS/BERN/COMmiddle_bernaa_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMM_bernaa, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMmiddle_bernaa_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMM_bernaa, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMmiddle_bernaa_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMM_bernaa_info, "src/SIEMENS/BERN/COMmiddle_bernaa_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMM_bernab, "src/SIEMENS/BERN/COMmiddle_bernab_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMM_bernab, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMmiddle_bernab_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMM_bernab, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMmiddle_bernab_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMM_bernab_info, "src/SIEMENS/BERN/COMmiddle_bernab_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMM_bernac, "src/SIEMENS/BERN/COMmiddle_bernac_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMM_bernac, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMmiddle_bernac_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMM_bernac, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMmiddle_bernac_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMM_bernac_info, "src/SIEMENS/BERN/COMmiddle_bernac_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMM_bernad, "src/SIEMENS/BERN/COMmiddle_bernad_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMM_bernad, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMmiddle_bernad_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMM_bernad, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMmiddle_bernad_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMM_bernad_info, "src/SIEMENS/BERN/COMmiddle_bernad_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMM_bernba, "src/SIEMENS/BERN/COMmiddle_bernba_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMM_bernba, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMmiddle_bernba_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMM_bernba, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMmiddle_bernba_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMM_bernba_info, "src/SIEMENS/BERN/COMmiddle_bernba_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMM_bernbb, "src/SIEMENS/BERN/COMmiddle_bernbb_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMM_bernbb, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMmiddle_bernbb_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMM_bernbb, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMmiddle_bernbb_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMM_bernbb_info, "src/SIEMENS/BERN/COMmiddle_bernbb_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMM_bernbc, "src/SIEMENS/BERN/COMmiddle_bernbc_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMM_bernbc, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMmiddle_bernbc_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMM_bernbc, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMmiddle_bernbc_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMM_bernbc_info, "src/SIEMENS/BERN/COMmiddle_bernbc_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMM_bernbd, "src/SIEMENS/BERN/COMmiddle_bernbd_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMM_bernbd, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMmiddle_bernbd_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMM_bernbd, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMmiddle_bernbd_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMM_bernbd_info, "src/SIEMENS/BERN/COMmiddle_bernbd_INFO_8bpp.png") {tmpl_depo()}
+//	Short
+spriteset(ss_COMS_berna, "src/SIEMENS/BERN/COMshort_berna_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMS_berna, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMshort_berna_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMS_berna, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMshort_berna_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMS_berna_info, "src/SIEMENS/BERN/COMshort_berna_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMS_bernb, "src/SIEMENS/BERN/COMshort_bernb_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMS_bernb, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMshort_bernb_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMS_bernb, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMshort_bernb_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMS_bernb_info, "src/SIEMENS/BERN/COMshort_bernb_INFO_8bpp.png") {tmpl_depo()}
+//	Rear
+spriteset(ss_COMR_bernaa, "src/SIEMENS/BERN/COMrear_bernaa_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMR_bernaa, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMrear_bernaa_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMR_bernaa, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMrear_bernaa_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMR_bernaa_info, "src/SIEMENS/BERN/COMrear_bernaa_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMR_bernab, "src/SIEMENS/BERN/COMrear_bernab_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMR_bernab, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMrear_bernab_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMR_bernab, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMrear_bernab_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMR_bernab_info, "src/SIEMENS/BERN/COMrear_bernab_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMR_bernba, "src/SIEMENS/BERN/COMrear_bernba_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMR_bernba, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMrear_bernba_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMR_bernba, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMrear_bernba_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMR_bernba_info, "src/SIEMENS/BERN/COMrear_bernba_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMR_bernbb, "src/SIEMENS/BERN/COMrear_bernbb_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMR_bernbb, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMrear_bernbb_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMR_bernbb, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/BERN/COMrear_bernbb_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMR_bernbb_info, "src/SIEMENS/BERN/COMrear_bernbb_INFO_8bpp.png") {tmpl_depo()}
+
+// --------------------------------------------------------------------------------COMberna End
+// --
+// --

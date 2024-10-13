@@ -1,0 +1,49 @@
+// --------------------------------------------------------------------------------COMaugs
+
+/*
+
+COM7augs
+	ss_COMF_augs
+	ss_COML_augs
+	ss_COMMp_augs
+		ss_COMMp_augs_PUP
+	ss_COML_augs
+	ss_COMM_augs
+	ss_COML_augs
+	ss_COMR_augs
+
+*/
+//	Front
+spriteset(ss_COMF_augs, "src/SIEMENS/AUGS/COMfront_augs_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMF_augs, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/AUGS/COMfront_augs_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMF_augs, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/AUGS/COMfront_augs_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMF_augs_info, "src/SIEMENS/AUGS/COMfront_augs_INFO_8bpp.png") {tmpl_depo()}
+//	Long
+spriteset(ss_COML_augs, "src/SIEMENS/AUGS/COMlong_augs_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COML_augs, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/AUGS/COMlong_augs_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COML_augs, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/AUGS/COMlong_augs_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COML_augs_info, "src/SIEMENS/AUGS/COMlong_augs_INFO_8bpp.png") {tmpl_depo()}
+//	Middle panto
+spriteset(ss_COMMp_augs, "src/SIEMENS/AUGS/COMmiddlep_augs_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMMp_augs, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/AUGS/COMmiddlep_augs_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMMp_augs, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/AUGS/COMmiddlep_augs_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMMp_augs_info, "src/SIEMENS/AUGS/COMmiddlep_augs_INFO_8bpp.png") {tmpl_depo()}
+
+spriteset(ss_COMMp_augs_PUP, "src/SIEMENS/AUGS/COMmiddlep_augs_PUP_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMMp_augs_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/AUGS/COMmiddlep_augs_PUP_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMMp_augs_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/AUGS/COMmiddlep_augs_PUP_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMMp_augs_PUP_info, "src/SIEMENS/AUGS/COMmiddlep_augs_PUP_INFO_8bpp.png") {tmpl_depo()}
+//	Middle
+spriteset(ss_COMM_augs, "src/SIEMENS/AUGS/COMmiddle_augs_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMM_augs, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/AUGS/COMmiddle_augs_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMM_augs, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/AUGS/COMmiddle_augs_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMM_augs_info, "src/SIEMENS/AUGS/COMmiddle_augs_INFO_8bpp.png") {tmpl_depo()}
+//	Rear
+spriteset(ss_COMR_augs, "src/SIEMENS/AUGS/COMrear_augs_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMR_augs, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/AUGS/COMrear_augs_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMR_augs, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/AUGS/COMrear_augs_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMR_augs_info, "src/SIEMENS/AUGS/COMrear_augs_INFO_8bpp.png") {tmpl_depo()}
+
+// --------------------------------------------------------------------------------COMaugs End
+// --
+// --

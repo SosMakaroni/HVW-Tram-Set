@@ -1,0 +1,127 @@
+// --------------------------------------------------------------------------------COM5bernaa
+
+spriteset(ss_COM5bernaa_BUY, "src/SIEMENS/BERN/COM5_bernaa_BUY_8bpp.png")		{tmpl_purchase()}  // Vásárlási jármű
+spriteset(ss_COM5bernaa_BUY_P, "src/SIEMENS/BERN/COM5_berna_BUY_P_8bpp.png")		{tmpl_purchase()} // Vásárlási áramszedő*/
+
+// Rakodási grafika
+
+// Vásárlási grafika
+switch (FEAT_ROADVEHS, SELF, sw_COM5bernaa_purchase, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 8 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_COM5bernaa_BUY;    // Alap modell
+    1: return ss_COM5bernaa_BUY_P;    // Alap modell
+}
+
+// Lista grafika
+switch (FEAT_ROADVEHS, SELF, sw_COMLp_berna_info, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 8 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_COMLp_berna_info;    // Alap modell
+    1: return ss_COMLp_berna_PUP_info;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw_COM5bernaa_info, position_in_consist ) {
+	1: sw_COMLp_berna_info;
+	2: ss_COMM_bernaa_info;
+	3: ss_COML_berna_info;
+	4: ss_COMR_bernaa_info;
+    ss_COMF_bernaa_info;
+}
+
+// Játék grafika
+switch (FEAT_ROADVEHS, SELF, sw_COMLp_berna, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 8 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_COMLp_berna;    // Alap modell
+    1: return ss_COMLp_berna_PUP;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw1_COM5bernaa, position_in_consist ) {
+	1: sw_COMLp_berna;
+	2: ss_COMM_bernaa;
+	3: ss_COML_berna;
+	4: ss_COMR_bernaa;
+    ss_COMF_bernaa;
+}
+
+// Rajz
+switch(FEAT_ROADVEHS, SELF, sw_COM5bernaa, (extra_callback_info1 & 0x12)) {
+   0x10: sw_COM5bernaa_info; // Depó nézet
+   0x11: sw_COM5bernaa_info; // Jármű infó/Refit nézet
+   0x12: sw_COM5bernaa_info; // Jármű lista nézet
+   0x00: sw1_COM5bernaa; // Játék nézet
+}
+
+// Csuklosítás
+switch (FEAT_ROADVEHS, SELF, sw_COM5bernaa_articulated, extra_callback_info1) {
+	0: item_COM5bernaa;
+	1: item_COM_long;
+	2: item_COM_middle;
+	3: item_COM_long;
+	4: item_COM_rear;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+// Szövegek
+switch(FEAT_ROADVEHS, SELF, sw_COM5bernaa_namep, (extra_callback_info1 >> 8) & 0xFFFF) {
+    1: return string(STR_COM5bernaa_BUY);
+	return CB_RESULT_NO_TEXT;
+}
+switch(FEAT_ROADVEHS, SELF, sw_COM5bernaa_name, extra_callback_info1 & 0xFF) {
+    0x11: return string(STR_COM5bernaa_INFO); // Jármű infóban név
+    0x20: sw_COM5bernaa_namep; // Vásárlási lista név
+	0x21: return string(STR_COM_NAME); // Elővásárlási név
+	return CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_COM5bernaa) {
+	property {
+        name:							string(STR_COM_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(2002,02,1);
+        model_life:						20;
+        vehicle_life:					40;
+        reliability_decay:				18;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					12;
+        sprite_id:						SPRITE_ID_NEW_ROADVEH;
+        speed:							70 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:							400 kW;
+        weight:							36 ton;
+        cargo_capacity:					36;
+		cargo_age_period:				185;
+        sound_effect:					SOUND_POWER_STATION;
+		length:                  		6;
+		variant_group:					item_COM5potsa;
+    }
+    graphics {
+		default:                 		sw_COM5bernaa;
+		purchase:						sw_COM5bernaa_purchase;
+		articulated_part:        		sw_COM5bernaa_articulated;
+		cost_factor:					45 * parapuco;
+		running_cost_factor:			76 * pararuco;
+		additional_text: 				string(STR_COM5bernaa_ADAT);
+		name:							sw_COM5bernaa_name;
+    }
+	livery_override (item_COM_long ) {
+		default:						sw_COM5bernaa;
+	}
+	livery_override (item_COM_middle ) {
+		default:						sw_COM5bernaa;
+	}
+	livery_override (item_COM_rear ) {
+		default:						sw_COM5bernaa;
+	}
+
+}
+
+// --------------------------------------------------------------------------------COM5bernaa End
+// --
+// --

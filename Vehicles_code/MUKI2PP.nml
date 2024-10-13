@@ -1,0 +1,250 @@
+// --------------------------------------------------------------------------------MUKI2PP
+
+spriteset(ss_MUKI2PP_purchase, "src/MUKI/MUKI2PP_BUY_8bpp.png")		{tmpl_purchase()} // Vásárlási jármű
+spriteset(ss_MUKI2PP_PDO_purchase, "src/MUKI/MUKI1_PDO_8bpp.png")		{tmpl_purchase()} // Vásárlási áramszedő
+
+spriteset(ss_MUKI2P, "src/MUKI/MUKI12_1x_8bpp.png")		{tmpl_1(1)} //Motorkocsi
+alternative_sprites(ss_MUKI2P, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/MUKI/MUKI12_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_MUKI2P, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/MUKI/MUKI12_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_MUKI2Pi, "src/MUKI/MUKI12_8bpp.png")		{tmpl_depo()}
+spriteset(ss_MUKI2P_PUP, "src/MUKI/MUKI1_PUP_1x_8bpp.png")		{tmpl_1(1)} //Áramszedő
+alternative_sprites(ss_MUKI2P_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/MUKI/MUKI1_PUP_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_MUKI2P_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/MUKI/MUKI1_PUP_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_MUKI2P_PUPi, "src/MUKI/MUKI1_PUP_8bpp.png")		{tmpl_depo()}
+spriteset(ss_VPOT_GBS, "src/MUKI/VPOT_GBS_1x_8bpp.png")		{tmpl_1(1)} //Pótkocsi üres
+alternative_sprites(ss_VPOT_GBS, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/MUKI/VPOT_GBS_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_VPOT_GBS, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/MUKI/VPOT_GBS_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_VPOT_GBSi, "src/MUKI/VPOT_GBS_8bpp.png")		{tmpl_depo()}
+
+
+// Rakodási grafika
+spritegroup sg_MUKI2PP_1_DOBOZ {	loaded:  [ss_MUKI2P];	loading: [ss_MUKI2P];}
+spritegroup sg_MUKI2PP_2_GBS {	loaded:  [ss_VPOT_GBS];	loading: [ss_VPOT_GBS];}
+
+spritegroup sg_MUKI2PP_1_DOBOZi {	loaded:  [ss_MUKI2Pi];	loading: [ss_MUKI2Pi];}
+spritegroup sg_MUKI2PP_2_GBSi {	loaded:  [ss_VPOT_GBSi];	loading: [ss_VPOT_GBSi];}
+
+// Vásárlási grafika
+switch (FEAT_ROADVEHS, SELF, swg_MUKI2PP_purchase, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_MUKI2PP_purchase;    // Alap modell
+    1: return ss_MUKI2PP_PDO_purchase;    // Pantonograf (le)
+}
+
+// Lista grafika
+switch (FEAT_ROADVEHS, SELF, sw2_MUKI2PP_1i, cargo_type_in_veh) {
+	ENSP: return sg_MUKI2PP_1_DOBOZi;
+	sg_MUKI2PP_1_DOBOZi;
+}
+switch (FEAT_ROADVEHS, SELF, swg_MUKI2PP_1i, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sw2_MUKI2PP_1i;    // Alap modell
+    1: return ss_MUKI2P_PUPi;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, swg_MUKI2PP_2i, cargo_type_in_veh) {
+	ENSP: return sg_MUKI2PP_2_GBSi;
+	sg_MUKI2PP_2_GBSi;
+}
+switch (FEAT_ROADVEHS, SELF, sw1_MUKI2PPi, position_in_consist ) {
+	1: swg_MUKI2PP_2i;
+	2: ss_toldat;
+	3: swg_MUKI2PP_1i;
+    swg_MUKI2PP_1i;
+}
+
+// Játék grafika
+switch (FEAT_ROADVEHS, SELF, sw2_MUKI2PP_1, cargo_type_in_veh) {
+	ENSP: return sg_MUKI2PP_1_DOBOZ;
+	sg_MUKI2PP_1_DOBOZ;
+}
+switch (FEAT_ROADVEHS, SELF, swg_MUKI2PP_1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return sw2_MUKI2PP_1;    // Alap modell
+    1: return ss_MUKI2P_PUP;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, swg_MUKI2PP_2, cargo_type_in_veh) {
+	ENSP: return sg_MUKI2PP_2_GBS;
+	sg_MUKI2PP_2_GBS;
+}
+switch (FEAT_ROADVEHS, SELF, sw1_MUKI2PP, position_in_consist ) {
+	1: swg_MUKI2PP_2;
+	2: ss_toldat;
+	3: swg_MUKI2PP_1;
+    swg_MUKI2PP_1;
+}
+// Rajz
+switch(FEAT_ROADVEHS, SELF, sw_MUKI2PP, (extra_callback_info1 & 0x12)) {
+   0x10: sw1_MUKI2PPi; // Depó nézet
+   0x11: sw1_MUKI2PPi; // Jármű infó/Refit nézet
+   0x12: sw1_MUKI2PPi; // Jármű lista nézet
+   0x00: sw1_MUKI2PP; // Játék nézet
+}
+
+
+// Csuklosítás
+switch (FEAT_ROADVEHS, SELF, sw_MUKI2PP_articulated, extra_callback_info1) {
+    0: item_MUKI2PP;
+	1: item_MUKI2PP_2;
+	2: item_MUKI2PP_T;
+    3: item_MUKI2PP_3;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+// Modelhossz
+switch (FEAT_ROADVEHS, SELF, sw_MUKI2PP_length, position_in_consist) {
+	1: return 8;
+	2: return 5;
+	3: return 8;
+    return 7;
+}
+
+// Szövegek
+switch(FEAT_ROADVEHS, SELF, sw_MUKI2PP_namep, (extra_callback_info1 >> 8) & 0xFFFF) {
+    1: return string(STR_MUKI1PP_BUY);
+	return CB_RESULT_NO_TEXT;
+}
+switch(FEAT_ROADVEHS, SELF, sw_MUKI2PP_name, extra_callback_info1 & 0xFF) {
+    0x11: return string(STR_MUKI1PP_INFO); // Jármű infóban név
+    0x20: sw_MUKI2PP_namep; // Vásárlási lista név
+	0x21: return string(STR_MUKI1PP_NAME); // Elővásárlási név
+	return CB_RESULT_NO_TEXT;
+}
+switch (FEAT_ROADVEHS, SELF, sw_MUKI2PP_livery_text, cargo_type_in_veh) {
+	ENSP: return string(STR_COLOUR_SCHEME_PANTO);
+	WOOD: return string(STR_COLOUR_SCHEME_WOOD);
+	STEL: return string(STR_COLOUR_SCHEME_STEL);
+	return string(STR_COLOUR_SCHEME_LADA);
+}
+
+//Kapacitás
+
+item(FEAT_ROADVEHS, item_MUKI2PP) {
+	property {
+        name:								string(STR_MUKI_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1928,01,01);
+        model_life:						50;
+        vehicle_life:						50;
+        reliability_decay:				20;
+		cargo_allow_refit:       			[STEL, ENSP, WOOD];
+		cargo_disallow_refit:			[LVST];
+        refittable_cargo_classes:		bitmask(CC_PIECE_GOODS);
+        non_refittable_cargo_classes:	bitmask(CC_PASSENGERS, CC_EXPRESS, CC_REFRIGERATED, CC_BULK);
+        loading_speed:					4;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								45 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								110 hp;
+        weight:							14 ton;
+        cargo_capacity:					0;
+		cargo_age_period:					185;
+        sound_effect:						SOUND_POWER_STATION;
+		variant_group:					item_MUKI1;
+    }
+    graphics {
+		default:                 		sw_MUKI2PP;
+		purchase:						swg_MUKI2PP_purchase;
+		articulated_part:        		sw_MUKI2PP_articulated;
+		length:                  		sw_MUKI2PP_length;
+		cargo_subtype_text: 			sw_MUKI2PP_livery_text;
+		cargo_capacity: 				0;
+		purchase_cargo_capacity:		0;
+		cost_factor:					13 * parapuco;
+		running_cost_factor:			14 * pararuco;
+		additional_text: 				string(STR_MUKI1PP_ADAT);
+		name:							sw_MUKI2PP_name;
+    }
+}
+item(FEAT_ROADVEHS, item_MUKI2PP_2) {
+	property {
+        name:								string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
+		cargo_allow_refit:       			[STEL, ENSP, WOOD];
+		cargo_disallow_refit:			[LVST];
+        refittable_cargo_classes:		bitmask(CC_PIECE_GOODS);
+        non_refittable_cargo_classes:	bitmask(CC_PASSENGERS, CC_EXPRESS, CC_REFRIGERATED, CC_BULK);
+        loading_speed:					4;
+        cost_factor:						0;
+        running_cost_factor:				0;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:								0 kW;
+        weight:							0 ton;
+        cargo_capacity:					24;
+		cargo_age_period:					0;
+        sound_effect:						SOUND_POWER_STATION;
+    }
+    graphics {
+		default:                 		sw_MUKI2PP;
+		length:                  		sw_MUKI2PP_length;
+		cargo_capacity: 				8 * paracapa;
+		purchase_cargo_capacity:		8 * paracapa;
+    }
+}
+item(FEAT_ROADVEHS, item_MUKI2PP_3) {
+	property {
+        name:								string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
+		cargo_allow_refit:       			[STEL, ENSP, WOOD];
+		cargo_disallow_refit:			[LVST];
+        refittable_cargo_classes:		bitmask(CC_PIECE_GOODS);
+        non_refittable_cargo_classes:	bitmask(CC_PASSENGERS, CC_EXPRESS, CC_REFRIGERATED, CC_BULK);
+        loading_speed:					4;
+        cost_factor:						0;
+        running_cost_factor:				0;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:								0 kW;
+        weight:							0 ton;
+        cargo_capacity:					0;
+		cargo_age_period:					0;
+        sound_effect:						SOUND_POWER_STATION;
+    }
+    graphics {
+		default:                 		sw_MUKI2PP;
+		length:                  		sw_MUKI2PP_length;
+		cargo_capacity: 				0;
+		purchase_cargo_capacity:		0;
+    }
+}
+item(FEAT_ROADVEHS, item_MUKI2PP_T) {
+	property {
+        name:								string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
+        refittable_cargo_classes:		bitmask(NO_CARGO_CLASS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					0;
+        cost_factor:						0;
+        running_cost_factor:				0;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:								0 kW;
+        weight:							0 ton;
+        cargo_capacity:					0;
+		cargo_age_period:					0;
+    }
+    graphics {
+		default:                 		ss_toldat;
+		length:                  		sw_MUKI2PP_length;
+    }
+}
+
+// --------------------------------------------------------------------------------MUKI2PP End
+

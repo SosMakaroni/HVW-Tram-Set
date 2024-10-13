@@ -1,0 +1,42 @@
+// --------------------------------------------------------------------------------COMpotsa
+
+/*
+
+COM5potsa
+	ss_COMF_potsa
+	ss_COML_potsa
+	ss_COMMp_potsa
+		ss_COMMp_potsa_PUP
+	ss_COML_potsa
+	ss_COMR_potsa
+
+*/
+//	Front
+spriteset(ss_COMF_potsa, "src/SIEMENS/POTS/COMfront_potsa_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMF_potsa, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/POTS/COMfront_potsa_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMF_potsa, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/POTS/COMfront_potsa_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMF_potsa_info, "src/SIEMENS/POTS/COMfront_potsa_INFO_8bpp.png") {tmpl_depo()}
+//	Long
+spriteset(ss_COML_potsa, "src/SIEMENS/POTS/COMlong_potsa_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COML_potsa, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/POTS/COMlong_potsa_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COML_potsa, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/POTS/COMlong_potsa_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COML_potsa_info, "src/SIEMENS/POTS/COMlong_potsa_INFO_8bpp.png") {tmpl_depo()}
+//	Middle panto
+spriteset(ss_COMMp_potsa, "src/SIEMENS/POTS/COMmiddlep_potsa_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMMp_potsa, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/POTS/COMmiddlep_potsa_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMMp_potsa, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/POTS/COMmiddlep_potsa_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMMp_potsa_info, "src/SIEMENS/POTS/COMmiddlep_potsa_INFO_8bpp.png") {tmpl_depo()}
+
+spriteset(ss_COMMp_potsa_PUP, "src/SIEMENS/POTS/COMmiddlep_potsa_PUP_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMMp_potsa_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/POTS/COMmiddlep_potsa_PUP_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMMp_potsa_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/POTS/COMmiddlep_potsa_PUP_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMMp_potsa_PUP_info, "src/SIEMENS/POTS/COMmiddlep_potsa_PUP_INFO_8bpp.png") {tmpl_depo()}
+//	Rear
+spriteset(ss_COMR_potsa, "src/SIEMENS/POTS/COMrear_potsa_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMR_potsa, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/POTS/COMrear_potsa_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMR_potsa, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/POTS/COMrear_potsa_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMR_potsa_info, "src/SIEMENS/POTS/COMrear_potsa_INFO_8bpp.png") {tmpl_depo()}
+
+// --------------------------------------------------------------------------------COMpotsa End
+// --
+// --

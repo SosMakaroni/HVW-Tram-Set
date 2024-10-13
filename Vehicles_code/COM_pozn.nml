@@ -1,0 +1,66 @@
+// --------------------------------------------------------------------------------COMpozn
+
+/*
+COM5pozna
+	ss_COMF_pozna
+	ss_COML_pozna
+	ss_COMMp_pozna
+		ss_COMMp_pozna_PUP
+	ss_COMS_pozna
+	ss_COMR_pozna
+COM5poznb
+*/
+//	Front
+spriteset(ss_COMF_pozna, "src/SIEMENS/POZN/COMfront_pozna_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMF_pozna, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/POZN/COMfront_pozna_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMF_pozna, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/POZN/COMfront_pozna_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMF_pozna_info, "src/SIEMENS/POZN/COMfront_pozna_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMF_poznb, "src/SIEMENS/POZN/COMfront_poznb_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMF_poznb, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/POZN/COMfront_poznb_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMF_poznb, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/POZN/COMfront_poznb_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMF_poznb_info, "src/SIEMENS/POZN/COMfront_poznb_INFO_8bpp.png") {tmpl_depo()}
+//	Long
+spriteset(ss_COML_pozna, "src/SIEMENS/POZN/COMlong_pozna_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COML_pozna, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/POZN/COMlong_pozna_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COML_pozna, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/POZN/COMlong_pozna_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COML_pozna_info, "src/SIEMENS/POZN/COMlong_pozna_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COML_poznb, "src/SIEMENS/POZN/COMlong_poznb_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COML_poznb, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/POZN/COMlong_poznb_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COML_poznb, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/POZN/COMlong_poznb_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COML_poznb_info, "src/SIEMENS/POZN/COMlong_poznb_INFO_8bpp.png") {tmpl_depo()}
+//	Middle panto
+spriteset(ss_COMMp_pozna, "src/SIEMENS/POZN/COMmiddlep_pozna_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMMp_pozna, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/POZN/COMmiddlep_pozna_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMMp_pozna, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/POZN/COMmiddlep_pozna_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMMp_pozna_info, "src/SIEMENS/POZN/COMmiddlep_pozna_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMMp_poznb, "src/SIEMENS/POZN/COMmiddlep_poznb_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMMp_poznb, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/POZN/COMmiddlep_poznb_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMMp_poznb, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/POZN/COMmiddlep_poznb_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMMp_poznb_info, "src/SIEMENS/POZN/COMmiddlep_poznb_INFO_8bpp.png") {tmpl_depo()}
+
+spriteset(ss_COMMp_pozna_PUP, "src/SIEMENS/POZN/COMmiddlep_pozna_PUP_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMMp_pozna_PUP, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/POZN/COMmiddlep_pozna_PUP_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMMp_pozna_PUP, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/POZN/COMmiddlep_pozna_PUP_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMMp_pozna_PUP_info, "src/SIEMENS/POZN/COMmiddlep_pozna_PUP_INFO_8bpp.png") {tmpl_depo()}
+//	Short
+spriteset(ss_COMS_pozna, "src/SIEMENS/POZN/COMshort_pozna_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMS_pozna, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/POZN/COMshort_pozna_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMS_pozna, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/POZN/COMshort_pozna_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMS_pozna_info, "src/SIEMENS/POZN/COMshort_pozna_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMS_poznb, "src/SIEMENS/POZN/COMshort_poznb_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMS_poznb, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/POZN/COMshort_poznb_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMS_poznb, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/POZN/COMshort_poznb_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMS_poznb_info, "src/SIEMENS/POZN/COMshort_poznb_INFO_8bpp.png") {tmpl_depo()}
+//	Rear
+spriteset(ss_COMR_pozna, "src/SIEMENS/POZN/COMrear_pozna_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMR_pozna, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/POZN/COMrear_pozna_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMR_pozna, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/POZN/COMrear_pozna_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMR_pozna_info, "src/SIEMENS/POZN/COMrear_pozna_INFO_8bpp.png") {tmpl_depo()}
+spriteset(ss_COMR_poznb, "src/SIEMENS/POZN/COMrear_poznb_1x_8bpp.png") {tmpl_1(1)}
+alternative_sprites(ss_COMR_poznb, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/SIEMENS/POZN/COMrear_poznb_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_COMR_poznb, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/SIEMENS/POZN/COMrear_poznb_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_COMR_poznb_info, "src/SIEMENS/POZN/COMrear_poznb_INFO_8bpp.png") {tmpl_depo()}
+
+// --------------------------------------------------------------------------------COMpozn End
+// --
+// --

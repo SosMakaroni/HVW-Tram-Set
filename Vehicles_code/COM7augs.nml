@@ -1,0 +1,133 @@
+// --------------------------------------------------------------------------------COM7augs
+
+spriteset(ss_COM7augs_BUY, "src/SIEMENS/AUGS/COM7_augs_BUY_8bpp.png")		{tmpl_purchase()}  // Vásárlási jármű
+spriteset(ss_COM7augs_BUY_P, "src/SIEMENS/AUGS/COM7_augs_BUY_P_8bpp.png")		{tmpl_purchase()} // Vásárlási áramszedő*/
+
+// Rakodási grafika
+
+// Vásárlási grafika
+switch (FEAT_ROADVEHS, SELF, sw_COM7augs_purchase, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 8 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_COM7augs_BUY;    // Alap modell
+    1: return ss_COM7augs_BUY_P;    // Alap modell
+}
+
+// Lista grafika
+switch (FEAT_ROADVEHS, SELF, sw_COMMp_augs_info, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 8 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_COMMp_augs_info;    // Alap modell
+    1: return ss_COMMp_augs_PUP_info;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw_COM7augs_info, position_in_consist ) {
+	1: ss_COML_augs_info;
+	2: sw_COMMp_augs_info;
+	3: ss_COML_augs_info;
+	4: ss_COMM_augs_info;
+	5: ss_COML_augs_info;
+	6: ss_COMR_augs_info;
+    ss_COMF_augs_info;
+}
+
+// Játék grafika
+switch (FEAT_ROADVEHS, SELF, sw_COMMp_augs, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 8 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: return ss_COMMp_augs;    // Alap modell
+    1: return ss_COMMp_augs_PUP;    // Pantonograf (fel)
+}
+switch (FEAT_ROADVEHS, SELF, sw1_COM7augs, position_in_consist ) {
+	1: ss_COML_augs;
+	2: sw_COMMp_augs;
+	3: ss_COML_augs;
+	4: ss_COMM_augs;
+	5: ss_COML_augs;
+	6: ss_COMR_augs;
+    ss_COMF_augs;
+}
+
+// Rajz
+switch(FEAT_ROADVEHS, SELF, sw_COM7augs, (extra_callback_info1 & 0x12)) {
+   0x10: sw_COM7augs_info; // Depó nézet
+   0x11: sw_COM7augs_info; // Jármű infó/Refit nézet
+   0x12: sw_COM7augs_info; // Jármű lista nézet
+   0x00: sw1_COM7augs; // Játék nézet
+}
+
+// Csuklosítás
+switch (FEAT_ROADVEHS, SELF, sw_COM7augs_articulated, extra_callback_info1) {
+	0: item_COM7augs;
+	1: item_COM_long;
+	2: item_COM_middle;
+	3: item_COM_long;
+	4: item_COM_middle;
+	5: item_COM_long;
+	6: item_COM_rear;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+// Szövegek
+switch(FEAT_ROADVEHS, SELF, sw_COM7augs_namep, (extra_callback_info1 >> 8) & 0xFFFF) {
+    1: return string(STR_COM7augs_BUY);
+	return CB_RESULT_NO_TEXT;
+}
+switch(FEAT_ROADVEHS, SELF, sw_COM7augs_name, extra_callback_info1 & 0xFF) {
+    0x11: return string(STR_COM7augs_INFO); // Jármű infóban név
+    0x20: sw_COM7augs_namep; // Vásárlási lista név
+	0x21: return string(STR_COM_NAME); // Elővásárlási név
+	return CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_COM7augs) {
+	property {
+        name:							string(STR_COM_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(2000,02,1);
+        model_life:						20;
+        vehicle_life:					40;
+        reliability_decay:				18;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					12;
+        sprite_id:						SPRITE_ID_NEW_ROADVEH;
+        speed:							70 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:							600 kW;
+        weight:							63 ton;
+        cargo_capacity:					36;
+		cargo_age_period:				185;
+        sound_effect:					SOUND_POWER_STATION;
+		length:                  		6;
+		variant_group:					item_COM5potsa;
+    }
+    graphics {
+		default:                 		sw_COM7augs;
+		purchase:						sw_COM7augs_purchase;
+		articulated_part:        		sw_COM7augs_articulated;
+		cost_factor:					45 * parapuco;
+		running_cost_factor:			76 * pararuco;
+		additional_text: 				string(STR_COM7augs_ADAT);
+		name:							sw_COM7augs_name;
+    }
+	livery_override (item_COM_long ) {
+		default:						sw_COM7augs;
+	}
+	livery_override (item_COM_middle ) {
+		default:						sw_COM7augs;
+	}
+	livery_override (item_COM_rear ) {
+		default:						sw_COM7augs;
+	}
+
+}
+
+// --------------------------------------------------------------------------------COM7augs End
+// --
+// --
